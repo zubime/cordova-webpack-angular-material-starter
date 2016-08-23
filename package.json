@@ -1,0 +1,39 @@
+{
+  "name": "www",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-animate": "^1.5.8",
+    "angular-aria": "^1.5.8",
+    "angular-material": "^1.1.0",
+    "angular-messages": "^1.5.8",
+    "angular-ui-router": "^0.3.1",
+    "animate.css": "^3.5.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "font-awesome": "^4.6.3",
+    "material-design-icons": "^2.2.3",
+    "ng-annotate-loader": "^0.1.1",
+    "url-loader": "^0.5.7"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.11.4",
+    "babel-core": "^6.13.2",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015-webpack": "^6.4.3",
+    "babel-preset-es2016": "^6.11.3",
+    "css-loader": "^0.23.1",
+    "file-loader": "^0.9.0",
+    "script-loader": "^0.7.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.2",
+    "webpack-cordova-plugin": "^0.1.6",
+    "webpack-material-design-icons": "0.0.2"
+  }
+}
