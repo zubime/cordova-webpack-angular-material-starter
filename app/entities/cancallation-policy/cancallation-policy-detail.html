@@ -1,0 +1,30 @@
+
+<div>
+    <h2><span translate="gCompanyApp.cancallationPolicy.detail.title">Cancallation Policy</span> {{vm.cancallationPolicy.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="gCompanyApp.cancallationPolicy.locationId">Location Id</span></dt>
+        <dd>
+            <span>{{vm.cancallationPolicy.locationId}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.cancallationPolicy.name">Name</span></dt>
+        <dd>
+            <span>{{vm.cancallationPolicy.name}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.cancallationPolicy.daysBefore">Days Before</span></dt>
+        <dd>
+            <span>{{vm.cancallationPolicy.daysBefore}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.cancallationPolicy.cancelFeePercent">Cancel Fee Percent</span></dt>
+        <dd>
+            <span>{{vm.cancallationPolicy.cancelFeePercent}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

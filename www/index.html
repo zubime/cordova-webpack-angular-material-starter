@@ -39,10 +39,41 @@
       <section layout="row" ng-controller="AppCtrl as main" >
         <md-sidenav class="md-sidenav-left" md-component-id="left"
                 md-whiteframe="4">
-          <md-toolbar >
-            <h1 class="md-toolbar-tools">Disabled Backdrop</h1>
+          <md-toolbar md-scroll-shrink class="md-tall">
+            <img ng-src="" class="md-avatar"></img>
           </md-toolbar>
-          <md-content layout-margin>
+          <md-content >
+            <md-list>
+              <md-list-item  ng-click="main.toggleLeft()">
+                <md-icon>store</md-icon>
+                <p>Business Setup</p>
+              </md-list-item>
+              <md-list-item  ng-click="main.toggleLeft()">
+                <md-icon>question_answer</md-icon>
+                <p>Conversations</p>
+              </md-list-item>
+              <md-list-item  ng-click="main.toggleLeft()">
+                <md-icon>date_range</md-icon>
+                <p>Calendar</p>
+              </md-list-item>
+              <md-list-item  ng-click="main.toggleLeft()">
+                <md-icon>card_giftcard</md-icon>
+                <p>Promotions</p>
+              </md-list-item>
+              <md-list-item  ng-click="main.toggleLeft()">
+                <md-icon>trending_up</md-icon>
+                <p>Statistics</p>
+              </md-list-item>
+              <md-list-item  ng-click="main.toggleLeft()">
+                <md-icon>build</md-icon>
+                <p>Configuration</p>
+              </md-list-item>
+
+                <md-list-item  ng-click="main.toggleLeft()">
+                  <md-icon>exit_to_app</md-icon>
+                  <p>Logout</p>
+                </md-list-item>
+            </md-list>
 
           </md-content>
         </md-sidenav>
@@ -53,7 +84,7 @@
                 <md-icon ng-click="main.toggleLeft()" >menu</md-icon>
               </md-button>
               <h2>
-                <span>Toolbar </span>
+                <span>SportiVenture </span>
               </h2>
               <span flex></span>
               <md-button class="md-icon-button" aria-label="Favorite">

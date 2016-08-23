@@ -1,0 +1,76 @@
+<div>
+    <h2 translate="gCompanyApp.article.home.title">Articles</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="article.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  translate="gCompanyApp.article.home.createLabel">
+                        Create new Article
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span translate="global.field.id">ID</span></th>
+                    <th><span translate="gCompanyApp.article.title">Title</span></th>
+                    <th><span translate="gCompanyApp.article.summary">Summary</span></th>
+                    <th><span translate="gCompanyApp.article.published">Published</span></th>
+                    <th><span translate="gCompanyApp.article.userId">User Id</span></th>
+                    <th><span translate="gCompanyApp.article.articleProvider">Article Provider</span></th>
+                    <th><span translate="gCompanyApp.article.uri">Uri</span></th>
+                    <th><span translate="gCompanyApp.article.tag">Tag</span></th>
+                    <th><span translate="gCompanyApp.article.location">Location</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="article in vm.articles track by article.id">
+                    <td><a ui-sref="article-detail({id:article.id})">{{article.id}}</a></td>
+                    <td>{{article.title}}</td>
+                    <td>{{article.summary}}</td>
+                        <td>{{article.published | date:'mediumDate'}}</td>
+                    <td>{{article.userId}}</td>
+                    <td>{{article.articleProvider}}</td>
+                    <td>{{article.uri}}</td>
+                    <td>
+                        <span ng-repeat="tag in article.tags">
+                            <a class="form-control-static" ui-sref="tag-detail({id: {{tag.id}}})">{{tag.name}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td>
+                        <a ui-sref="location-detail({id:article.location.id})">{{article.location.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="article-detail({id:article.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="article.edit({id:article.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="article.delete({id:article.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

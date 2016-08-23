@@ -1,0 +1,22 @@
+
+<div>
+    <h2><span translate="gCompanyApp.currency.detail.title">Currency</span> {{vm.currency.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="gCompanyApp.currency.currencyCode">Currency Code</span></dt>
+        <dd>
+            <span>{{vm.currency.currencyCode}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.currency.currencyName">Currency Name</span></dt>
+        <dd>
+            <span>{{vm.currency.currencyName}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

@@ -1,0 +1,87 @@
+<div>
+    <h2 translate="gCompanyApp.resource.home.title">Resources</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="resource.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  translate="gCompanyApp.resource.home.createLabel">
+                        Create new Resource
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="locationId"><span translate="gCompanyApp.resource.locationId">Location Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="serviceDetailId"><span translate="gCompanyApp.resource.serviceDetailId">Service Detail Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="typeId"><span translate="gCompanyApp.resource.typeId">Type Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="subTypeId"><span translate="gCompanyApp.resource.subTypeId">Sub Type Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="pricePerHour"><span translate="gCompanyApp.resource.pricePerHour">Price Per Hour</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="pricePerDay"><span translate="gCompanyApp.resource.pricePerDay">Price Per Day</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="pricePerWeek"><span translate="gCompanyApp.resource.pricePerWeek">Price Per Week</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="currencyCode"><span translate="gCompanyApp.resource.currencyCode">Currency Code</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="name"><span translate="gCompanyApp.resource.name">Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="generalFeatures"><span translate="gCompanyApp.resource.generalFeatures">General Features</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="galleryId"><span translate="gCompanyApp.resource.galleryId">Gallery Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="image"><span translate="gCompanyApp.resource.image">Image</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="resource in vm.resources track by resource.id">
+                    <td><a ui-sref="resource-detail({id:resource.id})">{{resource.id}}</a></td>
+                    <td>{{resource.locationId}}</td>
+                    <td>{{resource.serviceDetailId}}</td>
+                    <td>{{resource.typeId}}</td>
+                    <td>{{resource.subTypeId}}</td>
+                    <td>{{resource.pricePerHour}}</td>
+                    <td>{{resource.pricePerDay}}</td>
+                    <td>{{resource.pricePerWeek}}</td>
+                    <td>{{resource.currencyCode}}</td>
+                    <td>{{resource.name}}</td>
+                    <td>{{resource.generalFeatures}}</td>
+                    <td>{{resource.galleryId}}</td>
+                    <td>
+                        <a ng-if="resource.image" ng-click="vm.openFile(resource.imageContentType, resource.image)">
+                            <img data-ng-src="{{'data:' + resource.imageContentType + ';base64,' + resource.image}}" style="max-height: 30px;"/>
+                        </a>
+                        <span ng-if="resource.image">{{resource.imageContentType}}, {{vm.byteSize(resource.image)}}</span>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="resource-detail({id:resource.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="resource.edit({id:resource.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="resource.delete({id:resource.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>

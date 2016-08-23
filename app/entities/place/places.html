@@ -1,0 +1,74 @@
+<div>
+    <h2 translate="gCompanyApp.place.home.title">Places</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="place.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  translate="gCompanyApp.place.home.createLabel">
+                        Create new Place
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="longName"><span translate="gCompanyApp.place.longName">Long Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="shortName"><span translate="gCompanyApp.place.shortName">Short Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="country"><span translate="gCompanyApp.place.country">Country</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="areaLvl1"><span translate="gCompanyApp.place.areaLvl1">Area Lvl 1</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="areaLvl2"><span translate="gCompanyApp.place.areaLvl2">Area Lvl 2</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="areaLvl3"><span translate="gCompanyApp.place.areaLvl3">Area Lvl 3</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="location"><span translate="gCompanyApp.place.location">Location</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="loc"><span translate="gCompanyApp.place.loc">Loc</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="place in vm.places track by place.id">
+                    <td><a ui-sref="place-detail({id:place.id})">{{place.id}}</a></td>
+                    <td>{{place.longName}}</td>
+                    <td>{{place.shortName}}</td>
+                    <td>{{place.country}}</td>
+                    <td>{{place.areaLvl1}}</td>
+                    <td>{{place.areaLvl2}}</td>
+                    <td>{{place.areaLvl3}}</td>
+                    <td translate="{{'gCompanyApp.Type.' + place.location}}">{{place.location}}</td>
+                    <td>{{place.loc}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="place-detail({id:place.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="place.edit({id:place.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="place.delete({id:place.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>

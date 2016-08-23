@@ -1,0 +1,74 @@
+<div>
+    <h2 translate="gCompanyApp.review.home.title">Reviews</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="review.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  translate="gCompanyApp.review.home.createLabel">
+                        Create new Review
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="locationGrade"><span translate="gCompanyApp.review.locationGrade">Location Grade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="serviceGrade"><span translate="gCompanyApp.review.serviceGrade">Service Grade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="staffGrade"><span translate="gCompanyApp.review.staffGrade">Staff Grade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="priceGrade"><span translate="gCompanyApp.review.priceGrade">Price Grade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="description"><span translate="gCompanyApp.review.description">Description</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="date"><span translate="gCompanyApp.review.date">Date</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="username"><span translate="gCompanyApp.review.username">Username</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="locationId"><span translate="gCompanyApp.review.locationId">Location Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="review in vm.reviews track by review.id">
+                    <td><a ui-sref="review-detail({id:review.id})">{{review.id}}</a></td>
+                    <td>{{review.locationGrade}}</td>
+                    <td>{{review.serviceGrade}}</td>
+                    <td>{{review.staffGrade}}</td>
+                    <td>{{review.priceGrade}}</td>
+                    <td>{{review.description}}</td>
+                        <td>{{review.date | date:'mediumDate'}}</td>
+                    <td>{{review.username}}</td>
+                    <td>{{review.locationId}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="review-detail({id:review.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="review.edit({id:review.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="review.delete({id:review.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>

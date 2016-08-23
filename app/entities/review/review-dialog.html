@@ -1,0 +1,150 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myReviewLabel" translate="gCompanyApp.review.home.createOrEditLabel">Create or edit a Review</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.review.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.review.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gCompanyApp.review.locationGrade" for="field_locationGrade">Location Grade</label>
+            <input type="number" class="form-control" name="locationGrade" id="field_locationGrade"
+                    ng-model="vm.review.locationGrade"
+                    required max="5" />
+            <div ng-show="editForm.locationGrade.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.locationGrade.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.locationGrade.$error.max" translate="entity.validation.max" translate-value-max="5">
+                    This field cannot be more than 5.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.locationGrade.$error.number" translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gCompanyApp.review.serviceGrade" for="field_serviceGrade">Service Grade</label>
+            <input type="number" class="form-control" name="serviceGrade" id="field_serviceGrade"
+                    ng-model="vm.review.serviceGrade"
+                    required max="5" />
+            <div ng-show="editForm.serviceGrade.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.serviceGrade.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.serviceGrade.$error.max" translate="entity.validation.max" translate-value-max="5">
+                    This field cannot be more than 5.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.serviceGrade.$error.number" translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gCompanyApp.review.staffGrade" for="field_staffGrade">Staff Grade</label>
+            <input type="number" class="form-control" name="staffGrade" id="field_staffGrade"
+                    ng-model="vm.review.staffGrade"
+                    required max="5" />
+            <div ng-show="editForm.staffGrade.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.staffGrade.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.staffGrade.$error.max" translate="entity.validation.max" translate-value-max="5">
+                    This field cannot be more than 5.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.staffGrade.$error.number" translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gCompanyApp.review.priceGrade" for="field_priceGrade">Price Grade</label>
+            <input type="number" class="form-control" name="priceGrade" id="field_priceGrade"
+                    ng-model="vm.review.priceGrade"
+                    required max="5" />
+            <div ng-show="editForm.priceGrade.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.priceGrade.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.priceGrade.$error.max" translate="entity.validation.max" translate-value-max="5">
+                    This field cannot be more than 5.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.priceGrade.$error.number" translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gCompanyApp.review.description" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                    ng-model="vm.review.description"
+                    required ng-maxlength="200" />
+            <div ng-show="editForm.description.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.description.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.description.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="200">
+                    This field cannot be longer than 200 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gCompanyApp.review.date" for="field_date">Date</label>
+                <div class="input-group">
+                    <input id="field_date" type="text" class="form-control" name="date" uib-datepicker-popup="{{dateformat}}" ng-model="vm.review.date" is-open="vm.datePickerOpenStatus.date"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('date')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gCompanyApp.review.username" for="field_username">Username</label>
+            <input type="text" class="form-control" name="username" id="field_username"
+                    ng-model="vm.review.username"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gCompanyApp.review.locationId" for="field_locationId">Location Id</label>
+            <input type="text" class="form-control" name="locationId" id="field_locationId"
+                    ng-model="vm.review.locationId"
+                    required />
+            <div ng-show="editForm.locationId.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.locationId.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

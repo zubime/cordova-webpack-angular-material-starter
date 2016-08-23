@@ -1,0 +1,43 @@
+
+<div>
+    <h2><span translate="gCompanyApp.gallery.detail.title">Gallery</span> {{vm.gallery.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="gCompanyApp.gallery.name">Name</span></dt>
+        <dd>
+            <span>{{vm.gallery.name}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.gallery.description">Description</span></dt>
+        <dd>
+            <span>{{vm.gallery.description}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.gallery.images">Images</span></dt>
+        <dd>
+            <ul>
+              <li ng-repeat=" uid in vm.gallery.uids ">{{uid}} : /m_gallery/api/gallery/{{vm.gallery.id}}/image/{{uid}}</li>
+              <li ng-repeat="f in files" style="font:smaller">{{f.name}} {{f.$error}} {{f.$errorParam}}</li>
+            </ul>
+
+        </dd>
+        <img ng-repeat=" uid in vm.gallery.uids" ng-src="m_gallery/api/gallery/{{vm.gallery.id}}/image/{{uid}}"></img>
+
+    </dl>
+
+    <div ngf-drop ngf-select ng-model="files" class="drop-box"
+        ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="true"
+        accept="image/*"
+        ngf-pattern="'image/*,application/pdf'">Drop images here or click to upload
+    </div>
+    <div ngf-no-file-drop>
+        <div class="button" ngf-select="upload($files)" ngf-multiple="true">Select File</div>
+    </div>
+
+
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

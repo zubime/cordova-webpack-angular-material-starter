@@ -1,0 +1,76 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myArticleLabel" translate="gCompanyApp.article.home.createOrEditLabel">Create or edit a Article</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.article.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.article.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gCompanyApp.article.title" for="field_title">Title</label>
+            <input type="text" class="form-control" name="title" id="field_title"
+                    ng-model="vm.article.title"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gCompanyApp.article.summary" for="field_summary">Summary</label>
+            <input type="text" class="form-control" name="summary" id="field_summary"
+                    ng-model="vm.article.summary"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gCompanyApp.article.published" for="field_published">Published</label>
+                <div class="input-group">
+                    <input id="field_published" type="text" class="form-control" name="published" uib-datepicker-popup="{{dateformat}}" ng-model="vm.article.published" is-open="vm.datePickerOpenStatus.published"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('published')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gCompanyApp.article.userId" for="field_userId">User Id</label>
+            <input type="number" class="form-control" name="userId" id="field_userId"
+                    ng-model="vm.article.userId"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gCompanyApp.article.articleProvider" for="field_articleProvider">Article Provider</label>
+            <input type="text" class="form-control" name="articleProvider" id="field_articleProvider"
+                    ng-model="vm.article.articleProvider"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gCompanyApp.article.uri" for="field_uri">Uri</label>
+            <input type="text" class="form-control" name="uri" id="field_uri"
+                    ng-model="vm.article.uri"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label translate="gCompanyApp.article.tag" for="field_tag">Tag</label>
+            <select class="form-control" id="field_tag" multiple name="tag" ng-model="vm.article.tags" ng-options="tag as tag.name for tag in vm.tags track by tag.id"></select>
+        </div>
+        <div class="form-group">
+            <label translate="gCompanyApp.article.location" for="field_location">Location</label>
+            <select class="form-control" id="field_location" name="location" ng-model="vm.article.locationId" ng-options="location.id as location.name for location in vm.locations track by location.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

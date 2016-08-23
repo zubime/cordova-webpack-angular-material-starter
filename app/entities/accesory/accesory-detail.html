@@ -1,0 +1,57 @@
+
+<div>
+    <h2><span translate="gCompanyApp.accesory.detail.title">Accesory</span> {{vm.accesory.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="gCompanyApp.accesory.locationId">Location Id</span></dt>
+        <dd>
+            <span>{{vm.accesory.locationId}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.accesory.serviceDetailId">Service Detail Id</span></dt>
+        <dd>
+            <span>{{vm.accesory.serviceDetailId}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.accesory.pricePerHour">Price Per Hour</span></dt>
+        <dd>
+            <span>{{vm.accesory.pricePerHour}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.accesory.pricePerDay">Price Per Day</span></dt>
+        <dd>
+            <span>{{vm.accesory.pricePerDay}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.accesory.pricePerWeek">Price Per Week</span></dt>
+        <dd>
+            <span>{{vm.accesory.pricePerWeek}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.accesory.currencyCode">Currency Code</span></dt>
+        <dd>
+            <span>{{vm.accesory.currencyCode}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.accesory.name">Name</span></dt>
+        <dd>
+            <span>{{vm.accesory.name}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.accesory.image">Image</span></dt>
+        <dd>
+            <div ng-if="vm.accesory.image">
+                <a ng-click="vm.openFile(vm.accesory.imageContentType, vm.accesory.image)">
+                    <img data-ng-src="{{'data:' + vm.accesory.imageContentType + ';base64,' + vm.accesory.image}}" style="max-width: 100%;"/>
+                </a>
+                {{vm.accesory.imageContentType}}, {{vm.byteSize(vm.accesory.image)}}
+            </div>
+        </dd>
+        <dt><span translate="gCompanyApp.accesory.reservation">Reservation</span></dt>
+        <dd>
+            <span ng-repeat="reservation in vm.accesory.reservations">
+                <a ui-sref="reservation-detail({id: {{reservation.id}}})">{{reservation.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

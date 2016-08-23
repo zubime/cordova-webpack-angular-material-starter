@@ -1,0 +1,82 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myReservationLabel" translate="gCompanyApp.reservation.home.createOrEditLabel">Create or edit a Reservation</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.reservation.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.reservation.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gCompanyApp.reservation.locationId" for="field_locationId">Location Id</label>
+            <input type="number" class="form-control" name="locationId" id="field_locationId"
+                    ng-model="vm.reservation.locationId"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gCompanyApp.reservation.dateFrom" for="field_dateFrom">Date From</label>
+                <div class="input-group">
+                    <input id="field_dateFrom" type="text" class="form-control" name="dateFrom" datetime-picker="{{dateformat}}" ng-model="vm.reservation.dateFrom" is-open="vm.datePickerOpenStatus.dateFrom"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateFrom')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gCompanyApp.reservation.dateTo" for="field_dateTo">Date To</label>
+                <div class="input-group">
+                    <input id="field_dateTo" type="text" class="form-control" name="dateTo" datetime-picker="{{dateformat}}" ng-model="vm.reservation.dateTo" is-open="vm.datePickerOpenStatus.dateTo"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateTo')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gCompanyApp.reservation.userId" for="field_userId">User Id</label>
+            <input type="number" class="form-control" name="userId" id="field_userId"
+                    ng-model="vm.reservation.userId"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gCompanyApp.reservation.price" for="field_price">Price</label>
+            <input type="number" class="form-control" name="price" id="field_price"
+                    ng-model="vm.reservation.price"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gCompanyApp.reservation.currencyCode" for="field_currencyCode">Currency Code</label>
+            <input type="text" class="form-control" name="currencyCode" id="field_currencyCode"
+                    ng-model="vm.reservation.currencyCode"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gCompanyApp.reservation.isPaid" for="field_isPaid">Is Paid</label>
+            <input type="checkbox" class="form-control" name="isPaid" id="field_isPaid"
+                    ng-model="vm.reservation.isPaid"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label translate="gCompanyApp.reservation.resource" for="field_resource">Resource</label>
+            <select class="form-control" id="field_resource" name="resource" ng-model="vm.reservation.resourceId" ng-options="resource.id as resource.id for resource in vm.resources"            >
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

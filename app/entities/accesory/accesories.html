@@ -1,0 +1,81 @@
+<div>
+    <h2 translate="gCompanyApp.accesory.home.title">Accesories</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="accesory.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  translate="gCompanyApp.accesory.home.createLabel">
+                        Create new Accesory
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span translate="global.field.id">ID</span></th>
+                    <th><span translate="gCompanyApp.accesory.locationId">Location Id</span></th>
+                    <th><span translate="gCompanyApp.accesory.serviceDetailId">Service Detail Id</span></th>
+                    <th><span translate="gCompanyApp.accesory.pricePerHour">Price Per Hour</span></th>
+                    <th><span translate="gCompanyApp.accesory.pricePerDay">Price Per Day</span></th>
+                    <th><span translate="gCompanyApp.accesory.pricePerWeek">Price Per Week</span></th>
+                    <th><span translate="gCompanyApp.accesory.currencyCode">Currency Code</span></th>
+                    <th><span translate="gCompanyApp.accesory.name">Name</span></th>
+                    <th><span translate="gCompanyApp.accesory.image">Image</span></th>
+                    <th><span translate="gCompanyApp.accesory.reservation">Reservation</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="accesory in vm.accesories track by accesory.id">
+                    <td><a ui-sref="accesory-detail({id:accesory.id})">{{accesory.id}}</a></td>
+                    <td>{{accesory.locationId}}</td>
+                    <td>{{accesory.serviceDetailId}}</td>
+                    <td>{{accesory.pricePerHour}}</td>
+                    <td>{{accesory.pricePerDay}}</td>
+                    <td>{{accesory.pricePerWeek}}</td>
+                    <td>{{accesory.currencyCode}}</td>
+                    <td>{{accesory.name}}</td>
+                    <td>
+                        <a ng-if="accesory.image" ng-click="vm.openFile(accesory.imageContentType, accesory.image)">
+                            <img data-ng-src="{{'data:' + accesory.imageContentType + ';base64,' + accesory.image}}" style="max-height: 30px;"/>
+                        </a>
+                        <span ng-if="accesory.image">{{accesory.imageContentType}}, {{vm.byteSize(accesory.image)}}</span>
+                    </td>
+                    <td>
+                        <span ng-repeat="reservation in accesory.reservations">
+                            <a class="form-control-static" ui-sref="reservation-detail({id: {{reservation.id}}})">{{reservation.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="accesory-detail({id:accesory.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="accesory.edit({id:accesory.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="accesory.delete({id:accesory.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

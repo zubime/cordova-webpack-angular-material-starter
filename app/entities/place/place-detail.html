@@ -1,0 +1,46 @@
+
+<div>
+    <h2><span translate="gCompanyApp.place.detail.title">Place</span> {{vm.place.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="gCompanyApp.place.longName">Long Name</span></dt>
+        <dd>
+            <span>{{vm.place.longName}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.place.shortName">Short Name</span></dt>
+        <dd>
+            <span>{{vm.place.shortName}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.place.country">Country</span></dt>
+        <dd>
+            <span>{{vm.place.country}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.place.areaLvl1">Area Lvl 1</span></dt>
+        <dd>
+            <span>{{vm.place.areaLvl1}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.place.areaLvl2">Area Lvl 2</span></dt>
+        <dd>
+            <span>{{vm.place.areaLvl2}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.place.areaLvl3">Area Lvl 3</span></dt>
+        <dd>
+            <span>{{vm.place.areaLvl3}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.place.location">Location</span></dt>
+        <dd>
+            <span translate="{{'gCompanyApp.Type.' + vm.place.location}}">{{vm.place.location}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.place.loc">Loc</span></dt>
+        <dd>
+            <span>{{vm.place.loc}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

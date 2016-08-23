@@ -1,0 +1,94 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myAccesoryLabel" translate="gCompanyApp.accesory.home.createOrEditLabel">Create or edit a Accesory</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.accesory.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.accesory.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gCompanyApp.accesory.locationId" for="field_locationId">Location Id</label>
+            <input type="number" class="form-control" name="locationId" id="field_locationId"
+                    ng-model="vm.accesory.locationId"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gCompanyApp.accesory.serviceDetailId" for="field_serviceDetailId">Service Detail Id</label>
+            <input type="number" class="form-control" name="serviceDetailId" id="field_serviceDetailId"
+                    ng-model="vm.accesory.serviceDetailId"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gCompanyApp.accesory.pricePerHour" for="field_pricePerHour">Price Per Hour</label>
+            <input type="number" class="form-control" name="pricePerHour" id="field_pricePerHour"
+                    ng-model="vm.accesory.pricePerHour"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gCompanyApp.accesory.pricePerDay" for="field_pricePerDay">Price Per Day</label>
+            <input type="number" class="form-control" name="pricePerDay" id="field_pricePerDay"
+                    ng-model="vm.accesory.pricePerDay"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gCompanyApp.accesory.pricePerWeek" for="field_pricePerWeek">Price Per Week</label>
+            <input type="number" class="form-control" name="pricePerWeek" id="field_pricePerWeek"
+                    ng-model="vm.accesory.pricePerWeek"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gCompanyApp.accesory.currencyCode" for="field_currencyCode">Currency Code</label>
+            <input type="text" class="form-control" name="currencyCode" id="field_currencyCode"
+                    ng-model="vm.accesory.currencyCode"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gCompanyApp.accesory.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.accesory.name"
+                     />
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setImage($file, vm.accesory)" ngf-pattern="'image/*'">
+            <label class="control-label" translate="gCompanyApp.accesory.image" for="field_image">Image</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.accesory.imageContentType + ';base64,' + vm.accesory.image}}" style="max-height: 100px;" ng-if="vm.accesory.image"/>
+                <div ng-if="vm.accesory.image" class="help-block clearfix">
+                    <span class="pull-left">{{vm.accesory.imageContentType}}, {{vm.byteSize(vm.accesory.image)}}</span>
+                    <button ng-click="vm.accesory.image=null;vm.accesory.imageContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="file" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setImage($file, vm.accesory)" accept="image/*" translate="entity.action.addimage">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="image" id="field_image"
+                    ng-model="vm.accesory.image"
+                     />
+            <input type="hidden" class="form-control" name="imageContentType" id="field_imageContentType"
+                    ng-model="vm.accesory.imageContentType" />
+        </div>
+
+        <div class="form-group">
+            <label translate="gCompanyApp.accesory.reservation" for="field_reservation">Reservation</label>
+            <select class="form-control" id="field_reservation" multiple name="reservation" ng-model="vm.accesory.reservations" ng-options="reservation as reservation.id for reservation in vm.reservations track by reservation.id"></select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,52 @@
+
+<div>
+    <h2><span translate="gCompanyApp.serviceDetails.detail.title">Service Details</span> {{vm.serviceDetails.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="gCompanyApp.serviceDetails.name">Name</span></dt>
+        <dd>
+            <span>{{vm.serviceDetails.name}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.serviceDetails.description">Description</span></dt>
+        <dd>
+            <span>{{vm.serviceDetails.description}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.serviceDetails.priceFrom">Price From</span></dt>
+        <dd>
+            <span>{{vm.serviceDetails.priceFrom}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.serviceDetails.priceTo">Price To</span></dt>
+        <dd>
+            <span>{{vm.serviceDetails.priceTo}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.serviceDetails.image">Image</span></dt>
+        <dd>
+            <div ng-if="vm.serviceDetails.image">
+                <a ng-click="vm.openFile(vm.serviceDetails.imageContentType, vm.serviceDetails.image)">
+                    <img data-ng-src="{{'data:' + vm.serviceDetails.imageContentType + ';base64,' + vm.serviceDetails.image}}" style="max-width: 100%;"/>
+                </a>
+                {{vm.serviceDetails.imageContentType}}, {{vm.byteSize(vm.serviceDetails.image)}}
+            </div>
+        </dd>
+        <dt><span translate="gCompanyApp.serviceDetails.location">Location</span></dt>
+        <dd>
+            <a ui-sref="location-detail({id:vm.serviceDetails.locationId})">{{vm.serviceDetails.locationId}}</a>
+        </dd>
+        <dt><span translate="gCompanyApp.serviceDetails.subType">Sub Type</span></dt>
+        <dd>
+            <a ui-sref="sub-type-detail({id:vm.serviceDetails.subTypeId})">{{vm.serviceDetails.subTypeName}}</a>
+        </dd>
+        <dt><span translate="gCompanyApp.serviceDetails.type">Type</span></dt>
+        <dd>
+            <a ui-sref="type-detail({id:vm.serviceDetails.typeId})">{{vm.serviceDetails.typeName}}</a>
+        </dd>
+
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

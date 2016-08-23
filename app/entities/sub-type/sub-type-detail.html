@@ -1,0 +1,34 @@
+
+<div>
+    <h2><span translate="gCompanyApp.subType.detail.title">Sub Type</span> {{vm.subType.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="gCompanyApp.subType.name">Name</span></dt>
+        <dd>
+            <span>{{vm.subType.name}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.subType.description">Description</span></dt>
+        <dd>
+            <span>{{vm.subType.description}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.subType.iconUri">Icon Uri</span></dt>
+        <dd>
+            <span>{{vm.subType.iconUri}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.subType.imageUri">Image Uri</span></dt>
+        <dd>
+            <span>{{vm.subType.imageUri}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.subType.type">Type</span></dt>
+        <dd>
+            <a ui-sref="type-detail({id:vm.subType.type.id})">{{vm.subType.type.name}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

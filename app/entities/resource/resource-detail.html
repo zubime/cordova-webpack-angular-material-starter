@@ -1,0 +1,67 @@
+
+<div>
+    <h2><span translate="gCompanyApp.resource.detail.title">Resource</span> {{vm.resource.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="gCompanyApp.resource.locationId">Location Id</span></dt>
+        <dd>
+            <span>{{vm.resource.locationId}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.resource.serviceDetailId">Service Detail Id</span></dt>
+        <dd>
+            <span>{{vm.resource.serviceDetailId}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.resource.typeId">Type Id</span></dt>
+        <dd>
+            <span>{{vm.resource.typeId}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.resource.subTypeId">Sub Type Id</span></dt>
+        <dd>
+            <span>{{vm.resource.subTypeId}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.resource.pricePerHour">Price Per Hour</span></dt>
+        <dd>
+            <span>{{vm.resource.pricePerHour}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.resource.pricePerDay">Price Per Day</span></dt>
+        <dd>
+            <span>{{vm.resource.pricePerDay}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.resource.pricePerWeek">Price Per Week</span></dt>
+        <dd>
+            <span>{{vm.resource.pricePerWeek}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.resource.currencyCode">Currency Code</span></dt>
+        <dd>
+            <span>{{vm.resource.currencyCode}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.resource.name">Name</span></dt>
+        <dd>
+            <span>{{vm.resource.name}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.resource.generalFeatures">General Features</span></dt>
+        <dd>
+            <span>{{vm.resource.generalFeatures}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.resource.galleryId">Gallery Id</span></dt>
+        <dd>
+            <span>{{vm.resource.galleryId}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.resource.image">Image</span></dt>
+        <dd>
+            <div ng-if="vm.resource.image">
+                <a ng-click="vm.openFile(vm.resource.imageContentType, vm.resource.image)">
+                    <img data-ng-src="{{'data:' + vm.resource.imageContentType + ';base64,' + vm.resource.image}}" style="max-width: 100%;"/>
+                </a>
+                {{vm.resource.imageContentType}}, {{vm.byteSize(vm.resource.image)}}
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

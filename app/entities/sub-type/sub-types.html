@@ -1,0 +1,66 @@
+<div>
+    <h2 translate="gCompanyApp.subType.home.title">Sub Types</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="sub-type.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  translate="gCompanyApp.subType.home.createLabel">
+                        Create new Sub Type
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span translate="global.field.id">ID</span></th>
+                    <th><span translate="gCompanyApp.subType.name">Name</span></th>
+                    <th><span translate="gCompanyApp.subType.description">Description</span></th>
+                    <th><span translate="gCompanyApp.subType.iconUri">Icon Uri</span></th>
+                    <th><span translate="gCompanyApp.subType.imageUri">Image Uri</span></th>
+                    <th><span translate="gCompanyApp.subType.type">Type</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="subType in vm.subTypes track by subType.id">
+                    <td><a ui-sref="sub-type-detail({id:subType.id})">{{subType.id}}</a></td>
+                    <td>{{subType.name}}</td>
+                    <td>{{subType.description}}</td>
+                    <td>{{subType.iconUri}}</td>
+                    <td>{{subType.imageUri}}</td>
+                    <td>
+                        <a ui-sref="type-detail({id:subType.type.id})">{{subType.type.name}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="sub-type-detail({id:subType.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="sub-type.edit({id:subType.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="sub-type.delete({id:subType.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

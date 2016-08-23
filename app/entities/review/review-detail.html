@@ -1,0 +1,46 @@
+
+<div>
+    <h2><span translate="gCompanyApp.review.detail.title">Review</span> {{vm.review.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="gCompanyApp.review.locationGrade">Location Grade</span></dt>
+        <dd>
+            <span>{{vm.review.locationGrade}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.review.serviceGrade">Service Grade</span></dt>
+        <dd>
+            <span>{{vm.review.serviceGrade}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.review.staffGrade">Staff Grade</span></dt>
+        <dd>
+            <span>{{vm.review.staffGrade}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.review.priceGrade">Price Grade</span></dt>
+        <dd>
+            <span>{{vm.review.priceGrade}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.review.description">Description</span></dt>
+        <dd>
+            <span>{{vm.review.description}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.review.date">Date</span></dt>
+        <dd>
+            <span>{{vm.review.date | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.review.username">Username</span></dt>
+        <dd>
+            <span>{{vm.review.username}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.review.locationId">Location Id</span></dt>
+        <dd>
+            <span>{{vm.review.locationId}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

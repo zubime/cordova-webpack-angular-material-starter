@@ -1,0 +1,34 @@
+
+<div>
+    <h2><span translate="gCompanyApp.type.detail.title">Type</span> {{vm.type.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="gCompanyApp.type.name">Name</span></dt>
+        <dd>
+            <span>{{vm.type.name}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.type.description">Description</span></dt>
+        <dd>
+            <span>{{vm.type.description}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.type.service">Service</span></dt>
+        <dd>
+            <span>{{vm.type.service}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.type.iconUri">Icon Uri</span></dt>
+        <dd>
+            <span>{{vm.type.iconUri}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.type.imageUri">Image Uri</span></dt>
+        <dd>
+            <span>{{vm.type.imageUri}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

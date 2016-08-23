@@ -1,0 +1,30 @@
+
+<div>
+    <h2><span translate="gCompanyApp.state.detail.title">State</span> {{vm.state.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="gCompanyApp.state.name">Name</span></dt>
+        <dd>
+            <span>{{vm.state.name}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.state.code">Code</span></dt>
+        <dd>
+            <span>{{vm.state.code}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.state.imageUri">Image Uri</span></dt>
+        <dd>
+            <span>{{vm.state.imageUri}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.state.country">Country</span></dt>
+        <dd>
+            <a ui-sref="country-detail({id:vm.state.country.id})">{{vm.state.country.countryName}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

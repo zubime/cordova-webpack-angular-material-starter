@@ -1,0 +1,62 @@
+<div>
+    <h2 translate="gCompanyApp.cancallationPolicy.home.title">Cancallation Policies</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="cancallation-policy.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  translate="gCompanyApp.cancallationPolicy.home.createLabel">
+                        Create new Cancallation Policy
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span translate="global.field.id">ID</span></th>
+                    <th><span translate="gCompanyApp.cancallationPolicy.locationId">Location Id</span></th>
+                    <th><span translate="gCompanyApp.cancallationPolicy.name">Name</span></th>
+                    <th><span translate="gCompanyApp.cancallationPolicy.daysBefore">Days Before</span></th>
+                    <th><span translate="gCompanyApp.cancallationPolicy.cancelFeePercent">Cancel Fee Percent</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="cancallationPolicy in vm.cancallationPolicies track by cancallationPolicy.id">
+                    <td><a ui-sref="cancallation-policy-detail({id:cancallationPolicy.id})">{{cancallationPolicy.id}}</a></td>
+                    <td>{{cancallationPolicy.locationId}}</td>
+                    <td>{{cancallationPolicy.name}}</td>
+                    <td>{{cancallationPolicy.daysBefore}}</td>
+                    <td>{{cancallationPolicy.cancelFeePercent}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="cancallation-policy-detail({id:cancallationPolicy.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="cancallation-policy.edit({id:cancallationPolicy.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="cancallation-policy.delete({id:cancallationPolicy.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
