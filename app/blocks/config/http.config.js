@@ -1,3 +1,8 @@
+require('../interceptor/auth-expired.interceptor.js');
+require('../interceptor/auth.interceptor.js');
+require('../interceptor/errorhandler.interceptor.js');
+require('../interceptor/notification.interceptor.js');
+
 (function() {
     'use strict';
 
@@ -5,12 +10,10 @@
         .module('gCompanyApp')
         .config(httpConfig);
 
-    httpConfig.$inject = ['$urlRouterProvider', '$httpProvider', 'httpRequestInterceptorCacheBusterProvider', '$urlMatcherFactoryProvider'];
+    httpConfig.$inject = ['$urlRouterProvider', '$httpProvider', '$urlMatcherFactoryProvider'];
 
-    function httpConfig($urlRouterProvider, $httpProvider, httpRequestInterceptorCacheBusterProvider, $urlMatcherFactoryProvider) {
-        
-        //Cache everything except rest api requests
-        httpRequestInterceptorCacheBusterProvider.setMatchlist([/.*api.*/, /.*protected.*/], true);
+    function httpConfig($urlRouterProvider, $httpProvider, $urlMatcherFactoryProvider) {
+
 
         $urlRouterProvider.otherwise('/');
 

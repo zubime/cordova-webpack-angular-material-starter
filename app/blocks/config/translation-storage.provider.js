@@ -5,24 +5,24 @@
         .module('gCompanyApp')
         .factory('translationStorageProvider', translationStorageProvider);
 
-    translationStorageProvider.$inject = ['$cookies', '$log', 'LANGUAGES'];
+    translationStorageProvider.$inject = ['$localStorage', '$log', 'LANGUAGES'];
 
-    function translationStorageProvider($cookies, $log, LANGUAGES) {
+    function translationStorageProvider($localStorage, $log, LANGUAGES) {
         return {
             get: get,
             put: put
         };
 
         function get(name) {
-            if (LANGUAGES.indexOf($cookies.getObject(name)) === -1) {
-                $log.info('Resetting invalid cookie language "' + $cookies.getObject(name) + '" to prefered language "en"');
-                $cookies.putObject(name, 'en');
+            if (LANGUAGES.indexOf($localStorage[name] === -1)) {
+                $log.info('Resetting invalid cookie language "' + $localStorage[name] + '" to prefered language "en"');
+                $localStorage[name] = 'en';
             }
-            return $cookies.getObject(name);
+            return $localStorage[name];
         }
 
         function put(name, value) {
-            $cookies.putObject(name, value);
+            $localStorage[name] = value;
         }
     }
 })();

@@ -22,8 +22,7 @@ var angular = require('angular');
           $mdThemingProvider.theme('default')
             .primaryPalette('pink')
             .accentPalette('orange');
-          $mdIconProvider
-           .defaultIconSet('svg/mdi.svg')
+
         })
         .controller('AppCtrl',AppCtrl)
         .run(run);

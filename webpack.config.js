@@ -14,6 +14,9 @@ module.exports = {
       'angular-ui-router',
       'ng-file-upload',
       'angular-translate',
+      'angular-translate-storage-local',
+      'angular-translate-loader-partial',
+      'angular-translate-interpolation-messageformat',
       'angular-dynamic-locale',
       'ngstorage',
       'font-awesome/css/font-awesome.min.css'
@@ -45,7 +48,7 @@ module.exports = {
         loader: 'url'
       },{
         test: /\.html$/,
-        loader: "ng-cache"
+        loader: "html"
       },{
         test: /\.json$/,
         loader: "json-loader"

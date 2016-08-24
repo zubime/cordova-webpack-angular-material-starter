@@ -13,8 +13,12 @@
 // require('angular-material');
 // require('angular-ui-router');
 require('./app.module.js');
-require('./app.constants.js')
+require('./app.constants.js');
+require('./app.state.js');
 require('./components');
 require('./services/auth');
 require('./blocks/handlers/state.handler.js');
 require('./blocks/handlers/translation.handler.js');
+require('./blocks/config');
+
+require('./modules/business_setup')
