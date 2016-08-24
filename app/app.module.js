@@ -1,23 +1,31 @@
-(function() {
-    'use strict';
+'use strict';
 
+
+
+import AppCtrl from './app-controller.js'
+
+var angular = require('angular');
     angular
         .module('gCompanyApp', [
             'ngStorage',
             'tmh.dynamicLocale',
             'pascalprecht.translate',
             'ngResource',
-            'ngCookies',
             'ngAria',
-            'ngCacheBuster',
             'ngFileUpload',
-            'ui.bootstrap',
-            'ui.bootstrap.datetimepicker',
             'ui.router',
-            'infinite-scroll',
             // jhipster-needle-angularjs-add-module JHipster will add new module here
-            'angular-loading-bar'
+            'ngMaterial',
+            'ui.router'
         ])
+        .config(function($mdThemingProvider,$mdIconProvider) {
+          $mdThemingProvider.theme('default')
+            .primaryPalette('pink')
+            .accentPalette('orange');
+          $mdIconProvider
+           .defaultIconSet('svg/mdi.svg')
+        })
+        .controller('AppCtrl',AppCtrl)
         .run(run);
 
     run.$inject = ['stateHandler', 'translationHandler'];
@@ -26,4 +34,3 @@
         stateHandler.initialize();
         translationHandler.initialize();
     }
-})();

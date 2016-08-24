@@ -1,0 +1,11 @@
+require("./base64.service.js");
+require("./capitalize.filter.js");
+require("./data-util.service.js");
+require("./date-util.service.js");
+require("./jhi-item-count.directive.js");
+require("./pagination-util.service.js");
+require("./parse-links.service.js");
+require("./sort-by.directive.js");
+require("./sort.directive.js");
+require("./truncate-characters.filter.js");
+require("./truncate-words.filter.js");

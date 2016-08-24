@@ -1,0 +1,93 @@
+<div>
+    <h2 translate="gCompanyApp.serviceDetails.home.title">Service Details</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="service-details.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  translate="gCompanyApp.serviceDetails.home.createLabel">
+                        Create new Service Details
+                    </span>
+                </button>
+                <div class="form-group">
+                    <label translate="gCompanyApp.serviceDetails.location" for="field_location">Location</label> {{vm.locationId}}
+                    <select class="form-control" id="field_location" name="location"  ng-model="vm.locationId" ng-options="location.id as location.id for location in vm.locations"  ng-change="alert()" >
+                        <option value=""></option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span translate="global.field.id">ID</span></th>
+                    <th><span translate="gCompanyApp.serviceDetails.name">Name</span></th>
+                    <th><span translate="gCompanyApp.serviceDetails.description">Description</span></th>
+                    <th><span translate="gCompanyApp.serviceDetails.priceFrom">Price From</span></th>
+                    <th><span translate="gCompanyApp.serviceDetails.priceTo">Price To</span></th>
+                    <th><span translate="gCompanyApp.serviceDetails.image">Image</span></th>
+                    <th><span translate="gCompanyApp.serviceDetails.location">Location</span></th>
+                    <th><span translate="gCompanyApp.serviceDetails.subType">Sub Type</span></th>
+                    <th><span translate="gCompanyApp.serviceDetails.type">Type</span></th>
+                    <th><span translate="gCompanyApp.serviceDetails.point">Point</span></th>
+
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="serviceDetails in vm.serviceDetails track by serviceDetails.id">
+                    <td><a ui-sref="service-details-detail({id:serviceDetails.id})">{{serviceDetails.id}}</a></td>
+                    <td>{{serviceDetails.name}}</td>
+                    <td>{{serviceDetails.description}}</td>
+                    <td>{{serviceDetails.priceFrom}}</td>
+                    <td>{{serviceDetails.priceTo}}</td>
+                    <td>
+                        <a ng-if="serviceDetails.image" ng-click="vm.openFile(serviceDetails.imageContentType, serviceDetails.image)">
+                            <img data-ng-src="{{'data:' + serviceDetails.imageContentType + ';base64,' + serviceDetails.image}}" style="max-height: 30px;"/>
+                        </a>
+                        <span ng-if="serviceDetails.image">{{serviceDetails.imageContentType}}, {{vm.byteSize(serviceDetails.image)}}</span>
+                    </td>
+                    <td>
+                        <a ui-sref="location-detail({id:serviceDetails.locationId})">{{serviceDetails.locationId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="sub-type-detail({id:serviceDetails.subTypeId})">{{serviceDetails.subTypeId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="type-detail({id:serviceDetails.typeId})">{{serviceDetails.typeId}}</a>
+                    </td>
+                    <td>
+                        {{serviceDetails.point[0]}},{{serviceDetails.point[1]}}
+                    </td>
+
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="service-details-detail({id:serviceDetails.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="service-details.edit({id:serviceDetails.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="service-details.delete({id:serviceDetails.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

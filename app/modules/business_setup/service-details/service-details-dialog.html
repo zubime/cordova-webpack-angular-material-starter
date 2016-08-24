@@ -1,0 +1,93 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myServiceDetailsLabel" translate="gCompanyApp.serviceDetails.home.createOrEditLabel">Create or edit a Service Details</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.serviceDetails.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.serviceDetails.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gCompanyApp.serviceDetails.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.serviceDetails.name"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gCompanyApp.serviceDetails.description" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                    ng-model="vm.serviceDetails.description"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gCompanyApp.serviceDetails.priceFrom" for="field_priceFrom">Price From</label>
+            <input type="number" class="form-control" name="priceFrom" id="field_priceFrom"
+                    ng-model="vm.serviceDetails.priceFrom"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gCompanyApp.serviceDetails.priceTo" for="field_priceTo">Price To</label>
+            <input type="number" class="form-control" name="priceTo" id="field_priceTo"
+                    ng-model="vm.serviceDetails.priceTo"
+                     />
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setImage($file, vm.serviceDetails)" ngf-pattern="'image/*'">
+            <label class="control-label" translate="gCompanyApp.serviceDetails.image" for="field_image">Image</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.serviceDetails.imageContentType + ';base64,' + vm.serviceDetails.image}}" style="max-height: 100px;" ng-if="vm.serviceDetails.image"/>
+                <div ng-if="vm.serviceDetails.image" class="help-block clearfix">
+                    <span class="pull-left">{{vm.serviceDetails.imageContentType}}, {{vm.byteSize(vm.serviceDetails.image)}}</span>
+                    <button ng-click="vm.serviceDetails.image=null;vm.serviceDetails.imageContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="file" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setImage($file, vm.serviceDetails)" accept="image/*" translate="entity.action.addimage">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="image" id="field_image"
+                    ng-model="vm.serviceDetails.image"
+                     />
+            <input type="hidden" class="form-control" name="imageContentType" id="field_imageContentType"
+                    ng-model="vm.serviceDetails.imageContentType" />
+        </div>
+
+        <div class="form-group">
+            <label translate="gCompanyApp.serviceDetails.location" for="field_location">Location</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.serviceDetails.locationId" readonly />
+            <!-- <select class="form-control" id="field_location" name="location" ng-model="vm.serviceDetails.locationId" ng-options="location.id as location.id for location in vm.locations"            >
+                <option value=""></option>
+            </select> -->
+        </div>
+        <div class="form-group">
+            <label translate="gCompanyApp.serviceDetails.subType" for="field_subType">Sub Type</label>
+            <select class="form-control" id="field_subType" name="subType" ng-model="vm.serviceDetails.subTypeId" ng-options="subType.id as subType.name for subType in vm.subtypes"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="gCompanyApp.serviceDetails.type" for="field_type">Type</label>
+            <select class="form-control" id="field_type" name="type" ng-model="vm.serviceDetails.typeId" ng-options="type.id as type.name for type in vm.types"            >
+                <option value=""></option>
+            </select>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

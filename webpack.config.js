@@ -1,5 +1,6 @@
 var webpack = require("webpack");
 var CordovaPlugin = require('webpack-cordova-plugin');
+var path = require("path");
 
 module.exports = {
   entry: {
@@ -7,12 +8,21 @@ module.exports = {
       'angular-material',
       'angular-material/angular-material.css',
       'animate.css',
-      'webpack-material-design-icons'
+      'material-design-icons',
+      'angular-resource',
+      'angular-messages',
+      'angular-ui-router',
+      'ng-file-upload',
+      'angular-translate',
+      'angular-dynamic-locale',
+      'ngstorage',
+      'font-awesome/css/font-awesome.min.css'
     ],
-    app:["./app/app-module.es6"]},
+    app:["./app/index.js"]
+  },
   output: {
-    path: __dirname,
-    filename: "bundle.js"
+    path: path.resolve(__dirname, "www"),
+    filename: "[name].bundle.js"
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor", /* filename= */"vendor.bundle.js"),
@@ -27,7 +37,7 @@ module.exports = {
       { test: /\.css$/,
         loader: "style!css"
       },
-      { test: /\.es6$/, exclude: /node_modules/,
+      { test: /\.js$/, exclude: /node_modules/,
         loaders: ['ng-annotate', 'babel-loader']
       },
       {

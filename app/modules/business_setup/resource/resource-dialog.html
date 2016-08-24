@@ -1,0 +1,114 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myResourceLabel" translate="gCompanyApp.resource.home.createOrEditLabel">Create or edit a Resource</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.resource.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.resource.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gCompanyApp.resource.locationId" for="field_locationId">Location Id</label>
+            <input type="text" class="form-control" name="locationId" id="field_locationId"
+                    ng-model="vm.resource.locationId"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gCompanyApp.resource.serviceDetailId" for="field_serviceDetailId">Service Detail Id</label>
+            <input type="text" class="form-control" name="serviceDetailId" id="field_serviceDetailId"
+                    ng-model="vm.resource.serviceDetailId"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gCompanyApp.resource.typeId" for="field_typeId">Type Id</label>
+            <input type="number" class="form-control" name="typeId" id="field_typeId"
+                    ng-model="vm.resource.typeId"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gCompanyApp.resource.subTypeId" for="field_subTypeId">Sub Type Id</label>
+            <input type="number" class="form-control" name="subTypeId" id="field_subTypeId"
+                    ng-model="vm.resource.subTypeId"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gCompanyApp.resource.pricePerHour" for="field_pricePerHour">Price Per Hour</label>
+            <input type="number" class="form-control" name="pricePerHour" id="field_pricePerHour"
+                    ng-model="vm.resource.pricePerHour"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gCompanyApp.resource.pricePerDay" for="field_pricePerDay">Price Per Day</label>
+            <input type="number" class="form-control" name="pricePerDay" id="field_pricePerDay"
+                    ng-model="vm.resource.pricePerDay"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gCompanyApp.resource.pricePerWeek" for="field_pricePerWeek">Price Per Week</label>
+            <input type="number" class="form-control" name="pricePerWeek" id="field_pricePerWeek"
+                    ng-model="vm.resource.pricePerWeek"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gCompanyApp.resource.currencyCode" for="field_currencyCode">Currency Code</label>
+            <input type="text" class="form-control" name="currencyCode" id="field_currencyCode"
+                    ng-model="vm.resource.currencyCode"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gCompanyApp.resource.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.resource.name"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gCompanyApp.resource.generalFeatures" for="field_generalFeatures">General Features</label>
+            <input type="text" class="form-control" name="generalFeatures" id="field_generalFeatures"
+                    ng-model="vm.resource.generalFeatures"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="gCompanyApp.resource.galleryId" for="field_galleryId">Gallery Id</label>
+            <input type="text" class="form-control" name="galleryId" id="field_galleryId"
+                    ng-model="vm.resource.galleryId"
+                     />
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setImage($file, vm.resource)" ngf-pattern="'image/*'">
+            <label class="control-label" translate="gCompanyApp.resource.image" for="field_image">Image</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.resource.imageContentType + ';base64,' + vm.resource.image}}" style="max-height: 100px;" ng-if="vm.resource.image"/>
+                <div ng-if="vm.resource.image" class="help-block clearfix">
+                    <span class="pull-left">{{vm.resource.imageContentType}}, {{vm.byteSize(vm.resource.image)}}</span>
+                    <button ng-click="vm.resource.image=null;vm.resource.imageContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="file" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setImage($file, vm.resource)" accept="image/*" translate="entity.action.addimage">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="image" id="field_image"
+                    ng-model="vm.resource.image"
+                     />
+            <input type="hidden" class="form-control" name="imageContentType" id="field_imageContentType"
+                    ng-model="vm.resource.imageContentType" />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

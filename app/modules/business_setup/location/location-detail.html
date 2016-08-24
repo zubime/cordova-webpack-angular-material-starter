@@ -1,0 +1,114 @@
+
+<div>
+    <h2><span translate="gCompanyApp.location.detail.title">Location</span> {{vm.location.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="gCompanyApp.location.street">Street</span></dt>
+        <dd>
+            <span>{{vm.location.street}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.location.streetNo">Street No</span></dt>
+        <dd>
+            <span>{{vm.location.streetNo}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.location.code">Code</span></dt>
+        <dd>
+            <span>{{vm.location.code}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.location.imageUrl">Image Url</span></dt>
+        <dd>
+            <span>{{vm.location.imageUrl}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.location.name">Name</span></dt>
+        <dd>
+            <span>{{vm.location.name}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.location.whyToVisit">Why To Visit</span></dt>
+        <dd>
+            <span>{{vm.location.whyToVisit}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.location.description">Description</span></dt>
+        <dd>
+            <span>{{vm.location.description}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.location.website">Website</span></dt>
+        <dd>
+            <span>{{vm.location.website}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.location.phoneNumber">Phone Number</span></dt>
+        <dd>
+            <span>{{vm.location.phoneNumber}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.location.email">Email</span></dt>
+        <dd>
+            <span>{{vm.location.email}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.location.image">Image</span></dt>
+        <dd>
+            <div ng-if="vm.location.image">
+                <a ng-click="vm.openFile(vm.location.imageContentType, vm.location.image)">
+                    <img data-ng-src="{{'data:' + vm.location.imageContentType + ';base64,' + vm.location.image}}" style="max-width: 100%;"/>
+                </a>
+                {{vm.location.imageContentType}}, {{vm.byteSize(vm.location.image)}}
+            </div>
+        </dd>
+        <dt><span translate="gCompanyApp.location.logo">Logo</span></dt>
+        <dd>
+            <div ng-if="vm.location.logo">
+                <a ng-click="vm.openFile(vm.location.logoContentType, vm.location.logo)">
+                    <img data-ng-src="{{'data:' + vm.location.logoContentType + ';base64,' + vm.location.logo}}" style="max-width: 100%;"/>
+                </a>
+                {{vm.location.logoContentType}}, {{vm.byteSize(vm.location.logo)}}
+            </div>
+        </dd>
+        <dt><span translate="gCompanyApp.location.latitude">Latitude</span></dt>
+        <dd>
+            <span>{{vm.location.point[0]}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.location.longitude">Longitude</span></dt>
+        <dd>
+            <span>{{vm.location.point[1]}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.location.bigImage">Big Image</span></dt>
+        <dd>
+            <div ng-if="vm.location.bigImage">
+                <a ng-click="vm.openFile(vm.location.bigImageContentType, vm.location.bigImage)">
+                    <img data-ng-src="{{'data:' + vm.location.bigImageContentType + ';base64,' + vm.location.bigImage}}" style="max-width: 100%;"/>
+                </a>
+                {{vm.location.bigImageContentType}}, {{vm.byteSize(vm.location.bigImage)}}
+            </div>
+        </dd>
+        <dt><span translate="gCompanyApp.location.reviewCount">Review Count</span></dt>
+        <dd>
+            <span>{{vm.location.reviewCount}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.location.reviewAvg">Review Avg</span></dt>
+        <dd>
+            <span>{{vm.location.reviewAvg}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.location.virtual">Virtual</span></dt>
+        <dd>
+            <span>{{vm.location.virtual}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.location.companyId">Company Id</span></dt>
+        <dd>
+            <span>{{vm.location.companyId}}</span>
+        </dd>
+        <dt><span translate="gCompanyApp.location.point">Latitude Longitude</span></dt>
+        <dd>
+            <span>{{vm.location.point[0]}}</span> , <span>{{vm.location.point[1]}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="location-detail.edit({id:vm.location.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

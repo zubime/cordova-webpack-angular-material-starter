@@ -1,4 +1,4 @@
 node_modules/*
 platforms/*
 www/bundle.js
-www/vendor.bundle.js
+www/*.bundle.js
