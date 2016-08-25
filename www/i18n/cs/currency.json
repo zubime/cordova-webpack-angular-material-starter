@@ -1,0 +1,23 @@
+{
+    "gCompanyApp": {
+        "currency" : {
+            "home": {
+                "title": "Currencies",
+                "createLabel": "Vytvořit Currency",
+                "createOrEditLabel": "Vytvořit nebo upravit Currency",
+                "search": "Vyhledat Currency"
+            },
+            "created": "Byl vytvořen potomek entity Currency s identifikátorem {{ param }}",
+            "updated": "Potomek entity Currency s identifikátorem {{ param }} byl upravený.",
+            "deleted": "Potomek entity Currency s identifikátorem {{ param }} bol smazaný.",
+            "delete": {
+                "question": "Jste si jisti, že chcete smazat Currency {{ id }}?"
+            },
+            "detail": {
+                "title": "Currency"
+            },
+            "currencyCode": "Currency Code",
+            "currencyName": "Currency Name"
+        }
+    }
+}

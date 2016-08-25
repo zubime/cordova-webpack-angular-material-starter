@@ -1,0 +1,40 @@
+{
+    "gCompanyApp": {
+        "location" : {
+            "home": {
+                "title": "Locations",
+                "createLabel": "Create a new Location",
+                "createOrEditLabel": "Create or edit a Location",
+                "search": "Search for Location"
+            },
+            "created": "A new Location is created with identifier {{ param }}",
+            "updated": "A Location is updated with identifier {{ param }}",
+            "deleted": "A Location is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Location {{ id }}?"
+            },
+            "detail": {
+                "title": "Location"
+            },
+            "street": "Street",
+            "streetNo": "Street No",
+            "code": "Code",
+            "imageUrl": "Image Url",
+            "name": "Name",
+            "whyToVisit": "Why To Visit",
+            "description": "Description",
+            "website": "Website",
+            "phoneNumber": "Phone Number",
+            "email": "Email",
+            "image": "Image",
+            "logo": "Logo",
+            "latitude": "Latitude",
+            "longitude": "Longitude",
+            "bigImage": "Big Image",
+            "reviewCount": "Review Count",
+            "reviewAvg": "Review Avg",
+            "virtual": "Virtual",
+            "companyId": "Company Id"
+        }
+    }
+}

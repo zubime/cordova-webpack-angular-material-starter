@@ -1,0 +1,26 @@
+{
+    "gCompanyApp": {
+        "country" : {
+            "home": {
+                "title": "Countries",
+                "createLabel": "Country erstellen",
+                "createOrEditLabel": "Country erstellen oder bearbeiten",
+                "search": "Suche nach Country"
+            },
+            "created": "Country erstellt mit ID {{ param }}",
+            "updated": "Country aktualisiert mit ID {{ param }}",
+            "deleted": "Country gelöscht mit ID {{ param }}",
+            "delete": {
+                "question": "Soll Country {{ id }} wirklich dauerhaft gejöscht werden?"
+            },
+            "detail": {
+                "title": "Country"
+            },
+            "countryCode": "Country Code",
+            "countryName": "Country Name",
+            "isoCode": "Iso Code",
+            "currencyCode": "Currency Code",
+            "state": "State"
+        }
+    }
+}

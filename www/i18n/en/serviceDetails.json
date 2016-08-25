@@ -1,0 +1,30 @@
+{
+    "gCompanyApp": {
+        "serviceDetails" : {
+            "home": {
+                "title": "Service Details",
+                "createLabel": "Create a new Service Details",
+                "createOrEditLabel": "Create or edit a Service Details",
+                "search": "Search for Service Details"
+            },
+            "created": "A new Service Details is created with identifier {{ param }}",
+            "updated": "A Service Details is updated with identifier {{ param }}",
+            "deleted": "A Service Details is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Service Details {{ id }}?"
+            },
+            "detail": {
+                "title": "Service Details"
+            },
+            "name": "Name",
+            "description": "Description",
+            "priceFrom": "Price From",
+            "priceTo": "Price To",
+            "image": "Image",
+            "location": "Location",
+            "subType": "Sub Type",
+            "type": "Type",
+            "category": "Category"
+        }
+    }
+}

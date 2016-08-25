@@ -1,0 +1,26 @@
+{
+    "gCompanyApp": {
+        "subType" : {
+            "home": {
+                "title": "Sub Types",
+                "createLabel": "Vytvořit Sub Type",
+                "createOrEditLabel": "Vytvořit nebo upravit Sub Type",
+                "search": "Vyhledat Sub Type"
+            },
+            "created": "Byl vytvořen potomek entity Sub Type s identifikátorem {{ param }}",
+            "updated": "Potomek entity Sub Type s identifikátorem {{ param }} byl upravený.",
+            "deleted": "Potomek entity Sub Type s identifikátorem {{ param }} bol smazaný.",
+            "delete": {
+                "question": "Jste si jisti, že chcete smazat Sub Type {{ id }}?"
+            },
+            "detail": {
+                "title": "Sub Type"
+            },
+            "name": "Name",
+            "description": "Description",
+            "iconUri": "Icon Uri",
+            "imageUri": "Image Uri",
+            "type": "Type"
+        }
+    }
+}

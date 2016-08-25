@@ -1,0 +1,25 @@
+{
+    "gCompanyApp": {
+        "cancallationPolicy" : {
+            "home": {
+                "title": "Cancallation Policies",
+                "createLabel": "Vytvořit Cancallation Policy",
+                "createOrEditLabel": "Vytvořit nebo upravit Cancallation Policy",
+                "search": "Vyhledat Cancallation Policy"
+            },
+            "created": "Byl vytvořen potomek entity Cancallation Policy s identifikátorem {{ param }}",
+            "updated": "Potomek entity Cancallation Policy s identifikátorem {{ param }} byl upravený.",
+            "deleted": "Potomek entity Cancallation Policy s identifikátorem {{ param }} bol smazaný.",
+            "delete": {
+                "question": "Jste si jisti, že chcete smazat Cancallation Policy {{ id }}?"
+            },
+            "detail": {
+                "title": "Cancallation Policy"
+            },
+            "locationId": "Location Id",
+            "name": "Name",
+            "daysBefore": "Days Before",
+            "cancelFeePercent": "Cancel Fee Percent"
+        }
+    }
+}

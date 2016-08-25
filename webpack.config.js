@@ -19,7 +19,9 @@ module.exports = {
       'angular-translate-interpolation-messageformat',
       'angular-dynamic-locale',
       'ngstorage',
-      'font-awesome/css/font-awesome.min.css'
+      'font-awesome/css/font-awesome.min.css',
+      'svg-morpheus',
+      'angular-material-icons'
     ],
     app:["./app/index.js"]
   },
@@ -58,6 +60,9 @@ module.exports = {
             'file?hash=sha512&digest=hex&name=[name].[hash].[ext]',
             'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
         ]
+      },{
+        test: /\.less$/,
+        loader: "style!css!less"
       }
     ]
   }

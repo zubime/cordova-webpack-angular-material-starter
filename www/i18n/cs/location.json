@@ -1,0 +1,40 @@
+{
+    "gCompanyApp": {
+        "location" : {
+            "home": {
+                "title": "Locations",
+                "createLabel": "Vytvořit Location",
+                "createOrEditLabel": "Vytvořit nebo upravit Location",
+                "search": "Vyhledat Location"
+            },
+            "created": "Byl vytvořen potomek entity Location s identifikátorem {{ param }}",
+            "updated": "Potomek entity Location s identifikátorem {{ param }} byl upravený.",
+            "deleted": "Potomek entity Location s identifikátorem {{ param }} bol smazaný.",
+            "delete": {
+                "question": "Jste si jisti, že chcete smazat Location {{ id }}?"
+            },
+            "detail": {
+                "title": "Location"
+            },
+            "street": "Street",
+            "streetNo": "Street No",
+            "code": "Code",
+            "imageUrl": "Image Url",
+            "name": "Name",
+            "whyToVisit": "Why To Visit",
+            "description": "Description",
+            "website": "Website",
+            "phoneNumber": "Phone Number",
+            "email": "Email",
+            "image": "Image",
+            "logo": "Logo",
+            "latitude": "Latitude",
+            "longitude": "Longitude",
+            "bigImage": "Big Image",
+            "reviewCount": "Review Count",
+            "reviewAvg": "Review Avg",
+            "virtual": "Virtual",
+            "companyId": "Company Id"
+        }
+    }
+}

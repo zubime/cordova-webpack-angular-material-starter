@@ -5,9 +5,9 @@
         .module('gCompanyApp')
         .controller('LocationDialogController', LocationDialogController);
 
-    LocationDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'DataUtils', 'entity', 'Location'];
+    LocationDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$mdDialog', 'DataUtils', 'entity', 'Location'];
 
-    function LocationDialogController ($timeout, $scope, $stateParams, $uibModalInstance, DataUtils, entity, Location) {
+    function LocationDialogController ($timeout, $scope, $stateParams, $mdDialog, DataUtils, entity, Location) {
         var vm = this;
 
         vm.location = entity;
@@ -21,7 +21,7 @@
         });
 
         function clear () {
-            $uibModalInstance.dismiss('cancel');
+            $mdDialog.cancel('cancel');
         }
 
         function save () {
@@ -35,7 +35,7 @@
 
         function onSaveSuccess (result) {
             $scope.$emit('gCompanyApp:locationUpdate', result);
-            $uibModalInstance.close(result);
+            $mdDialog.hide(result);
             vm.isSaving = false;
         }
 

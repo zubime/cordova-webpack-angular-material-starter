@@ -1,0 +1,23 @@
+{
+    "gCompanyApp": {
+        "gallery" : {
+            "home": {
+                "title": "Galleries",
+                "createLabel": "Criar novo Gallery",
+                "createOrEditLabel": "Criar ou editar Gallery",
+                "search": "Pesquisar por Gallery"
+            },
+            "created": "Um novo Gallery é criado com o identificador {{ param }}",
+            "updated": "Um Gallery é atualizado com o identificador {{ param }}",
+            "deleted": "Um Gallery é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Gallery {{ id }}?"
+            },
+            "detail": {
+                "title": "Gallery"
+            },
+            "name": "Name",
+            "description": "Description"
+        }
+    }
+}

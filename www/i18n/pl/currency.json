@@ -1,0 +1,23 @@
+{
+    "gCompanyApp": {
+        "currency" : {
+            "home": {
+                "title": "Currencies",
+                "createLabel": "Dodaj Currency",
+                "createOrEditLabel": "Dodaj lub edytuj: Currency",
+                "search": "Search for Currency"
+            },
+            "created": "A new Currency is created with identifier {{ param }}",
+            "updated": "A Currency is updated with identifier {{ param }}",
+            "deleted": "A Currency is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Czy na pewno chcesz usunąć Currency {{ id }}?"
+            },
+            "detail": {
+                "title": "Currency"
+            },
+            "currencyCode": "Currency Code",
+            "currencyName": "Currency Name"
+        }
+    }
+}

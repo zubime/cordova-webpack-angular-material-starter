@@ -1,0 +1,26 @@
+{
+    "gCompanyApp": {
+        "state" : {
+            "home": {
+                "title": "States",
+                "createLabel": "Vytvořit State",
+                "createOrEditLabel": "Vytvořit nebo upravit State",
+                "search": "Vyhledat State"
+            },
+            "created": "Byl vytvořen potomek entity State s identifikátorem {{ param }}",
+            "updated": "Potomek entity State s identifikátorem {{ param }} byl upravený.",
+            "deleted": "Potomek entity State s identifikátorem {{ param }} bol smazaný.",
+            "delete": {
+                "question": "Jste si jisti, že chcete smazat State {{ id }}?"
+            },
+            "detail": {
+                "title": "State"
+            },
+            "name": "Name",
+            "code": "Code",
+            "imageUri": "Image Uri",
+            "city": "City",
+            "country": "Country"
+        }
+    }
+}

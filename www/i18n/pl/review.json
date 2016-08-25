@@ -1,0 +1,29 @@
+{
+    "gCompanyApp": {
+        "review" : {
+            "home": {
+                "title": "Reviews",
+                "createLabel": "Dodaj Review",
+                "createOrEditLabel": "Dodaj lub edytuj: Review",
+                "search": "Search for Review"
+            },
+            "created": "A new Review is created with identifier {{ param }}",
+            "updated": "A Review is updated with identifier {{ param }}",
+            "deleted": "A Review is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Czy na pewno chcesz usunąć Review {{ id }}?"
+            },
+            "detail": {
+                "title": "Review"
+            },
+            "locationGrade": "Location Grade",
+            "serviceGrade": "Service Grade",
+            "staffGrade": "Staff Grade",
+            "priceGrade": "Price Grade",
+            "description": "Description",
+            "date": "Date",
+            "username": "Username",
+            "locationId": "Location Id"
+        }
+    }
+}

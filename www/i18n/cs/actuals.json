@@ -1,0 +1,29 @@
+{
+    "gCompanyApp": {
+        "actuals" : {
+            "home": {
+                "title": "Actuals",
+                "createLabel": "Vytvořit Actuals",
+                "createOrEditLabel": "Vytvořit nebo upravit Actuals",
+                "search": "Vyhledat Actuals"
+            },
+            "created": "Byl vytvořen potomek entity Actuals s identifikátorem {{ param }}",
+            "updated": "Potomek entity Actuals s identifikátorem {{ param }} byl upravený.",
+            "deleted": "Potomek entity Actuals s identifikátorem {{ param }} bol smazaný.",
+            "delete": {
+                "question": "Jste si jisti, že chcete smazat Actuals {{ id }}?"
+            },
+            "detail": {
+                "title": "Actuals"
+            },
+            "title": "Title",
+            "summary": "Summary",
+            "published": "Published",
+            "userId": "User Id",
+            "articleProvider": "Article Provider",
+            "uri": "Uri",
+            "tag": "Tag",
+            "location": "Location"
+        }
+    }
+}

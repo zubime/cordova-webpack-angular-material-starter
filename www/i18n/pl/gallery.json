@@ -1,0 +1,23 @@
+{
+    "gCompanyApp": {
+        "gallery" : {
+            "home": {
+                "title": "Galleries",
+                "createLabel": "Dodaj Gallery",
+                "createOrEditLabel": "Dodaj lub edytuj: Gallery",
+                "search": "Search for Gallery"
+            },
+            "created": "A new Gallery is created with identifier {{ param }}",
+            "updated": "A Gallery is updated with identifier {{ param }}",
+            "deleted": "A Gallery is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Czy na pewno chcesz usunąć Gallery {{ id }}?"
+            },
+            "detail": {
+                "title": "Gallery"
+            },
+            "name": "Name",
+            "description": "Description"
+        }
+    }
+}

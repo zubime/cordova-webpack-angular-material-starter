@@ -1,0 +1,25 @@
+{
+    "gCompanyApp": {
+        "cancallationPolicy" : {
+            "home": {
+                "title": "CancallationPolicies",
+                "createLabel": "Créer un nouveau Cancallation Policy",
+                "createOrEditLabel": "Créer ou éditer un Cancallation Policy",
+                "search": "Recherche pour Cancallation Policy"
+            },
+            "created": "Un nouveau Cancallation Policy a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Cancallation Policy avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Cancallation Policy avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Cancallation Policy {{ id }} ?"
+            },
+            "detail": {
+                "title": "Cancallation Policy"
+            },
+            "locationId": "Location Id",
+            "name": "Name",
+            "daysBefore": "Days Before",
+            "cancelFeePercent": "Cancel Fee Percent"
+        }
+    }
+}

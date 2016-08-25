@@ -5,23 +5,23 @@
         .module('gCompanyApp')
         .controller('LocationDeleteController',LocationDeleteController);
 
-    LocationDeleteController.$inject = ['$uibModalInstance', 'entity', 'Location'];
+    LocationDeleteController.$inject = ['$mdDialog', 'entity', 'Location'];
 
-    function LocationDeleteController($uibModalInstance, entity, Location) {
+    function LocationDeleteController($mdDialog, entity, Location) {
         var vm = this;
 
         vm.location = entity;
         vm.clear = clear;
         vm.confirmDelete = confirmDelete;
-        
+
         function clear () {
-            $uibModalInstance.dismiss('cancel');
+            $mdDialog.cancel('cancel');
         }
 
         function confirmDelete (id) {
             Location.delete({id: id},
                 function () {
-                    $uibModalInstance.close(true);
+                    $mdDialog.hide(true);
                 });
         }
     }

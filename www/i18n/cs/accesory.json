@@ -1,0 +1,30 @@
+{
+    "gCompanyApp": {
+        "accesory" : {
+            "home": {
+                "title": "Accesories",
+                "createLabel": "Vytvořit Accesory",
+                "createOrEditLabel": "Vytvořit nebo upravit Accesory",
+                "search": "Vyhledat Accesory"
+            },
+            "created": "Byl vytvořen potomek entity Accesory s identifikátorem {{ param }}",
+            "updated": "Potomek entity Accesory s identifikátorem {{ param }} byl upravený.",
+            "deleted": "Potomek entity Accesory s identifikátorem {{ param }} bol smazaný.",
+            "delete": {
+                "question": "Jste si jisti, že chcete smazat Accesory {{ id }}?"
+            },
+            "detail": {
+                "title": "Accesory"
+            },
+            "locationId": "Location Id",
+            "serviceDetailId": "Service Detail Id",
+            "pricePerHour": "Price Per Hour",
+            "pricePerDay": "Price Per Day",
+            "pricePerWeek": "Price Per Week",
+            "currencyCode": "Currency Code",
+            "name": "Name",
+            "image": "Image",
+            "reservation": "Reservation"
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "gCompanyApp": {
+        "subType" : {
+            "home": {
+                "title": "SubTypes",
+                "createLabel": "Créer un nouveau Sub Type",
+                "createOrEditLabel": "Créer ou éditer un Sub Type",
+                "search": "Recherche pour Sub Type"
+            },
+            "created": "Un nouveau Sub Type a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Sub Type avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Sub Type avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Sub Type {{ id }} ?"
+            },
+            "detail": {
+                "title": "Sub Type"
+            },
+            "name": "Name",
+            "description": "Description",
+            "iconUri": "Icon Uri",
+            "imageUri": "Image Uri",
+            "type": "Type"
+        }
+    }
+}

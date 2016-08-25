@@ -1,0 +1,24 @@
+{
+    "gCompanyApp": {
+        "city" : {
+            "home": {
+                "title": "Cities",
+                "createLabel": "Criar novo City",
+                "createOrEditLabel": "Criar ou editar City",
+                "search": "Pesquisar por City"
+            },
+            "created": "Um novo City é criado com o identificador {{ param }}",
+            "updated": "Um City é atualizado com o identificador {{ param }}",
+            "deleted": "Um City é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir City {{ id }}?"
+            },
+            "detail": {
+                "title": "City"
+            },
+            "name": "Name",
+            "imageUri": "Image Uri",
+            "state": "State"
+        }
+    }
+}

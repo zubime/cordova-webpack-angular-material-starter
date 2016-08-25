@@ -1,0 +1,30 @@
+{
+    "gCompanyApp": {
+        "reservation" : {
+            "home": {
+                "title": "Reservations",
+                "createLabel": "Reservation erstellen",
+                "createOrEditLabel": "Reservation erstellen oder bearbeiten",
+                "search": "Suche nach Reservation"
+            },
+            "created": "Reservation erstellt mit ID {{ param }}",
+            "updated": "Reservation aktualisiert mit ID {{ param }}",
+            "deleted": "Reservation gelöscht mit ID {{ param }}",
+            "delete": {
+                "question": "Soll Reservation {{ id }} wirklich dauerhaft gejöscht werden?"
+            },
+            "detail": {
+                "title": "Reservation"
+            },
+            "locationId": "Location Id",
+            "dateFrom": "Date From",
+            "dateTo": "Date To",
+            "userId": "User Id",
+            "price": "Price",
+            "currencyCode": "Currency Code",
+            "isPaid": "Is Paid",
+            "resource": "Resource",
+            "resource": "Resource"
+        }
+    }
+}

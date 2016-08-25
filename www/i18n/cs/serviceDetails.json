@@ -1,0 +1,30 @@
+{
+    "gCompanyApp": {
+        "serviceDetails" : {
+            "home": {
+                "title": "Service Details",
+                "createLabel": "Vytvořit Service Details",
+                "createOrEditLabel": "Vytvořit nebo upravit Service Details",
+                "search": "Vyhledat Service Details"
+            },
+            "created": "Byl vytvořen potomek entity Service Details s identifikátorem {{ param }}",
+            "updated": "Potomek entity Service Details s identifikátorem {{ param }} byl upravený.",
+            "deleted": "Potomek entity Service Details s identifikátorem {{ param }} bol smazaný.",
+            "delete": {
+                "question": "Jste si jisti, že chcete smazat Service Details {{ id }}?"
+            },
+            "detail": {
+                "title": "Service Details"
+            },
+            "name": "Name",
+            "description": "Description",
+            "priceFrom": "Price From",
+            "priceTo": "Price To",
+            "image": "Image",
+            "location": "Location",
+            "subType": "Sub Type",
+            "type": "Type",
+            "category": "Category"
+        }
+    }
+}

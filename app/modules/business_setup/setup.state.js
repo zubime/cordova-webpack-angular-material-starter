@@ -1,5 +1,5 @@
 'use strict';
-var template = require("ngtemplate!html!./setup.html");
+var template = require("ngtemplate!./setup.html");
 
 
     angular
@@ -18,20 +18,21 @@ var template = require("ngtemplate!html!./setup.html");
             },
             views: {
                 'content@': {
-                    templateProvider: function($templateCache){
+                    templateProvider: function($templateCache,$log){
+                      $log.info($templateCache.get(template));
                       return $templateCache.get(template);
                     } ,
                     controller: 'SetupController',
                     controllerAs: 'vm'
                 }
             }
-            //,
-            // resolve: {
-            //     translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
-            //         $translatePartialLoader.addPart('setup');
-            //         $translatePartialLoader.addPart('global');
-            //         return $translate.refresh();
-            //     }]
-            // }
+            ,
+            resolve: {
+                translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+                    $translatePartialLoader.addPart('setup');
+                    $translatePartialLoader.addPart('global');
+                    return $translate.refresh();
+                }]
+            }
         });
     }

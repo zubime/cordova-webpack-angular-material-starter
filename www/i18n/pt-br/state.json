@@ -1,0 +1,26 @@
+{
+    "gCompanyApp": {
+        "state" : {
+            "home": {
+                "title": "States",
+                "createLabel": "Criar novo State",
+                "createOrEditLabel": "Criar ou editar State",
+                "search": "Pesquisar por State"
+            },
+            "created": "Um novo State é criado com o identificador {{ param }}",
+            "updated": "Um State é atualizado com o identificador {{ param }}",
+            "deleted": "Um State é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir State {{ id }}?"
+            },
+            "detail": {
+                "title": "State"
+            },
+            "name": "Name",
+            "code": "Code",
+            "imageUri": "Image Uri",
+            "city": "City",
+            "country": "Country"
+        }
+    }
+}

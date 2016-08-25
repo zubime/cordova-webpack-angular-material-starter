@@ -1,0 +1,23 @@
+{
+    "gCompanyApp": {
+        "tag" : {
+            "home": {
+                "title": "Tags",
+                "createLabel": "Dodaj Tag",
+                "createOrEditLabel": "Dodaj lub edytuj: Tag",
+                "search": "Search for Tag"
+            },
+            "created": "A new Tag is created with identifier {{ param }}",
+            "updated": "A Tag is updated with identifier {{ param }}",
+            "deleted": "A Tag is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Czy na pewno chcesz usunąć Tag {{ id }}?"
+            },
+            "detail": {
+                "title": "Tag"
+            },
+            "name": "Name",
+            "article": "Article"
+        }
+    }
+}

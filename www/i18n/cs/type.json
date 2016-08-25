@@ -1,0 +1,26 @@
+{
+    "gCompanyApp": {
+        "type" : {
+            "home": {
+                "title": "Types",
+                "createLabel": "Vytvořit Type",
+                "createOrEditLabel": "Vytvořit nebo upravit Type",
+                "search": "Vyhledat Type"
+            },
+            "created": "Byl vytvořen potomek entity Type s identifikátorem {{ param }}",
+            "updated": "Potomek entity Type s identifikátorem {{ param }} byl upravený.",
+            "deleted": "Potomek entity Type s identifikátorem {{ param }} bol smazaný.",
+            "delete": {
+                "question": "Jste si jisti, že chcete smazat Type {{ id }}?"
+            },
+            "detail": {
+                "title": "Type"
+            },
+            "name": "Name",
+            "description": "Description",
+            "service": "Service",
+            "iconUri": "Icon Uri",
+            "imageUri": "Image Uri"
+        }
+    }
+}

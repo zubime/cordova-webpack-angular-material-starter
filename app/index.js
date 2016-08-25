@@ -12,6 +12,7 @@
 // require('angular-messages');
 // require('angular-material');
 // require('angular-ui-router');
+require('./menu.less');
 require('./app.module.js');
 require('./app.constants.js');
 require('./app.state.js');
@@ -21,4 +22,4 @@ require('./blocks/handlers/state.handler.js');
 require('./blocks/handlers/translation.handler.js');
 require('./blocks/config');
 
-require('./modules/business_setup')
+require('./modules/business_setup');

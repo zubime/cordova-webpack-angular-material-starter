@@ -1,0 +1,33 @@
+{
+    "gCompanyApp": {
+        "resource" : {
+            "home": {
+                "title": "Resources",
+                "createLabel": "Dodaj Resource",
+                "createOrEditLabel": "Dodaj lub edytuj: Resource",
+                "search": "Search for Resource"
+            },
+            "created": "A new Resource is created with identifier {{ param }}",
+            "updated": "A Resource is updated with identifier {{ param }}",
+            "deleted": "A Resource is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Czy na pewno chcesz usunąć Resource {{ id }}?"
+            },
+            "detail": {
+                "title": "Resource"
+            },
+            "locationId": "Location Id",
+            "serviceDetailId": "Service Detail Id",
+            "typeId": "Type Id",
+            "subTypeId": "Sub Type Id",
+            "pricePerHour": "Price Per Hour",
+            "pricePerDay": "Price Per Day",
+            "pricePerWeek": "Price Per Week",
+            "currencyCode": "Currency Code",
+            "name": "Name",
+            "generalFeatures": "General Features",
+            "galleryId": "Gallery Id",
+            "image": "Image"
+        }
+    }
+}

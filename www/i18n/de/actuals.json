@@ -1,0 +1,29 @@
+{
+    "gCompanyApp": {
+        "actuals" : {
+            "home": {
+                "title": "Actuals",
+                "createLabel": "Actuals erstellen",
+                "createOrEditLabel": "Actuals erstellen oder bearbeiten",
+                "search": "Suche nach Actuals"
+            },
+            "created": "Actuals erstellt mit ID {{ param }}",
+            "updated": "Actuals aktualisiert mit ID {{ param }}",
+            "deleted": "Actuals gelöscht mit ID {{ param }}",
+            "delete": {
+                "question": "Soll Actuals {{ id }} wirklich dauerhaft gejöscht werden?"
+            },
+            "detail": {
+                "title": "Actuals"
+            },
+            "title": "Title",
+            "summary": "Summary",
+            "published": "Published",
+            "userId": "User Id",
+            "articleProvider": "Article Provider",
+            "uri": "Uri",
+            "tag": "Tag",
+            "location": "Location"
+        }
+    }
+}

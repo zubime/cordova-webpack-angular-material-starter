@@ -1,0 +1,30 @@
+{
+    "gCompanyApp": {
+        "accesory" : {
+            "home": {
+                "title": "Accesories",
+                "createLabel": "Créer un nouveau Accesory",
+                "createOrEditLabel": "Créer ou éditer un Accesory",
+                "search": "Recherche pour Accesory"
+            },
+            "created": "Un nouveau Accesory a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Accesory avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Accesory avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Accesory {{ id }} ?"
+            },
+            "detail": {
+                "title": "Accesory"
+            },
+            "locationId": "Location Id",
+            "serviceDetailId": "Service Detail Id",
+            "pricePerHour": "Price Per Hour",
+            "pricePerDay": "Price Per Day",
+            "pricePerWeek": "Price Per Week",
+            "currencyCode": "Currency Code",
+            "name": "Name",
+            "image": "Image",
+            "reservation": "Reservation"
+        }
+    }
+}

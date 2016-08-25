@@ -1,0 +1,29 @@
+{
+    "gCompanyApp": {
+        "place" : {
+            "home": {
+                "title": "Places",
+                "createLabel": "Vytvořit Place",
+                "createOrEditLabel": "Vytvořit nebo upravit Place",
+                "search": "Vyhledat Place"
+            },
+            "created": "Byl vytvořen potomek entity Place s identifikátorem {{ param }}",
+            "updated": "Potomek entity Place s identifikátorem {{ param }} byl upravený.",
+            "deleted": "Potomek entity Place s identifikátorem {{ param }} bol smazaný.",
+            "delete": {
+                "question": "Jste si jisti, že chcete smazat Place {{ id }}?"
+            },
+            "detail": {
+                "title": "Place"
+            },
+            "longName": "Long Name",
+            "shortName": "Short Name",
+            "country": "Country",
+            "areaLvl1": "Area Lvl 1",
+            "areaLvl2": "Area Lvl 2",
+            "areaLvl3": "Area Lvl 3",
+            "location": "Location",
+            "loc": "Loc"
+        }
+    }
+}

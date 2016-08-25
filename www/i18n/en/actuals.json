@@ -1,0 +1,29 @@
+{
+    "gCompanyApp": {
+        "actuals" : {
+            "home": {
+                "title": "Actuals",
+                "createLabel": "Create a new Actuals",
+                "createOrEditLabel": "Create or edit a Actuals",
+                "search": "Search for Actuals"
+            },
+            "created": "A new Actuals is created with identifier {{ param }}",
+            "updated": "A Actuals is updated with identifier {{ param }}",
+            "deleted": "A Actuals is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Actuals {{ id }}?"
+            },
+            "detail": {
+                "title": "Actuals"
+            },
+            "title": "Title",
+            "summary": "Summary",
+            "published": "Published",
+            "userId": "User Id",
+            "articleProvider": "Article Provider",
+            "uri": "Uri",
+            "tag": "Tag",
+            "location": "Location"
+        }
+    }
+}

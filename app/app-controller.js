@@ -5,6 +5,15 @@
       let vm = this;
       vm.ctrlName = 'HomeCtrl';
       vm.$mdSidenav  = $mdSidenav;
+      vm.notifications = {
+        help: true,
+        info: true,
+        open: function(which){
+          if(which === 'help'){
+            this.help = !this.help;
+          }
+        }
+      }
 
     }
 

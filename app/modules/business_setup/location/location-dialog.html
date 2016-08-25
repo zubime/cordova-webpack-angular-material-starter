@@ -1,19 +1,34 @@
 
 <form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
 
-    <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
-                ng-click="vm.clear()">&times;</button>
-        <h4 class="modal-title" id="myLocationLabel" translate="gCompanyApp.location.home.createOrEditLabel">Create or edit a Location</h4>
-    </div>
-    <div class="modal-body">
-        <jhi-alert-error></jhi-alert-error>
-        <div class="form-group" ng-show="vm.location.id">
-            <label for="id" translate="global.field.id">ID</label>
-            <input type="text" class="form-control" id="id" name="id"
-                    ng-model="vm.location.id" readonly />
+
+    <md-content  layout="column" layout-margin>
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                    ng-click="vm.clear()">&times;</button>
+            <h4 class="modal-title" id="myLocationLabel" translate="gCompanyApp.location.home.createOrEditLabel">Create or edit a Location</h4>
         </div>
-        <div class="form-group">
+        <h4 class="md-title">Name</h4>
+        <md-input-container>
+          <label class="control-label" translate="gCompanyApp.location.name" for="field_name">Name</label>
+          <input type="text" class="form-control" name="name" id="field_name"
+                  ng-model="vm.location.name"
+                  required ng-maxlength="30" />
+          <div ng-show="editForm.name.$invalid">
+              <p class="help-block"
+                  ng-show="editForm.name.$error.required" translate="entity.validation.required">
+                  This field is required.
+              </p>
+              <p class="help-block"
+                  ng-show="editForm.name.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="30">
+                  This field cannot be longer than 30 characters.
+              </p>
+          </div>
+        </md-input-container>
+      <h4 class="md-title">Location</h4>
+      <md-button ui-sref="location.point" class="md-raised md-secondary">Setup Location</md-button>
+      <div layout="row">
+        <md-input-container flex class="form-group">
             <label class="control-label" translate="gCompanyApp.location.street" for="field_street">Street</label>
             <input type="text" class="form-control" name="street" id="field_street"
                     ng-model="vm.location.street"
@@ -24,8 +39,8 @@
                     This field cannot be longer than 30 characters.
                 </p>
             </div>
-        </div>
-        <div class="form-group">
+        </md-input-container>
+        <md-input-container style="width:80px;" class="form-group">
             <label class="control-label" translate="gCompanyApp.location.streetNo" for="field_streetNo">Street No</label>
             <input type="text" class="form-control" name="streetNo" id="field_streetNo"
                     ng-model="vm.location.streetNo"
@@ -36,213 +51,139 @@
                     This field cannot be longer than 30 characters.
                 </p>
             </div>
+        </md-input-container>
+      </div>
+      <h4 class="md-title">Contact Information</h4>
+      <md-input-container>
+        <label class="control-label" translate="gCompanyApp.location.email" for="field_email">Email</label>
+        <input type="text" class="form-control" name="email" id="field_email"
+                ng-model="vm.location.email"
+                required ng-maxlength="50" />
+        <div ng-show="editForm.email.$invalid">
+            <p class="help-block"
+                ng-show="editForm.email.$error.required" translate="entity.validation.required">
+                This field is required.
+            </p>
+            <p class="help-block"
+                ng-show="editForm.email.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="50">
+                This field cannot be longer than 50 characters.
+            </p>
         </div>
-        <div class="form-group">
-            <label class="control-label" translate="gCompanyApp.location.code" for="field_code">Code</label>
-            <input type="text" class="form-control" name="code" id="field_code"
-                    ng-model="vm.location.code"
-                    ng-maxlength="6" />
-            <div ng-show="editForm.code.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.code.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="6">
-                    This field cannot be longer than 6 characters.
-                </p>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gCompanyApp.location.imageUrl" for="field_imageUrl">Image Url</label>
-            <input type="text" class="form-control" name="imageUrl" id="field_imageUrl"
-                    ng-model="vm.location.imageUrl"
-                     />
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gCompanyApp.location.name" for="field_name">Name</label>
-            <input type="text" class="form-control" name="name" id="field_name"
-                    ng-model="vm.location.name"
-                    required ng-maxlength="30" />
-            <div ng-show="editForm.name.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.name.$error.required" translate="entity.validation.required">
-                    This field is required.
-                </p>
-                <p class="help-block"
-                    ng-show="editForm.name.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="30">
-                    This field cannot be longer than 30 characters.
-                </p>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gCompanyApp.location.whyToVisit" for="field_whyToVisit">Why To Visit</label>
-            <input type="text" class="form-control" name="whyToVisit" id="field_whyToVisit"
-                    ng-model="vm.location.whyToVisit"
-                     />
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gCompanyApp.location.description" for="field_description">Description</label>
-            <input type="text" class="form-control" name="description" id="field_description"
-                    ng-model="vm.location.description"
-                    required />
-            <div ng-show="editForm.description.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.description.$error.required" translate="entity.validation.required">
-                    This field is required.
-                </p>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gCompanyApp.location.website" for="field_website">Website</label>
-            <input type="text" class="form-control" name="website" id="field_website"
-                    ng-model="vm.location.website"
-                     />
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gCompanyApp.location.phoneNumber" for="field_phoneNumber">Phone Number</label>
-            <input type="text" class="form-control" name="phoneNumber" id="field_phoneNumber"
-                    ng-model="vm.location.phoneNumber"
-                    required ng-maxlength="12" />
-            <div ng-show="editForm.phoneNumber.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.phoneNumber.$error.required" translate="entity.validation.required">
-                    This field is required.
-                </p>
-                <p class="help-block"
-                    ng-show="editForm.phoneNumber.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="12">
-                    This field cannot be longer than 12 characters.
-                </p>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gCompanyApp.location.email" for="field_email">Email</label>
-            <input type="text" class="form-control" name="email" id="field_email"
-                    ng-model="vm.location.email"
-                    required ng-maxlength="50" />
-            <div ng-show="editForm.email.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.email.$error.required" translate="entity.validation.required">
-                    This field is required.
-                </p>
-                <p class="help-block"
-                    ng-show="editForm.email.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="50">
-                    This field cannot be longer than 50 characters.
-                </p>
-            </div>
-        </div>
-        <div class="form-group" ngf-drop ngf-change="vm.setImage($file, vm.location)" ngf-pattern="'image/*'">
-            <label class="control-label" translate="gCompanyApp.location.image" for="field_image">Image</label>
-            <div>
-                <img data-ng-src="{{'data:' + vm.location.imageContentType + ';base64,' + vm.location.image}}" style="max-height: 100px;" ng-if="vm.location.image"/>
-                <div ng-if="vm.location.image" class="help-block clearfix">
-                    <span class="pull-left">{{vm.location.imageContentType}}, {{vm.byteSize(vm.location.image)}}</span>
-                    <button ng-click="vm.location.image=null;vm.location.imageContentType=null;"
-                            class="btn btn-default btn-xs pull-right">
-                        <span class="glyphicon glyphicon-remove"></span>
-                    </button>
-                </div>
-                <button type="file" ngf-select class="btn btn-default btn-block"
-                        ngf-change="vm.setImage($file, vm.location)" accept="image/*" translate="entity.action.addimage">
-                    Add image
-                </button>
-            </div>
-            <input type="hidden" class="form-control" name="image" id="field_image"
-                    ng-model="vm.location.image"
-                     />
-            <input type="hidden" class="form-control" name="imageContentType" id="field_imageContentType"
-                    ng-model="vm.location.imageContentType" />
-        </div>
-        <div class="form-group" ngf-drop ngf-change="vm.setLogo($file, vm.location)" ngf-pattern="'image/*'">
-            <label class="control-label" translate="gCompanyApp.location.logo" for="field_logo">Logo</label>
-            <div>
-                <img data-ng-src="{{'data:' + vm.location.logoContentType + ';base64,' + vm.location.logo}}" style="max-height: 100px;" ng-if="vm.location.logo"/>
-                <div ng-if="vm.location.logo" class="help-block clearfix">
-                    <span class="pull-left">{{vm.location.logoContentType}}, {{vm.byteSize(vm.location.logo)}}</span>
-                    <button ng-click="vm.location.logo=null;vm.location.logoContentType=null;"
-                            class="btn btn-default btn-xs pull-right">
-                        <span class="glyphicon glyphicon-remove"></span>
-                    </button>
-                </div>
-                <button type="file" ngf-select class="btn btn-default btn-block"
-                        ngf-change="vm.setLogo($file, vm.location)" accept="image/*" translate="entity.action.addimage">
-                    Add image
-                </button>
-            </div>
-            <input type="hidden" class="form-control" name="logo" id="field_logo"
-                    ng-model="vm.location.logo"
-                     />
-            <input type="hidden" class="form-control" name="logoContentType" id="field_logoContentType"
-                    ng-model="vm.location.logoContentType" />
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gCompanyApp.location.latitude" for="field_latitude">Latitude</label>
-            <input type="number" class="form-control" name="latitude" id="field_latitude"
-                    ng-model="vm.location.point[0]" required
-                     />
-                     <div ng-show="editForm.latitude.$invalid">
-                         <p class="help-block"
-                             ng-show="editForm.latitude.$error.required" translate="entity.validation.required">
-                             This field is required.
-                         </p>
-                     </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gCompanyApp.location.longitude" for="field_longitude">Longitude</label>
-            <input type="number" class="form-control" name="longitude" id="field_longitude"
-                    ng-model="vm.location.point[1]" required
-                     />
-                     <div ng-show="editForm.longitude.$invalid">
-                         <p class="help-block"
-                             ng-show="editForm.longitude.$error.required" translate="entity.validation.required">
-                             This field is required.
-                         </p>
-                     </div>
-        </div>
-        <div class="form-group" ngf-drop ngf-change="vm.setBigImage($file, vm.location)" ngf-pattern="'image/*'">
-            <label class="control-label" translate="gCompanyApp.location.bigImage" for="field_bigImage">Big Image</label>
-            <div>
-                <img data-ng-src="{{'data:' + vm.location.bigImageContentType + ';base64,' + vm.location.bigImage}}" style="max-height: 100px;" ng-if="vm.location.bigImage"/>
-                <div ng-if="vm.location.bigImage" class="help-block clearfix">
-                    <span class="pull-left">{{vm.location.bigImageContentType}}, {{vm.byteSize(vm.location.bigImage)}}</span>
-                    <button ng-click="vm.location.bigImage=null;vm.location.bigImageContentType=null;"
-                            class="btn btn-default btn-xs pull-right">
-                        <span class="glyphicon glyphicon-remove"></span>
-                    </button>
-                </div>
-                <button type="file" ngf-select class="btn btn-default btn-block"
-                        ngf-change="vm.setBigImage($file, vm.location)" accept="image/*" translate="entity.action.addimage">
-                    Add image
-                </button>
-            </div>
-            <input type="hidden" class="form-control" name="bigImage" id="field_bigImage"
-                    ng-model="vm.location.bigImage"
-                     />
-            <input type="hidden" class="form-control" name="bigImageContentType" id="field_bigImageContentType"
-                    ng-model="vm.location.bigImageContentType" />
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gCompanyApp.location.reviewCount" for="field_reviewCount">Review Count</label>
-            <input type="number" class="form-control" name="reviewCount" id="field_reviewCount"
-                    ng-model="vm.location.reviewCount"
-                     />
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gCompanyApp.location.reviewAvg" for="field_reviewAvg">Review Avg</label>
-            <input type="number" class="form-control" name="reviewAvg" id="field_reviewAvg"
-                    ng-model="vm.location.reviewAvg"
-                     />
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gCompanyApp.location.virtual" for="field_virtual">Virtual</label>
-            <input type="checkbox" class="form-control" name="virtual" id="field_virtual"
-                    ng-model="vm.location.virtual"
-                     />
-        </div>
-        <div class="form-group">
-            <label class="control-label" translate="gCompanyApp.location.companyId" for="field_companyId">Company Id</label>
-            <input type="number" class="form-control" name="companyId" id="field_companyId"
-                    ng-model="vm.location.companyId"
-                     />
-        </div>
+      </md-input-container>
 
-    </div>
+      <div layout="row" >
+        <md-input-container class="md-block">
+          <label>Prefix</label>
+          <md-select ng-model="user.state">
+            <md-option ng-repeat="state in states" value="{{state.abbrev}}">
+              {{state.abbrev}}
+            </md-option>
+          </md-select>
+        </md-input-container>
+        <md-input-container flex>
+          <label class="control-label" translate="gCompanyApp.location.phoneNumber" for="field_phoneNumber">Phone Number</label>
+          <input type="text" class="form-control" name="phoneNumber" id="field_phoneNumber"
+                  ng-model="vm.location.phoneNumber"
+                  required ng-maxlength="12" />
+          <div ng-show="editForm.phoneNumber.$invalid">
+              <p class="help-block"
+                  ng-show="editForm.phoneNumber.$error.required" translate="entity.validation.required">
+                  This field is required.
+              </p>
+              <p class="help-block"
+                  ng-show="editForm.phoneNumber.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="12">
+                  This field cannot be longer than 12 characters.
+              </p>
+          </div>
+        </md-input-container>
+
+      </div>
+      <md-input-container>
+        <label class="control-label" translate="gCompanyApp.location.website" for="field_website">Website</label>
+        <input type="text" class="form-control" name="website" id="field_website"
+                ng-model="vm.location.website"
+                 />
+      </md-input-container>
+
+      <h4 class="md-title">Marketing Information</h4>
+      <md-input-container>
+        <label class="control-label" translate="gCompanyApp.location.whyToVisit" for="field_whyToVisit">Why To Visit</label>
+        <input type="text" class="form-control" name="whyToVisit" id="field_whyToVisit"
+                ng-model="vm.location.whyToVisit"
+                 />
+      </md-input-container>
+      <md-input-container>
+        <label class="control-label" translate="gCompanyApp.location.description" for="field_description">Description</label>
+        <input type="text" class="form-control" name="description" id="field_description"
+                ng-model="vm.location.description"
+                required />
+        <div ng-show="editForm.description.$invalid">
+            <p class="help-block"
+                ng-show="editForm.description.$error.required" translate="entity.validation.required">
+                This field is required.
+            </p>
+        </div>
+      </md-input-container>
+
+      <div class="form-group" ngf-drop ngf-change="vm.setImage($file, vm.location)" ngf-pattern="'image/*'">
+          <label class="control-label" translate="gCompanyApp.location.image" for="field_image">Image</label>
+          <div>
+              <img data-ng-src="{{'data:' + vm.location.imageContentType + ';base64,' + vm.location.image}}" style="max-height: 100px;" ng-if="vm.location.image"/>
+              <div ng-if="vm.location.image" class="help-block clearfix">
+                  <span class="pull-left">{{vm.location.imageContentType}}, {{vm.byteSize(vm.location.image)}}</span>
+                  <md-button ng-click="vm.location.image=null;vm.location.imageContentType=null;"
+                          class="btn btn-default btn-xs pull-right">
+                      <span class="glyphicon glyphicon-remove"></span>
+                  </md-button>
+              </div>
+              <md-button class="md-raised md-primary" type="file" ngf-select class="btn btn-default btn-block"
+                      ngf-change="vm.setImage($file, vm.location)" accept="image/*" translate="entity.action.addimage">
+                  Add image
+              </md-button>
+          </div>
+          <input type="hidden" class="form-control" name="image" id="field_image"
+                  ng-model="vm.location.image"
+                   />
+          <input type="hidden" class="form-control" name="imageContentType" id="field_imageContentType"
+                  ng-model="vm.location.imageContentType" />
+      </div>
+
+
+      <div class="form-group" ngf-drop ngf-change="vm.setLogo($file, vm.location)" ngf-pattern="'image/*'">
+          <label class="control-label" translate="gCompanyApp.location.logo" for="field_logo">Logo</label>
+          <div>
+              <img data-ng-src="{{'data:' + vm.location.logoContentType + ';base64,' + vm.location.logo}}" style="max-height: 100px;" ng-if="vm.location.logo"/>
+              <div ng-if="vm.location.logo" class="help-block clearfix">
+                  <span class="pull-left">{{vm.location.logoContentType}}, {{vm.byteSize(vm.location.logo)}}</span>
+                  <md-button ng-click="vm.location.logo=null;vm.location.logoContentType=null;"
+                          class="btn btn-default btn-xs pull-right">
+                      <span class="glyphicon glyphicon-remove"></span>
+                  </md-button>
+              </div>
+              <md-button type="file" ngf-select class="btn btn-default btn-block"
+                      ngf-change="vm.setLogo($file, vm.location)" accept="image/*" translate="entity.action.addimage">
+                  Add image
+              </md-button>
+          </div>
+          <input type="hidden" class="form-control" name="logo" id="field_logo"
+                  ng-model="vm.location.logo"
+                   />
+          <input type="hidden" class="form-control" name="logoContentType" id="field_logoContentType"
+                  ng-model="vm.location.logoContentType" />
+      </div>
+
+      <md-button class="md-raised md-primary">Add Picture</md-button>
+
+      <h4 class="md-title">Openning Hours</h4>
+      <md-list  ng-cloak>
+        <md-list-item ng-repeat="day in vm.days">
+          <p> {{ day.name }} </p>
+          <md-switch class="md-secondary" ng-model="day.enabled"></md-switch>
+        </md-list-item>
+      </md-list>
+
+
+    </md-content>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
             <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>

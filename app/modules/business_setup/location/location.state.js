@@ -1,5 +1,8 @@
-(function() {
-    'use strict';
+'use strict';
+var locations = require("ngtemplate!./locations.html");
+var location_detail = require("ngtemplate!./location-detail.html");
+var location_delete_dialog = require("ngtemplate!./location-delete-dialog.html");
+var location_dialog = require("ngtemplate!./location-dialog.html");
 
     angular
         .module('gCompanyApp')
@@ -10,7 +13,7 @@
     function stateConfig($stateProvider) {
         $stateProvider
         .state('location', {
-            parent: 'business_setup',
+            parent: 'app',
             url: '/location?page&sort&search',
             data: {
                 authorities: ['ROLE_USER'],
@@ -18,7 +21,9 @@
             },
             views: {
                 'content@': {
-                    templateUrl: 'app/entities/location/locations.html',
+                  templateProvider: function($templateCache,$log){
+                    return $templateCache.get(locations);
+                  },
                     controller: 'LocationController',
                     controllerAs: 'vm'
                 }
@@ -60,7 +65,10 @@
             },
             views: {
                 'content@': {
-                    templateUrl: 'app/entities/location/location-detail.html',
+
+                    templateProvider: function($templateCache,$log){
+                      return $templateCache.get(location_detail);
+                    },
                     controller: 'LocationDetailController',
                     controllerAs: 'vm'
                 }
@@ -89,19 +97,19 @@
             data: {
                 authorities: ['ROLE_USER']
             },
-            onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
-                $uibModal.open({
-                    templateUrl: 'app/entities/location/location-dialog.html',
+            onEnter: ['$stateParams', '$state', '$mdDialog','$templateCache', function($stateParams, $state, $mdDialog,$templateCache) {
+                $mdDialog.open({
+                    template: $templateCache.get(location_dialog),
                     controller: 'LocationDialogController',
                     controllerAs: 'vm',
                     backdrop: 'static',
-                    size: 'lg',
+                    fullscreen: 'true',
                     resolve: {
                         entity: ['Location', function(Location) {
                             return Location.get({id : $stateParams.id}).$promise;
                         }]
                     }
-                }).result.then(function() {
+                }).then(function() {
                     $state.go('^', {}, { reload: false });
                 }, function() {
                     $state.go('^');
@@ -114,13 +122,13 @@
             data: {
                 authorities: ['ROLE_USER']
             },
-            onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
-                $uibModal.open({
-                    templateUrl: 'app/entities/location/location-dialog.html',
+            onEnter: ['$stateParams', '$state', '$mdDialog','$templateCache', function($stateParams, $state, $mdDialog,$templateCache) {
+                $mdDialog.show({
+                    template: $templateCache.get(location_dialog),
                     controller: 'LocationDialogController',
                     controllerAs: 'vm',
                     backdrop: 'static',
-                    size: 'lg',
+                    fullscreen: true,
                     resolve: {
                         entity: function () {
                             return {
@@ -151,7 +159,7 @@
                             };
                         }
                     }
-                }).result.then(function() {
+                }).then(function() {
                     $state.go('location', null, { reload: true });
                 }, function() {
                     $state.go('location');
@@ -164,19 +172,19 @@
             data: {
                 authorities: ['ROLE_USER']
             },
-            onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
-                $uibModal.open({
-                    templateUrl: 'app/entities/location/location-dialog.html',
+            onEnter: ['$stateParams', '$state', '$mdDialog','$templateCache', function($stateParams, $state, $mdDialog,$templateCache) {
+                $mdDialog.show({
+                    template: $templateCache.get(location_dialog),
                     controller: 'LocationDialogController',
                     controllerAs: 'vm',
                     backdrop: 'static',
-                    size: 'lg',
+                    fullscreen: true,
                     resolve: {
                         entity: ['Location', function(Location) {
                             return Location.get({id : $stateParams.id}).$promise;
                         }]
                     }
-                }).result.then(function() {
+                }).then(function() {
                     $state.go('location', null, { reload: true });
                 }, function() {
                     $state.go('^');
@@ -189,18 +197,18 @@
             data: {
                 authorities: ['ROLE_USER']
             },
-            onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
-                $uibModal.open({
-                    templateUrl: 'app/entities/location/location-delete-dialog.html',
+            onEnter: ['$stateParams', '$state', '$mdDialog','$templateCache', function($stateParams, $state, $mdDialog,$templateCache) {
+                $mdDialog.show({
+                    template: $templateCache.get(location_delete_dialog),
                     controller: 'LocationDeleteController',
                     controllerAs: 'vm',
-                    size: 'md',
+                    fullscreen: true,
                     resolve: {
                         entity: ['Location', function(Location) {
                             return Location.get({id : $stateParams.id}).$promise;
                         }]
                     }
-                }).result.then(function() {
+                }).then(function() {
                     $state.go('location', null, { reload: true });
                 }, function() {
                     $state.go('^');
@@ -208,5 +216,3 @@
             }]
         });
     }
-
-})();

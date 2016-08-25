@@ -1,0 +1,29 @@
+{
+    "gCompanyApp": {
+        "article" : {
+            "home": {
+                "title": "Articles",
+                "createLabel": "Dodaj Article",
+                "createOrEditLabel": "Dodaj lub edytuj: Article",
+                "search": "Search for Article"
+            },
+            "created": "A new Article is created with identifier {{ param }}",
+            "updated": "A Article is updated with identifier {{ param }}",
+            "deleted": "A Article is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Czy na pewno chcesz usunąć Article {{ id }}?"
+            },
+            "detail": {
+                "title": "Article"
+            },
+            "title": "Title",
+            "summary": "Summary",
+            "published": "Published",
+            "userId": "User Id",
+            "articleProvider": "Article Provider",
+            "uri": "Uri",
+            "tag": "Tag",
+            "location": "Location"
+        }
+    }
+}

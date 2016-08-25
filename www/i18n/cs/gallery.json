@@ -1,0 +1,23 @@
+{
+    "gCompanyApp": {
+        "gallery" : {
+            "home": {
+                "title": "Galleries",
+                "createLabel": "Vytvořit Gallery",
+                "createOrEditLabel": "Vytvořit nebo upravit Gallery",
+                "search": "Vyhledat Gallery"
+            },
+            "created": "Byl vytvořen potomek entity Gallery s identifikátorem {{ param }}",
+            "updated": "Potomek entity Gallery s identifikátorem {{ param }} byl upravený.",
+            "deleted": "Potomek entity Gallery s identifikátorem {{ param }} bol smazaný.",
+            "delete": {
+                "question": "Jste si jisti, že chcete smazat Gallery {{ id }}?"
+            },
+            "detail": {
+                "title": "Gallery"
+            },
+            "name": "Name",
+            "description": "Description"
+        }
+    }
+}

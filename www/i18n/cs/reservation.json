@@ -1,0 +1,30 @@
+{
+    "gCompanyApp": {
+        "reservation" : {
+            "home": {
+                "title": "Reservations",
+                "createLabel": "Vytvořit Reservation",
+                "createOrEditLabel": "Vytvořit nebo upravit Reservation",
+                "search": "Vyhledat Reservation"
+            },
+            "created": "Byl vytvořen potomek entity Reservation s identifikátorem {{ param }}",
+            "updated": "Potomek entity Reservation s identifikátorem {{ param }} byl upravený.",
+            "deleted": "Potomek entity Reservation s identifikátorem {{ param }} bol smazaný.",
+            "delete": {
+                "question": "Jste si jisti, že chcete smazat Reservation {{ id }}?"
+            },
+            "detail": {
+                "title": "Reservation"
+            },
+            "locationId": "Location Id",
+            "dateFrom": "Date From",
+            "dateTo": "Date To",
+            "userId": "User Id",
+            "price": "Price",
+            "currencyCode": "Currency Code",
+            "isPaid": "Is Paid",
+            "resource": "Resource",
+            "resource": "Resource"
+        }
+    }
+}

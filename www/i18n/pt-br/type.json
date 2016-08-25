@@ -1,0 +1,26 @@
+{
+    "gCompanyApp": {
+        "type" : {
+            "home": {
+                "title": "Types",
+                "createLabel": "Criar novo Type",
+                "createOrEditLabel": "Criar ou editar Type",
+                "search": "Pesquisar por Type"
+            },
+            "created": "Um novo Type é criado com o identificador {{ param }}",
+            "updated": "Um Type é atualizado com o identificador {{ param }}",
+            "deleted": "Um Type é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Type {{ id }}?"
+            },
+            "detail": {
+                "title": "Type"
+            },
+            "name": "Name",
+            "description": "Description",
+            "service": "Service",
+            "iconUri": "Icon Uri",
+            "imageUri": "Image Uri"
+        }
+    }
+}
