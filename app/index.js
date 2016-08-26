@@ -13,11 +13,13 @@
 // require('angular-material');
 // require('angular-ui-router');
 require('./menu.less');
+require('./main.less');
 require('./app.module.js');
 require('./app.constants.js');
 require('./app.state.js');
 require('./components');
 require('./services/auth');
+require('./services/application');
 require('./blocks/handlers/state.handler.js');
 require('./blocks/handlers/translation.handler.js');
 require('./blocks/config');

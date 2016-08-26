@@ -1,22 +1,26 @@
-<md-tabs layout-fill md-swipe-content flex  md-border-bottom md-stretch-tabs>
-        <md-tab label="Information">
+<md-tabs style="height:0px" class="green" layout-fill md-swipe-content flex  md-border-bottom md-stretch-tabs>
+        <md-tab label="Information" ui-sref="location-detail">
           <md-tab-label>
             <md-icon>info_outline</md-icon>
           </md-tab-label>
+          <md-tab-body ><ng-include src="'information/tab.html'"></ng-include></md-tab-body>
         </md-tab>
         <md-tab label="Services">
           <md-tab-label>
             <md-icon>local_offer</md-icon>
           </md-tab-label>
+          <md-tab-body><ng-include src="'service/tab.html'"></ng-include></md-tab-body>
         </md-tab>
         <md-tab label="Personel">
           <md-tab-label>
             <md-icon>group</md-icon>
           </md-tab-label>
+          <md-tab-body><ng-include src="'users/tab.html'"></ng-include></md-tab-body>
         </md-tab>
         <md-tab label="Equipment">
           <md-tab-label>
             <md-icon>directions_bike</md-icon>
           </md-tab-label>
+          <md-tab-body><ng-include src="'resource/tab.html'"></ng-include></md-tab-body>
         </md-tab>
 </md-tabs>

@@ -16,7 +16,8 @@ var angular = require('angular');
             'ui.router',
             // jhipster-needle-angularjs-add-module JHipster will add new module here
             'ngMaterial',
-            'ui.router'
+            'ui.router',
+            'ngMdIcons'
         ])
         .config(function($mdThemingProvider,$mdIconProvider) {
           $mdThemingProvider.theme('default')
@@ -35,9 +36,10 @@ var angular = require('angular');
         .controller('AppCtrl',AppCtrl)
         .run(run);
 
-    run.$inject = ['stateHandler', 'translationHandler'];
+    run.$inject = ['stateHandler', 'translationHandler','$templateCache'];
 
-    function run(stateHandler, translationHandler) {
+    function run(stateHandler, translationHandler, $templateCache) {
         stateHandler.initialize();
         translationHandler.initialize();
+        $templateCache.put('templateId.html', 'This is the content of the template');
     }

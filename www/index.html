@@ -54,15 +54,18 @@
                 class="menu-heading-left"
                 layout="row"
                 layout-align="space-between center">
-                  <md-icon ng-click="i=(icons.length+i-1)%icons.length; selection=icons[i]">keyboard_arrow_left</md-icon>
+                  <md-button class="md-icon-button" ng-click="i=(icons.length+i-1)%icons.length; selection=icons[i]">
+                    <md-icon >keyboard_arrow_left</md-icon>
+                  </md-button>
                   <div flex></div>
                   <div   style="width:100px;height:100px" layout layout-aligh="center center">
                     <!-- <md-icon   ng-style="{'font-size':'50px'}" ng-repeat="icon in icons" ng-animate="animate" ng-if="selection == icon" >{{icon}}</md-icon> -->
                     <md-icon md-svg-src="svg/sport.svg" aria-label="sportiventure"></md-icon>
                   </div>
                   <div flex></div>
-
-                  <md-icon ng-click="i=(i+1)%icons.length; selection=icons[i]">keyboard_arrow_right</md-icon>
+                  <md-button class="md-icon-button" ng-click="i=(i+1)%icons.length; selection=icons[i]">
+                    <md-icon>keyboard_arrow_right</md-icon>
+                  </md-button>
                 </div>
                 <div flex></div>
               </md-toolbar>
@@ -112,15 +115,16 @@
 
             <md-toolbar class="md-hue-2" flex="none">
              <div class="md-toolbar-tools">
-               <md-button class="md-icon-button" aria-label="Settings">
-                 <md-icon ng-click="main.toggleLeft()" >menu</md-icon>
+               <md-button class="md-icon-button" aria-label="Settings" ng-click="main.toggleLeft()">
+                 <!-- <md-icon ng-click="main.toggleLeft()" >menu</md-icon> -->
+                 <ng-md-icon  icon="menu" ></ng-md-icon>
                </md-button>
                <h2>
                  <span>SportiVenture </span>
                </h2>
                <span flex></span>
-               <md-button class="md-icon-button" aria-label="Favorite">
-                 <md-icon ng-click="main.notifications.open('help')" ng-class="{'animated':main.notifications.help, 'infinite':true, 'rubberBand':true}" md-font-set="material-icons">lightbulb_outline</md-icon>
+               <md-button ng-click="main.notifications.open('help')" class="md-icon-button" aria-label="Favorite">
+                 <md-icon  ng-class="{'animated':main.notifications.help, 'infinite':true, 'rubberBand':true}" md-font-set="material-icons">lightbulb_outline</md-icon>
                </md-button>
                <md-button class="md-icon-button" aria-label="More">
                  <md-icon >more_vert</md-icon>
@@ -132,8 +136,9 @@
             </md-content>
           </section>
         </section>
-        <md-button ui-sref="location.new" class="md-fab md-primary md-fab-bottom-right" aria-label="Eat cake">
-          <md-icon>add</md-icon>
+        <md-button ui-sref="location.new" class="md-fab md-primary md-fab-bottom-right" >
+          <!-- <md-icon>add</md-icon> -->
+          <ng-md-icon  icon="add" style="fill: pink"></ng-md-icon>
         </md-button>
 
 

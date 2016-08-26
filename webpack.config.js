@@ -20,8 +20,9 @@ module.exports = {
       'angular-dynamic-locale',
       'ngstorage',
       'font-awesome/css/font-awesome.min.css',
-      'svg-morpheus',
-      'angular-material-icons'
+      'svg-morpheus/compile/minified/svg-morpheus.js',
+      'angular-material-icons',
+      './www/css/angular-material-icons.css'
     ],
     app:["./app/index.js"]
   },

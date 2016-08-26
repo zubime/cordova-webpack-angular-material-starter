@@ -57,14 +57,14 @@ var location_dialog = require("ngtemplate!./location-dialog.html");
             }
         })
         .state('location-detail', {
-            parent: 'business_setup',
+            parent: 'setup',
             url: '/location/{id}',
             data: {
                 authorities: ['ROLE_USER'],
                 pageTitle: 'gCompanyApp.location.detail.title'
             },
             views: {
-                'content@': {
+                'content': {
 
                     templateProvider: function($templateCache,$log){
                       return $templateCache.get(location_detail);
@@ -78,9 +78,9 @@ var location_dialog = require("ngtemplate!./location-dialog.html");
                     $translatePartialLoader.addPart('location');
                     return $translate.refresh();
                 }],
-                entity: ['$stateParams', 'Location', function($stateParams, Location) {
-                    return Location.get({id : $stateParams.id}).$promise;
-                }],
+                // entity: ['$stateParams', 'Location', function($stateParams, Location) {
+                //     return Location.get({id : $stateParams.id}).$promise;
+                // }],
                 previousState: ["$state", function ($state) {
                     var currentStateData = {
                         name: $state.current.name || 'location',
