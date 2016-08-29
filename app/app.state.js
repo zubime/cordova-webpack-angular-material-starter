@@ -7,9 +7,10 @@ var navbarTemplate = require("ngtemplate!./layouts/navbar/navbar.html");
         .module('gCompanyApp')
         .config(stateConfig);
 
-    stateConfig.$inject = ['$stateProvider'];
+    stateConfig.$inject = ['$stateProvider','$urlRouterProvider'];
 
-    function stateConfig($stateProvider) {
+    function stateConfig($stateProvider,$urlRouterProvider) {
+        $urlRouterProvider.otherwise('/location');
         $stateProvider.state('app', {
             abstract: true,
             resolve: {
@@ -21,6 +22,13 @@ var navbarTemplate = require("ngtemplate!./layouts/navbar/navbar.html");
                 translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
                     $translatePartialLoader.addPart('global');
                 }]
+            },
+            data: {
+                authorities: ['ROLE_USER'],
+                menu: {
+                  icon: 'menu',
+                  event:'toggleMenu'
+                }
             }
         });
     }

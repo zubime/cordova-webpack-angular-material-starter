@@ -9,12 +9,14 @@
 
     function LocationDialogController ($timeout, $scope, $stateParams, $mdDialog, DataUtils, entity, Location) {
         var vm = this;
-
+        vm.delay = true;
         vm.location = entity;
         vm.clear = clear;
         vm.byteSize = DataUtils.byteSize;
         vm.openFile = DataUtils.openFile;
         vm.save = save;
+        $timeout(function(){vm.delay= false; },150);
+
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();

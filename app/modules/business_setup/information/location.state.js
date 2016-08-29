@@ -1,6 +1,5 @@
 'use strict';
 var locations = require("ngtemplate!./locations.html");
-var location_detail = require("ngtemplate!./location-detail.html");
 var location_delete_dialog = require("ngtemplate!./location-delete-dialog.html");
 var location_dialog = require("ngtemplate!./location-dialog.html");
 
@@ -17,7 +16,11 @@ var location_dialog = require("ngtemplate!./location-dialog.html");
             url: '/location?page&sort&search',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'gCompanyApp.location.home.title'
+                pageTitle: 'gCompanyApp.location.home.title',
+                fab:{
+                  icon:'add',
+                  state:'location.new'
+                }
             },
             views: {
                 'content@': {
@@ -56,66 +59,8 @@ var location_dialog = require("ngtemplate!./location-dialog.html");
                 }]
             }
         })
-        .state('location-detail', {
-            parent: 'setup',
-            url: '/location/{id}',
-            data: {
-                authorities: ['ROLE_USER'],
-                pageTitle: 'gCompanyApp.location.detail.title'
-            },
-            views: {
-                'content': {
 
-                    templateProvider: function($templateCache,$log){
-                      return $templateCache.get(location_detail);
-                    },
-                    controller: 'LocationDetailController',
-                    controllerAs: 'vm'
-                }
-            },
-            resolve: {
-                translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
-                    $translatePartialLoader.addPart('location');
-                    return $translate.refresh();
-                }],
-                // entity: ['$stateParams', 'Location', function($stateParams, Location) {
-                //     return Location.get({id : $stateParams.id}).$promise;
-                // }],
-                previousState: ["$state", function ($state) {
-                    var currentStateData = {
-                        name: $state.current.name || 'location',
-                        params: $state.params,
-                        url: $state.href($state.current.name, $state.params)
-                    };
-                    return currentStateData;
-                }]
-            }
-        })
-        .state('location-detail.edit', {
-            parent: 'location-detail',
-            url: '/detail/edit',
-            data: {
-                authorities: ['ROLE_USER']
-            },
-            onEnter: ['$stateParams', '$state', '$mdDialog','$templateCache', function($stateParams, $state, $mdDialog,$templateCache) {
-                $mdDialog.open({
-                    template: $templateCache.get(location_dialog),
-                    controller: 'LocationDialogController',
-                    controllerAs: 'vm',
-                    backdrop: 'static',
-                    fullscreen: 'true',
-                    resolve: {
-                        entity: ['Location', function(Location) {
-                            return Location.get({id : $stateParams.id}).$promise;
-                        }]
-                    }
-                }).then(function() {
-                    $state.go('^', {}, { reload: false });
-                }, function() {
-                    $state.go('^');
-                });
-            }]
-        })
+
         .state('location.new', {
             parent: 'location',
             url: '/new',

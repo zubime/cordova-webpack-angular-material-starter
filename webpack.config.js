@@ -5,6 +5,8 @@ var path = require("path");
 module.exports = {
   entry: {
     vendor:[
+      'mdi',
+      'angular',
       'angular-material',
       'angular-material/angular-material.css',
       'animate.css',

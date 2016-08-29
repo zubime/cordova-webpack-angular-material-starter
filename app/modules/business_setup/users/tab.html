@@ -1,1 +1,8 @@
-<h1>users tab</h1>
+<md-content layout="column">
+<md-list>
+  <md-list-item ><img alt="{{ person.name }}" ng-src="{{ person.img }}" class="md-avatar" /><p>Adam Chojnacki</p><md-button ng-click="vm.hello()" class="md-secondary" ng-click="doSecondaryAction($event)">Active</md-button></md-list-item>
+  <md-list-item ><img alt="{{ person.name }}" ng-src="{{ person.img }}" class="md-avatar" /><p>Krzysztof Mickiwicz</p>    <md-button ng-click="showListBottomSheet()" class="md-secondary" ng-click="doSecondaryAction($event)">Active</md-button></md-list-item>
+  <md-list-item ><img alt="{{ person.name }}" ng-src="{{ person.img }}" class="md-avatar" /><p>Barbara Kozłowska</p><md-button ng-click="showListBottomSheet()" class="md-secondary" ng-click="doSecondaryAction($event)">Off</md-button></md-list-item>
+
+</md-list>
+</md-content>

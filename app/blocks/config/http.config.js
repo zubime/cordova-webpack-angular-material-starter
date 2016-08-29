@@ -15,7 +15,6 @@ require('../interceptor/notification.interceptor.js');
     function httpConfig($urlRouterProvider, $httpProvider, $urlMatcherFactoryProvider) {
 
 
-        $urlRouterProvider.otherwise('/');
 
         $httpProvider.interceptors.push('errorHandlerInterceptor');
         $httpProvider.interceptors.push('authExpiredInterceptor');

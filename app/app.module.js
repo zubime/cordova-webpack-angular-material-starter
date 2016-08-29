@@ -17,9 +17,12 @@ var angular = require('angular');
             // jhipster-needle-angularjs-add-module JHipster will add new module here
             'ngMaterial',
             'ui.router',
-            'ngMdIcons'
+            'ngMdIcons',
+            'ngAnimate'
         ])
         .config(function($mdThemingProvider,$mdIconProvider) {
+          // $mdIconProvider
+          //   .defaultIconSet('my/app/mdi.svg')
           $mdThemingProvider.theme('default')
             .primaryPalette('pink')
             .accentPalette('orange');

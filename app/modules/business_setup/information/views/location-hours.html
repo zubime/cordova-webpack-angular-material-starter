@@ -1,0 +1,12 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation layout="column" class="red" flex layout-fill>
+    <md-content  layout="column" layout-margin>
+
+
+
+    </md-content>
+    <div flex></div>
+    <md-button type="submit" ng-hide="vm.delay || editForm.$invalid || vm.isSaving" class="md-fab md-primary md-fab-bottom-right">
+            <md-icon>done</md-icon>
+    </md-button>
+</form>

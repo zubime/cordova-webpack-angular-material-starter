@@ -11,11 +11,25 @@
     <md-checkbox class="md-warn md-align-top-left" ng-model="todo.hours" aria-label="Oppening Hours">Oppening Hours</md-checkbox>
   </div> -->
   <md-list>
-                   <md-list-item ng-click=""><p>Category             </p><md-checkbox class="md-warn md-align-top-left" ng-model="todo.category" aria-label="Contact Information"></md-checkbox>
-    </md-list-item><md-list-item ng-click=""><p>Contact Information  </p><md-checkbox class="md-warn md-align-top-left" ng-model="todo.contact" aria-label="Contact Information"></md-checkbox>
-    </md-list-item><md-list-item ng-click=""><p>Location Information </p><md-checkbox class="md-warn md-align-top-left" ng-model="todo.location" aria-label="Location Information"></md-checkbox>
-    </md-list-item><md-list-item ng-click=""><p>Marketing Information</p><md-checkbox class="md-warn md-align-top-left" ng-model="todo.marketing" aria-label="Marketing Information"></md-checkbox>
-    </md-list-item><md-list-item ng-click=""><p>Oppening Hours       </p><md-checkbox class="md-warn md-align-top-left" ng-model="todo.hours" aria-label="Oppening Hours"></md-checkbox>
+    <md-list-item ui-sref="location-detail.category" ng-click="null">
+      <p>Category             </p>
+      <md-checkbox class="md-warn md-align-top-left" ng-model="todo.category" aria-label="Contact Information"></md-checkbox>
+    </md-list-item>
+    <md-list-item ui-sref="location-detail.contact" ng-click="null">
+      <p>Contact Information  </p>
+      <md-checkbox class="md-warn md-align-top-left" ng-model="todo.contact" aria-label="Contact Information"></md-checkbox>
+    </md-list-item>
+    <md-list-item ui-sref="location-detail.location" ng-click="null">
+      <p>Location Information </p>
+      <md-checkbox class="md-warn md-align-top-left" ng-model="todo.location" aria-label="Location Information"></md-checkbox>
+    </md-list-item>
+    <md-list-item ui-sref="location-detail.marketing" ng-click="null">
+      <p>Marketing Information</p>
+      <md-checkbox class="md-warn md-align-top-left" ng-model="todo.marketing" aria-label="Marketing Information"></md-checkbox>
+    </md-list-item>
+    <md-list-item ui-sref="location-detail.hours" ng-click="null">
+      <p>Oppening Hours       </p>
+      <md-checkbox class="md-warn md-align-top-left" ng-model="todo.hours" aria-label="Oppening Hours"></md-checkbox>
     </md-list-item>
   </md-list>
 

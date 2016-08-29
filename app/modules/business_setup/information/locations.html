@@ -55,3 +55,13 @@
       <md-button>Status</md-button>
     </md-card-actions>
   </md-card>
+ 
+<md-card ng-repeat="state in $state.get()">
+  <md-card-title>{{state.name}}</md-card-title>
+  <md-card-content>
+  <ul><li ng-repeat="(key,value) in state">{{key}}:{{value}}</li></ul>
+  </md-card-content>
+  <md-card-actions layout="row" layout-align="end center">
+    <md-button ui-sref="{{state.name}}" >Navigate</md-button>
+  </md-card-actions>
+</md-card>

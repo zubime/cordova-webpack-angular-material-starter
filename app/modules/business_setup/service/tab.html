@@ -1,8 +1,9 @@
 <md-content layout="column">
 <md-list>
-  <md-list-item ><p>Wypożyczalnia rowerów</p><md-button class="md-secondary" ng-click="doSecondaryAction($event)">12-20 USD</md-button></md-list-item>
-  <md-list-item ><p>Reperacja rowerów</p><md-button class="md-secondary" ng-click="doSecondaryAction($event)">12-20 USD</md-button></md-list-item>
-  <md-list-item ><p>Wypożyczalnia kajaków</p><md-button class="md-secondary" ng-click="doSecondaryAction($event)">-</md-button></md-list-item>
+  <md-list-item ><md-icon>directions_bike</md-icon><p>Wypożyczalnia rowerów</p><md-button ng-click="vm.hello()" class="md-secondary" ng-click="doSecondaryAction($event)">12-20 USD</md-button></md-list-item>
+  <md-list-item ><md-icon>directions_bike</md-icon><p>Reperacja rowerów</p>    <md-button ng-click="showListBottomSheet()" class="md-secondary" ng-click="doSecondaryAction($event)">12-20 USD</md-button></md-list-item>
+  <md-list-item ><md-icon>directions_boat</md-icon><p>Wypożyczalnia kajaków</p><md-button ng-click="showListBottomSheet()" class="md-secondary" ng-click="doSecondaryAction($event)">-</md-button></md-list-item>
+  <md-list-item ><md-icon>home</md-icon><p>Rezerwacja Pokoi</p><md-button ng-click="showListBottomSheet()" class="md-secondary" ng-click="doSecondaryAction($event)">-</md-button></md-list-item>
 
 </md-list>
 </md-content>

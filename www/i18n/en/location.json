@@ -14,7 +14,19 @@
                 "question": "Are you sure you want to delete Location {{ id }}?"
             },
             "detail": {
-                "title": "Location"
+                "title": "Business Setup",
+                "contact":{
+                  "title":"Contact"
+                },
+                "hours":{
+                  "title":"Hours"
+                },
+                "marketing":{
+                  "title":"Marketing"
+                },
+                "location":{
+                  "title":"Location"
+                }
             },
             "street": "Street",
             "streetNo": "Street No",

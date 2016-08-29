@@ -1,0 +1,82 @@
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation layout="column" class="red" flex layout-fill>
+    <md-content  layout="column" layout-margin>
+<br>
+
+        <md-input-container>
+          <label class="control-label" translate="gCompanyApp.location.name" for="field_name">Name</label>
+          <input type="text" class="form-control" name="name" id="field_name"
+                  ng-model="vm.location.name"
+                  required ng-maxlength="30" />
+
+        <div ng-messages="editForm.name.$invalid" role="alert">
+          <div ng-message="required">
+            This field is required.
+          </div>
+          <div ng-message="maxlength">
+            This field cannot be longer than 30 characters.
+          </div>
+        </div>
+
+        </md-input-container>
+
+
+      <md-input-container>
+        <label class="control-label" translate="gCompanyApp.location.email" for="field_email">Email</label>
+        <input type="text" class="form-control" name="email" id="field_email"
+                ng-model="vm.location.email"
+                required ng-maxlength="50" />
+        <div ng-messages="editForm.email.$error">
+            <div class="help-block"
+                ng-message="required" translate="entity.validation.required">
+                This field is required.
+            </div>
+            <div class="help-block"
+                ng-message="maxlength" translate="entity.validation.maxlength" translate-value-max="50">
+                This field cannot be longer than 50 characters.
+            </div>
+        </div>
+      </md-input-container>
+
+      <div layout="row" >
+        <md-input-container class="md-block">
+          <label>Prefix</label>
+          <md-select ng-model="user.state">
+            <md-option ng-repeat="state in states" value="{{state.abbrev}}">
+              {{state.abbrev}}
+            </md-option>
+          </md-select>
+        </md-input-container>
+        <md-input-container flex>
+          <label class="control-label" translate="gCompanyApp.location.phoneNumber" for="field_phoneNumber">Phone Number</label>
+          <input type="text" class="form-control" name="phoneNumber" id="field_phoneNumber"
+                  ng-model="vm.location.phoneNumber"
+                  required ng-maxlength="12" />
+          <div ng-messages="editForm.phoneNumber.$invalid">
+              <div class="help-block"
+                  ng-message="required" translate="entity.validation.required">
+                  This field is required.
+              </div>
+              <div class="help-block"
+                  ng-message="maxlength" translate="entity.validation.maxlength" translate-value-max="12">
+                  This field cannot be longer than 12 characters.
+              </div>
+          </div>
+        </md-input-container>
+
+      </div>
+      <md-input-container>
+        <label class="control-label" translate="gCompanyApp.location.website" for="field_website">Website</label>
+        <input type="text" class="form-control" name="website" id="field_website"
+                ng-model="vm.location.website"
+                 />
+      </md-input-container>
+      <div>Invalid: {{editForm.$invalid}}</div>
+      <div>is Saving: {{vm.isSaving}}</div>
+
+
+    </md-content>
+    <div flex></div>
+    <md-button type="submit" ng-hide="vm.delay || editForm.$invalid || vm.isSaving" class="md-fab md-primary md-fab-bottom-right">
+            <md-icon>done</md-icon>
+    </md-button>
+</form>

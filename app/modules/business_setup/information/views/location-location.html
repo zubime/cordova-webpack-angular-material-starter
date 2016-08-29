@@ -1,0 +1,38 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation layout="column" class="red" flex layout-fill>
+    <md-content  layout="column" layout-margin>
+      <md-button ui-sref="location.point" class="md-raised md-secondary">Setup Location</md-button>
+      <div layout="row">
+        <md-input-container flex class="form-group">
+            <label class="control-label" translate="gCompanyApp.location.street" for="field_street">Street</label>
+            <input type="text" class="form-control" name="street" id="field_street"
+                    ng-model="vm.location.street"
+                    ng-maxlength="30" />
+            <div ng-show="editForm.street.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.street.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="30">
+                    This field cannot be longer than 30 characters.
+                </p>
+            </div>
+        </md-input-container>
+        <md-input-container style="width:80px;" class="form-group">
+            <label class="control-label" translate="gCompanyApp.location.streetNo" for="field_streetNo">Street No</label>
+            <input type="text" class="form-control" name="streetNo" id="field_streetNo"
+                    ng-model="vm.location.streetNo"
+                    ng-maxlength="30" />
+            <div ng-show="editForm.streetNo.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.streetNo.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="30">
+                    This field cannot be longer than 30 characters.
+                </p>
+            </div>
+        </md-input-container>
+      </div>
+
+
+    </md-content>
+    <div flex></div>
+    <md-button type="submit" ng-hide="vm.delay || editForm.$invalid || vm.isSaving" class="md-fab md-primary md-fab-bottom-right">
+            <md-icon>done</md-icon>
+    </md-button>
+</form>
