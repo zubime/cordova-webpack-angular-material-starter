@@ -1,11 +1,15 @@
 
-<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation layout="column" class="red" flex layout-fill>
-    <md-content  layout="column" layout-margin>
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation layout="column" layout-margin >
+    <md-list>
 
+        <md-list-item ng-repeat=" name in ['Poniedziałek','Wtorek','Środa','Czwartek','Piątek','Sobota','Niedziela']">
+          <p>{{name}}</p>
+          <md-button>8:00 - 18:00</md-button>
+          <md-switch class="md-secondary" ng-model="setting.enabled"></md-switch>
+        </md-list-item>
 
+    </md-list>
 
-    </md-content>
-    <div flex></div>
     <md-button type="submit" ng-hide="vm.delay || editForm.$invalid || vm.isSaving" class="md-fab md-primary md-fab-bottom-right">
             <md-icon>done</md-icon>
     </md-button>

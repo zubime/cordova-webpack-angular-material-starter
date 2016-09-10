@@ -28,7 +28,7 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' https://maps.wikimedia.org http://*/openstreetmap.org">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
@@ -41,7 +41,7 @@
         <script type="text/javascript" src="vendor.bundle.js"></script>
         <script type="text/javascript" src="app.bundle.js"></script>
     </head>
-    <body ng-app="gCompanyApp" ng-controller="AppCtrl as main" >
+    <body ng-app="gCompanyApp" ng-controller="AppCtrl as main" ng-cloak>
         <section layout="row"  layout-fill>
           <md-sidenav class="md-sidenav-left" md-component-id="left"
                   md-whiteframe="4">
@@ -71,13 +71,13 @@
                 <div flex></div>
               </md-toolbar>
               <md-content >
-                <md-subheader>SportiVenture.com</md-subheader>
+                <md-subheader>SportiVenture.com<br>{{$state.current.data.fab.state}}</md-subheader>
                 <md-list>
                   <md-list-item  ng-click="main.toggleLeft()" ui-sref="location">
                     <md-icon>location_on</md-icon>
                     <p>Location</p>
                   </md-list-item>
-                  <md-list-item  ng-click="main.toggleLeft()" ui-sref="location-detail({id:1})">
+                  <md-list-item  ng-click="main.toggleLeft()" ui-sref="location-detail.information({id:1})">
                     <md-icon>store</md-icon>
                     <p>Business Setup</p>
                   </md-list-item>
@@ -101,6 +101,10 @@
                     <md-icon>build</md-icon>
                     <p>Configuration</p>
                   </md-list-item>
+                  <md-list-item  ng-click="main.toggleLeft()" ui-sref="status">
+                    <md-icon>settings</md-icon>
+                    <p>Status</p>
+                  </md-list-item>
 
                     <md-list-item  ng-click="main.toggleLeft()" >
                       <md-icon>exit_to_app</md-icon>
@@ -121,7 +125,7 @@
                  <ng-md-icon  icon="{{$state.current.data.menu.icon?$state.current.data.menu.icon:'menu'}}" ></ng-md-icon>
                </md-button>
                <h2>
-                 <span translate="{{$state.current.data.pageTitle}}">SportiVenture </span>
+                 <span class="header_title" translate="{{$state.current.data.pageTitle}}">SportiVenture </span>
                  <span>
                     <!-- $state: {{$state.current.name}}
                     $stateParams: {{$stateParams}}
@@ -141,11 +145,15 @@
             <md-content ng-animate="{enter: 'animated bounceInRight', leave: 'animated bounceOutLeft'}" flex layout-fill data-ui-view="content" layout="column" >
 
             </md-content>
+            <div  ng-init="left = true" ng-class="{'left':left, 'right':!left}" class="description" ng-show="$state.current.data.pageDescription" md-swipe-left="left=true;$state.go($state.current.data.nextState)" md-swipe-right="left=false;$state.go($state.current.data.prevState)">
+              <h1 class="md-headline centered" translate="{{$state.current.data.pageDescription}}"></h1>
+            </div>
+
           </section>
         </section>
-        <md-button  ng-show="$state.current.data.fab" ui-sref="location.new" class="md-fab md-primary md-fab-bottom-right" >
+        <md-button  ng-hide="$state.current.data.fab == null" ng-click="$state.go($state.current.data.fab.state)"  class="md-fab md-primary md-fab-bottom-right" >
           <!-- <md-icon>add</md-icon> -->
-          <ng-md-icon ng-attr-style="options={'duration':375,'rotation':'clockwise'}" icon="{{$state.current.data.fab.icon}}" style="fill: pink"></ng-md-icon>
+          <ng-md-icon ng-attr-style="options={'duration':375,'rotation':'clockwise'}" icon="{{$state.current.data.fab.icon?$state.current.data.fab.icon:'add'}}" style="fill: pink"></ng-md-icon>
         </md-button>
 
 

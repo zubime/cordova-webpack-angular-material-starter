@@ -1,10 +1,26 @@
 
-<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation layout="column" class="red" flex layout-fill>
-    <md-content  layout="column" layout-margin>
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation layout="column" layout-margin >
+  <br>
 
+  <md-input-container>
+    <label class="control-label" translate="gCompanyApp.location.whyToVisit" for="field_whyToVisit">Why To Visit</label>
+    <textarea rows="4" type="text" class="form-control" name="whyToVisit" id="field_whyToVisit"
+            ng-model="vm.location.whyToVisit"
+            required />
+    <div ng-messages="editForm.description.$invalid">
+        <div class="help-block"
+            ng-message="required" translate="entity.validation.required">
+            This field is required.
+        </div>
+    </div>
+  </md-input-container>
+  <md-input-container>
+    <label class="control-label" translate="gCompanyApp.location.description" for="field_description">Description</label>
+    <textarea rows="6" type="text" class="form-control" name="description" id="field_description"
+            ng-model="vm.location.description"
+             />
 
-
-    </md-content>
+  </md-input-container>
     <div flex></div>
     <md-button type="submit" ng-hide="vm.delay || editForm.$invalid || vm.isSaving" class="md-fab md-primary md-fab-bottom-right">
             <md-icon>done</md-icon>

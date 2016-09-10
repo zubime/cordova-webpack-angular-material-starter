@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports =  require('angular')
-    .module('www')
+    .module('gCompanyApp')
     .config(config);
 
   function config($urlRouterProvider) {

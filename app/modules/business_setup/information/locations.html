@@ -1,6 +1,6 @@
 
 
-  <md-card md-theme="default" md-theme-watch ng-repeat="location in vm.locations track by location.id">
+  <!-- <md-card md-theme="default" md-theme-watch ng-repeat="location in vm.locations track by location.id">
     <md-card-title>
       <md-card-title-text>
         <span class="md-headline">{{location.name}}</span>
@@ -17,7 +17,7 @@
       <md-button ui-sref="location-detail({id:location.id})">View</md-button>
       <md-button>Status</md-button>
     </md-card-actions>
-  </md-card>
+  </md-card> -->
 
   <md-card md-theme="default" md-theme-watch>
     <md-card-title>
@@ -55,13 +55,3 @@
       <md-button>Status</md-button>
     </md-card-actions>
   </md-card>
- 
-<md-card ng-repeat="state in $state.get()">
-  <md-card-title>{{state.name}}</md-card-title>
-  <md-card-content>
-  <ul><li ng-repeat="(key,value) in state">{{key}}:{{value}}</li></ul>
-  </md-card-content>
-  <md-card-actions layout="row" layout-align="end center">
-    <md-button ui-sref="{{state.name}}" >Navigate</md-button>
-  </md-card-actions>
-</md-card>

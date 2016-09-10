@@ -1,6 +1,6 @@
-var template = require("ngtemplate?prefix=service/!./tab.html");
-var bottom   = require("ngtemplate?prefix=service/!./bottom-sheet.html");
-var bottomCtrl = require("./bottom-sheet.controller.js");
+import template from "ngtemplate?prefix=service/!./tab.html";
+import bottom   from "ngtemplate?prefix=service/!./bottomMenu/bottom-sheet.html";
+import BottomSheetCtrl from "./bottomMenu/bottom-sheet.controller.js";
 var angular  = require('angular');
 
 
@@ -10,23 +10,11 @@ class ServiceTabDirective {
   constructor(){
       this.restrict = 'E';
       this.templateUrl = template;
-
       this.controllerAs = 'vm';
-  }
-
-  controller($scope, $timeout, $mdBottomSheet, $mdToast){
-    $scope.alert = '';
-    $scope.showListBottomSheet = function() {
-      $scope.alert = '';
-      $mdBottomSheet.show({
-        templateUrl: bottom,
-        controller:  bottomCtrl
-      }).then(function(clickedItem) {
-        $scope.alert = clickedItem['name'] + ' clicked!';
-      });
-    };
+      this.controller = ServiceTabDirectiveController;
 
   }
+
   link(scope,elelemt,attrs){
 
   }
@@ -36,4 +24,27 @@ class ServiceTabDirective {
 
 }
 
-angular.module('gCompanyApp').directive('serviceTab',() => new ServiceTabDirective);
+class ServiceTabDirectiveController{
+  constructor($scope,$mdBottomSheet){
+      $scope.alert = '';
+      this.$scope = $scope;
+      this.$mdBottomSheet = $mdBottomSheet;
+  }
+  doSecondaryAction (){
+    alert('hello');
+  }
+
+  showListBottomSheet () {
+    this.$mdBottomSheet.show({
+      templateUrl: bottom,
+      controller:  'serviceTabBottomSheetCtrl'
+    }).then(function(clickedItem) {
+
+    });
+  };
+}
+
+
+angular.module('gCompanyApp')
+.controller('serviceTabBottomSheetCtrl',() => new BottomSheetCtrl)
+.directive('serviceTab',() => new ServiceTabDirective);

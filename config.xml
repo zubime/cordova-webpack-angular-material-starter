@@ -9,4 +9,10 @@
     </author>
     <content src="index.html"/>
     <access origin="*" />
+    <access origin="https://maps.wikimedia.org" />
+    <preference name="xwalkVersion" value="20+" />
+    <preference name="xwalkCommandLine" value="--disable-pull-to-refresh-effect" />
+    <preference name="xwalkMode" value="embedded" />
+    <preference name="xwalkMultipleApk" value="true" />
+    <preference name="android-minSdkVersion" value="16" />
 </widget>

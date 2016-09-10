@@ -1,0 +1,29 @@
+<md-bottom-sheet layout="column">
+    <div layout="row">
+      <md-input-container flex ng-init="vm.categories=['Bike','Canoe','Boat']" >
+        <label>Service Category</label>
+        <md-select ng-model="service.category">
+          <md-option ng-repeat="category in vm.categories" value="{{category}}">{{category}}</md-option>
+        </md-select>
+      </md-input-container>
+      <md-input-container flex ng-init="vm.services=['Workshop','Rental','Free']">
+        <label>Service</label>
+        <md-select ng-model="service.type">
+          <md-option ng-repeat="service in vm.services" value="{{service}}">{{service}}</md-option>
+        </md-select>
+      </md-input-container>
+    </div>
+    <div layout="row">
+      <md-input-container flex>
+        <label>Price From</label>
+        <input type="number" ng-model="service.priceFrom">
+      </md-input-container>
+      <md-input-container flex>
+        <label>Price To</label>
+        <input type="number" ng-model="service.priceTo">
+      </md-input-container>
+
+    </div>
+    <md-button style="width:100%" class="md-raised md-primary">Save</md-button>
+
+</md-bottom-sheet>

@@ -41,6 +41,7 @@ var location_marketing = require("ngtemplate!./information/views/location-market
             }
         })
         .state('location-detail', {
+            abstract: true,
             parent: 'app',
             url: '/location/{id}',
             data: {
@@ -80,16 +81,105 @@ var location_marketing = require("ngtemplate!./information/views/location-market
                 }]
             }
         })
-        .state('location-detail.contact', {
-            parent: 'location-detail',
-            url: '/detail/contact',
+        .state('location-detail.information',{
+          parent: 'location-detail',
+          url: '/information',
+          data: {
+            authorities: ['ROLE_USER'],
+            pageTitle: 'gCompanyApp.location.detail.information_title'
+          }
+        })
+        .state('location-detail.service',{
+          parent: 'location-detail',
+          url: '/service',
+          data: {
+            authorities: ['ROLE_USER'],
+            pageTitle: 'gCompanyApp.location.detail.service_title',
+            fab:{
+              icon:'face',
+              state:'location-detail.service.new'
+            }
+
+          }
+        })
+        .state('location-detail.service.new',{
+          parent: 'location-detail.service',
+          url: '/new',
+          data: {
+            authorities: ['ROLE_USER'],
+            pageTitle: 'gCompanyApp.location.detail.service_title',
+            fab:{
+              icon:'add',
+              state:'location-detail.service.new'
+            }
+
+          }
+        })
+        .state('location-detail.equipment',{
+          parent: 'location-detail',
+          url: '/equipment',
+          data: {
+            authorities: ['ROLE_USER'],
+            pageTitle: 'gCompanyApp.location.detail.equipment_title',
+            fab:{
+              icon:'add',
+              state:'location-detail.equipment.new'
+            }
+
+          }
+        })
+        .state('location-detail.equipment.new',{
+          parent: 'location-detail.equipment',
+          url: '/new',
+          data: {
+            authorities: ['ROLE_USER'],
+            pageTitle: 'gCompanyApp.location.detail.equipment_title',
+            fab:{
+              icon:'save',
+              state:'location.new'
+            }
+
+          }
+        })
+        .state('location-detail.personel',{
+          parent: 'location-detail',
+          url: '/personel',
+          data: {
+            authorities: ['ROLE_USER'],
+            pageTitle: 'gCompanyApp.location.detail.personel_title',
+            fab:{
+              icon:'add',
+              state:'location-detail.personel.new'
+            }
+
+          }
+        })
+        .state('location-detail.personel.new',{
+          parent: 'location-detail.personel',
+          url: '/new',
+          data: {
+            authorities: ['ROLE_USER'],
+            pageTitle: 'gCompanyApp.location.detail.personel_title',
+            fab:{
+              icon:'save',
+              state:'location.new'
+            }
+
+          }
+        })
+        .state('location-detail.information.contact', {
+            parent: 'location-detail.information',
+            url: '/contact',
             data: {
                 authorities: ['ROLE_USER'],
                 menu: {
                   icon: 'arrow_back',
                   state: '^'
                 },
-                pageTitle: 'gCompanyApp.location.detail.contact.title'
+                pageTitle: 'gCompanyApp.location.detail.contact.title',
+                pageDescription: 'gCompanyApp.location.detail.contact.description',
+                nextState:'location-detail.information.location',
+                prevState:'location-detail.information.hours'
             },
             views: {
                 'content@': {
@@ -112,16 +202,19 @@ var location_marketing = require("ngtemplate!./information/views/location-market
                 }]
             }
         })
-        .state('location-detail.hours', {
-            parent: 'location-detail',
-            url: '/detail/hours',
+        .state('location-detail.information.hours', {
+            parent: 'location-detail.information',
+            url: '/hours',
             data: {
                 authorities: ['ROLE_USER'],
                 menu: {
                   icon: 'arrow_back',
                   state: '^'
                 },
-                pageTitle: 'gCompanyApp.location.detail.hours.title'
+                pageTitle: 'gCompanyApp.location.detail.hours.title',
+                pageDescription: 'gCompanyApp.location.detail.hours.description',
+                nextState:'location-detail.information.contact',
+                prevState:'location-detail.information.marketing'
             },
             views: {
                 'content@': {
@@ -144,16 +237,19 @@ var location_marketing = require("ngtemplate!./information/views/location-market
                 }]
             }
         })
-        .state('location-detail.location', {
-            parent: 'location-detail',
-            url: '/detail/location',
+        .state('location-detail.information.location', {
+            parent: 'location-detail.information',
+            url: '/location',
             data: {
                 authorities: ['ROLE_USER'],
                 menu: {
                   icon: 'arrow_back',
                   state: '^'
                 },
-                pageTitle: 'gCompanyApp.location.detail.location.title'
+                pageTitle: 'gCompanyApp.location.detail.location.title',
+                pageDescription: 'gCompanyApp.location.detail.location.description',
+                nextState:'location-detail.information.marketing',
+                prevState:'location-detail.information.contact'
             },
             views: {
                 'content@': {
@@ -176,16 +272,19 @@ var location_marketing = require("ngtemplate!./information/views/location-market
                 }]
             }
         })
-        .state('location-detail.marketing', {
-            parent: 'location-detail',
-            url: '/detail/marketing',
+        .state('location-detail.information.marketing', {
+            parent: 'location-detail.information',
+            url: '/marketing',
             data: {
                 authorities: ['ROLE_USER'],
                 menu: {
                   icon: 'arrow_back',
                   state: '^'
                 },
-                pageTitle: 'gCompanyApp.location.detail.marketing.title'
+                pageTitle: 'gCompanyApp.location.detail.marketing.title',
+                pageDescription: 'gCompanyApp.location.detail.marketing.description',
+                nextState:'location-detail.information.hours',
+                prevState:'location-detail.information.location'
             },
             views: {
                 'content@': {

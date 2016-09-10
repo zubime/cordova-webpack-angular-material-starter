@@ -14,18 +14,26 @@
                 "question": "Are you sure you want to delete Location {{ id }}?"
             },
             "detail": {
-                "title": "Business Setup",
+                "information_title": "General Information",
+                "service_title": "Services",
+                "equipment_title": "Equipment",
+                "personel_title": "Personel",
+
                 "contact":{
-                  "title":"Contact"
+                  "title":"Contact",
+                  "description":"Jak twoi kliencie mogą się z tobą skontaktować?"
                 },
                 "hours":{
-                  "title":"Hours"
+                  "title":"Hours",
+                  "description":"Kiedy twoja firma jest otwarta?"
                 },
                 "marketing":{
-                  "title":"Marketing"
+                  "title":"Marketing",
+                  "description":"Dlaczego warto Cię odwiedzić?"
                 },
                 "location":{
-                  "title":"Location"
+                  "title":"Location",
+                  "description":"Ustal Lokalizację przedsiębiorstwa."
                 }
             },
             "street": "Street",

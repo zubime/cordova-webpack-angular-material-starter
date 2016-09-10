@@ -1,8 +1,9 @@
 'use strict';
 
-
+require('./modules/status');
 
 import AppCtrl from './app-controller.js'
+import run from './app-run.js';
 
 var angular = require('angular');
     angular
@@ -13,12 +14,11 @@ var angular = require('angular');
             'ngResource',
             'ngAria',
             'ngFileUpload',
-            'ui.router',
-            // jhipster-needle-angularjs-add-module JHipster will add new module here
             'ngMaterial',
             'ui.router',
             'ngMdIcons',
-            'ngAnimate'
+            'ngAnimate',
+            'status'
         ])
         .config(function($mdThemingProvider,$mdIconProvider) {
           // $mdIconProvider
@@ -38,11 +38,3 @@ var angular = require('angular');
         })
         .controller('AppCtrl',AppCtrl)
         .run(run);
-
-    run.$inject = ['stateHandler', 'translationHandler','$templateCache'];
-
-    function run(stateHandler, translationHandler, $templateCache) {
-        stateHandler.initialize();
-        translationHandler.initialize();
-        $templateCache.put('templateId.html', 'This is the content of the template');
-    }

@@ -1,23 +1,35 @@
+<!-- <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+  <md-nav-item md-nav-sref="app.page4" name="page1"><md-icon>info_outline</md-icon></md-nav-item>
+  <md-nav-item md-nav-sref="app.page4" name="page2"><md-icon>local_offer</md-icon></md-nav-item>
+  <md-nav-item md-nav-sref="app.page4" name="page3"><md-icon>directions_bike</md-icon></md-nav-item>
+  <md-nav-item md-nav-sref="app.page4" name="page4"><md-icon>group</md-icon></md-nav-item>
+</md-nav-bar>
+<md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+  <md-nav-item md-nav-sref="app.page4" name="page1">Information</md-nav-item>
+  <md-nav-item md-nav-sref="app.page4" name="page2">Services</md-nav-item>
+  <md-nav-item md-nav-sref="app.page4" name="page3">Equipment</md-nav-item>
+  <md-nav-item md-nav-sref="app.page4" name="page4">Personel</md-nav-item>
+</md-nav-bar> -->
 <md-tabs style="height:0px" class="green" layout-fill md-swipe-content flex  md-border-bottom md-stretch-tabs>
-        <md-tab label="Information" ui-sref="location-detail">
+        <md-tab ui-sref="location-detail.information" label="Information" ui-sref="location-detail">
           <md-tab-label>
             <md-icon>info_outline</md-icon>
           </md-tab-label>
           <md-tab-body ><information-tab></information-tab></md-tab-body>
         </md-tab>
-        <md-tab label="Services">
+        <md-tab ui-sref="location-detail.service" label="Services">
           <md-tab-label>
             <md-icon>local_offer</md-icon>
           </md-tab-label>
           <md-tab-body><service-tab></service-tab></md-tab-body>
         </md-tab>
-        <md-tab label="Equipment">
+        <md-tab ui-sref="location-detail.equipment" label="Equipment">
           <md-tab-label>
             <md-icon>directions_bike</md-icon>
           </md-tab-label>
           <md-tab-body><resource-tab></resource-tab></md-tab-body>
         </md-tab>
-        <md-tab label="Personel">
+        <md-tab ui-sref="location-detail.personel" label="Personel">
           <md-tab-label>
             <md-icon>group</md-icon>
           </md-tab-label>

@@ -17,11 +17,11 @@ require('./main.less');
 require('./app.module.js');
 require('./app.constants.js');
 require('./app.state.js');
+require('./app-routes.js');
 require('./components');
 require('./services/auth');
 require('./services/application');
 require('./blocks/handlers/state.handler.js');
 require('./blocks/handlers/translation.handler.js');
 require('./blocks/config');
-
 require('./modules/business_setup');

@@ -3,10 +3,53 @@ img.responsive {
     height: auto;
 }
 
-.md-fab.ng-hide-remove {
-  animation: bounceIn 1s;
+// .md-fab.ng-hide-remove {
+//   animation: bounceIn 1s;
+// }
+//
+// .md-fab.ng-hide-add {
+//   animation: bounceOut 1s;
+// }
+
+
+.md-fab
+{
+  &.ng-hide-remove {
+    animation: bounceIn 1s;
+  }
+  &.ng-hide-add {
+    animation: bounceOut 1s;
+  }
 }
 
-.md-fab.ng-hide-add {
-  animation: bounceOut 1s;
+.header-title{
+  &.ng-enter{
+    animation: bounceIn 1s;
+  }
+  &.ng-leave{
+    animation: bounceOut 1s;
+  }
+}
+
+.centered{
+  text-align: center;
+}
+
+ui-view {
+  background-color: red;
+  &.ng-enter.ng-enter-active{
+    animation: slideInLeft 1s;
+  }
+  &.ng-leave.ng-leave-active{
+    animation: slideOutRight 1s;
+  }
+}
+.right {
+  background-color: green;
+  &.ng-enter{
+    animation: slideInRight 1s;
+  }
+  &.ng-leave{
+    animation: slideOutLeft 1s;
+  }
 }

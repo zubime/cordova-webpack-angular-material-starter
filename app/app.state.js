@@ -9,8 +9,8 @@ var navbarTemplate = require("ngtemplate!./layouts/navbar/navbar.html");
 
     stateConfig.$inject = ['$stateProvider','$urlRouterProvider'];
 
-    function stateConfig($stateProvider,$urlRouterProvider) {
-        $urlRouterProvider.otherwise('/location');
+    function stateConfig($stateProvider) {
+
         $stateProvider.state('app', {
             abstract: true,
             resolve: {
