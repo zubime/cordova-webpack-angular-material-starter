@@ -1,4 +1,4 @@
-(function() {
+
     'use strict';
 
     var jhiAlert = {
@@ -10,9 +10,6 @@
         controller: jhiAlertController
     };
 
-    angular
-        .module('gCompanyApp')
-        .component('jhiAlert', jhiAlert);
 
     jhiAlertController.$inject = ['$scope', 'AlertService'];
 
@@ -24,4 +21,4 @@
             vm.alerts = [];
         });
     }
-})();
+export default jhiAlert;

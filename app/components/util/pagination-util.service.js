@@ -1,9 +1,5 @@
-(function () {
-    'use strict';
 
-    angular
-        .module('gCompanyApp')
-        .factory('PaginationUtil', PaginationUtil);
+    'use strict';
 
     function PaginationUtil () {
 
@@ -39,4 +35,4 @@
             return sortArray.join(',');
         }
     }
-})();
+export default PaginationUtil;

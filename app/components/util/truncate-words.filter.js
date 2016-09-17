@@ -1,9 +1,6 @@
-(function() {
-    'use strict';
+'use strict';
 
-    angular
-        .module('gCompanyApp')
-        .filter('words', words);
+
 
     function words() {
         return wordsFilter;
@@ -21,8 +18,8 @@
                     input = inputWords.slice(0, words).join(' ') + '...';
                 }
             }
-            
+
             return input;
         }
     }
-})();
+export default words;

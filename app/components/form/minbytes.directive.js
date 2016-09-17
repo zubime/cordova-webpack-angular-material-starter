@@ -1,9 +1,8 @@
-(function() {
+
     'use strict';
 
-    angular
-        .module('gCompanyApp')
-        .directive('minbytes', minbytes);
+
+
 
     function minbytes () {
         var directive = {
@@ -42,4 +41,4 @@
             return base64String.length / 4 * 3 - paddingSize(base64String);
         }
     }
-})();
+export default minbytes;

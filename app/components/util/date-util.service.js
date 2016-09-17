@@ -1,9 +1,5 @@
-(function() {
-    'use strict';
+'use strict';
 
-    angular
-        .module('gCompanyApp')
-        .factory('DateUtils', DateUtils);
 
     DateUtils.$inject = ['$filter'];
 
@@ -46,5 +42,4 @@
             return 'yyyy-MM-dd';
         }
     }
-
-})();
+export default DateUtils;

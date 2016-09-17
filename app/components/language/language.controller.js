@@ -1,9 +1,6 @@
-(function() {
+
     'use strict';
 
-    angular
-        .module('gCompanyApp')
-        .controller('JhiLanguageController', JhiLanguageController);
 
     JhiLanguageController.$inject = ['$translate', 'JhiLanguageService', 'tmhDynamicLocale'];
 
@@ -22,4 +19,4 @@
             tmhDynamicLocale.set(languageKey);
         }
     }
-})();
+export default JhiLanguageController;

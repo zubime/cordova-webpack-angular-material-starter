@@ -2,8 +2,7 @@
 
   class AppCtrl {
     constructor($scope, $timeout, $mdSidenav,$state,$stateParams,$rootScope) {
-
-
+      'ngInject';
       $scope.$on('toggleMenu',function(event, mass){ $mdSidenav('left').toggle(); })
       let vm = this;
       vm.ctrlName = 'HomeCtrl';
@@ -37,5 +36,4 @@
 
   }
 
-AppCtrl.$inject = ['$scope', '$timeout', '$mdSidenav','$state','$stateParams','$rootScope'];
 export default AppCtrl;

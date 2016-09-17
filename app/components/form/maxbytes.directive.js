@@ -1,9 +1,5 @@
-(function() {
-    'use strict';
 
-    angular
-        .module('gCompanyApp')
-        .directive('maxbytes', maxbytes);
+    'use strict';
 
     function maxbytes () {
         var directive = {
@@ -43,4 +39,4 @@
         }
     }
 
-})();
+export default maxbytes;

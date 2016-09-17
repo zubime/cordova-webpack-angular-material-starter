@@ -1,10 +1,8 @@
-(function() {
+
     /*jshint bitwise: false*/
     'use strict';
 
-    angular
-        .module('gCompanyApp')
-        .factory('Base64', Base64);
+
 
     function Base64 () {
         var keyStr = 'ABCDEFGHIJKLMNOP' +
@@ -87,4 +85,4 @@
             }
         }
     }
-})();
+export default Base64;

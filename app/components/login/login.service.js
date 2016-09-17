@@ -1,9 +1,5 @@
-(function() {
-    'use strict';
-
-    angular
-        .module('gCompanyApp')
-        .factory('LoginService', LoginService);
+'use strict';
+import login from "./login.html";
 
     LoginService.$inject = [];
 
@@ -39,4 +35,4 @@
             // );
         }
     }
-})();
+export default LoginService;

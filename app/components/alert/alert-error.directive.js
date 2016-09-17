@@ -1,4 +1,3 @@
-(function() {
     'use strict';
 
     var jhiAlertError = {
@@ -10,9 +9,6 @@
         controller: jhiAlertErrorController
     };
 
-    angular
-        .module('gCompanyApp')
-        .component('jhiAlertError', jhiAlertError);
 
     jhiAlertErrorController.$inject = ['$scope', 'AlertService', '$rootScope', '$translate'];
 
@@ -88,4 +84,5 @@
             }
         });
     }
-})();
+
+export default jhiAlertError;

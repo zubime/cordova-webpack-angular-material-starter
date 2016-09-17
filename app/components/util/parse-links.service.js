@@ -1,9 +1,5 @@
-(function(){
-    'use strict';
+'use strict';
 
-    angular
-        .module('gCompanyApp')
-        .factory('ParseLinks', ParseLinks);
 
     function ParseLinks () {
 
@@ -44,4 +40,4 @@
             return links;
         }
     }
-})();
+export default ParseLinks;

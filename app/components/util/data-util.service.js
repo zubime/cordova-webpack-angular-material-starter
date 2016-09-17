@@ -1,9 +1,5 @@
-(function() {
-    'use strict';
 
-    angular
-        .module('gCompanyApp')
-        .factory('DataUtils', DataUtils);
+    'use strict';
 
     DataUtils.$inject = ['$window'];
 
@@ -71,4 +67,4 @@
             };
         }
     }
-})();
+export default DataUtils;

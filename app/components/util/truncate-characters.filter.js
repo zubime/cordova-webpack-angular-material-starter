@@ -1,10 +1,5 @@
-(function() {
-    'use strict';
+'use strict';
 
-    angular
-        .module('gCompanyApp')
-        .filter('characters', characters);
-        
     function characters () {
         return charactersFilter;
 
@@ -34,4 +29,4 @@
             return input;
         }
     }
-})();
+export default characters;

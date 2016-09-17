@@ -1,9 +1,5 @@
-(function() {
-    'use strict';
+'use strict';
 
-    angular
-        .module('gCompanyApp')
-        .controller('LoginController', LoginController);
 
     LoginController.$inject = ['$rootScope', '$state', '$timeout', 'Auth', '$uibModalInstance'];
 
@@ -70,4 +66,4 @@
             $state.go('requestReset');
         }
     }
-})();
+export default LoginController;

@@ -1,9 +1,8 @@
-(function() {
+
     'use strict';
 
-    angular
-        .module('gCompanyApp')
-        .filter('findLanguageFromKey', findLanguageFromKey);
+
+
 
     function findLanguageFromKey() {
         return findLanguageFromKeyFilter;
@@ -40,4 +39,4 @@
             }[lang];
         }
     }
-})();
+export default findLanguageFromKey;

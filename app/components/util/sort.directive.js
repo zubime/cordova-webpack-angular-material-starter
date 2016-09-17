@@ -1,9 +1,6 @@
-(function() {
+
     'use strict';
 
-    angular
-        .module('gCompanyApp')
-        .directive('jhSort', jhSort);
 
     function jhSort () {
         var directive = {
@@ -77,4 +74,4 @@
             }
         }
     }
-})();
+export default jhSort;

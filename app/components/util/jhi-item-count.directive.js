@@ -1,4 +1,4 @@
-(function() {
+
     'use strict';
 
     var jhiItemCount = {
@@ -13,7 +13,4 @@
         }
     };
 
-    angular
-        .module('gCompanyApp')
-        .component('jhiItemCount', jhiItemCount);
-})();
+export default jhiItemCount;

@@ -1,9 +1,7 @@
-(function() {
+
     'use strict';
 
-    angular
-        .module('gCompanyApp')
-        .provider('AlertService', AlertService);
+
 
     function AlertService () {
         this.toast = false;
@@ -134,4 +132,4 @@
             }
         }
     }
-})();
+export default AlertService;

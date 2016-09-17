@@ -26,7 +26,7 @@ module.exports = {
       'angular-material-icons',
       './www/css/angular-material-icons.css'
     ],
-    app:["./app/index.js"]
+    app:["./app/app.module.js"]
   },
   output: {
     path: path.resolve(__dirname, "www"),

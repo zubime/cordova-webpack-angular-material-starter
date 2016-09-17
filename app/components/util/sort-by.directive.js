@@ -1,9 +1,5 @@
-(function() {
-    'use strict';
 
-    angular
-        .module('gCompanyApp')
-        .directive('jhSortBy', jhSortBy);
+    'use strict';
 
     function jhSortBy() {
         var directive = {
@@ -21,4 +17,4 @@
             });
         }
     }
-})();
+export default jhSortBy;

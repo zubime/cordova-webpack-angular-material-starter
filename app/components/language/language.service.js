@@ -1,9 +1,7 @@
-(function () {
+
     'use strict';
 
-    angular
-        .module('gCompanyApp')
-        .factory('JhiLanguageService', JhiLanguageService);
+
 
     JhiLanguageService.$inject = ['$q', '$http', '$translate', 'LANGUAGES'];
 
@@ -30,4 +28,4 @@
             return deferred.promise;
         }
     }
-})();
+export default JhiLanguageService;

@@ -1,9 +1,8 @@
-(function() {
+
     'use strict';
 
-    angular
-        .module('gCompanyApp')
-        .filter('capitalize', capitalize);
+
+
 
     function capitalize() {
         return capitalizeFilter;
@@ -15,4 +14,4 @@
             return input.substring(0, 1).toUpperCase() + input.substring(1);
         }
     }
-})();
+export default capitalize;

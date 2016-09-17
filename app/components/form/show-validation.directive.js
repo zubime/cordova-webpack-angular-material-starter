@@ -1,9 +1,8 @@
-(function() {
+
     'use strict';
 
-    angular
-        .module('gCompanyApp')
-        .directive('showValidation', showValidation);
+
+
 
     function showValidation () {
         var directive = {
@@ -32,4 +31,4 @@
             });
         }
     }
-})();
+export default showValidation;
