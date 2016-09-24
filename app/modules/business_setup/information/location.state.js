@@ -1,15 +1,11 @@
 'use strict';
 var locations = require("ngtemplate!./locations.html");
-var location_delete_dialog = require("ngtemplate!./location-delete-dialog.html");
-var location_dialog = require("ngtemplate!./location-dialog.html");
+var location_delete_dialog = require("ngtemplate!./delete/location-delete-dialog.html");
+var location_dialog = require("ngtemplate!./dialog/location-dialog.html");
 
-    angular
-        .module('gCompanyApp')
-        .config(stateConfig);
 
-    stateConfig.$inject = ['$stateProvider'];
-
-    function stateConfig($stateProvider) {
+    export default function stateConfig($stateProvider) {
+            'ngInject';
         $stateProvider
         .state('location', {
             parent: 'app',

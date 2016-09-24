@@ -1,13 +1,10 @@
-(function() {
+
     'use strict';
 
-    angular
-        .module('gCompanyApp')
-        .factory('translationStorageProvider', translationStorageProvider);
 
-    translationStorageProvider.$inject = ['$localStorage', '$log', 'LANGUAGES'];
 
-    function translationStorageProvider($localStorage, $log, LANGUAGES) {
+export default function translationStorageProvider($localStorage, $log, LANGUAGES) {
+        'ngInject';
         return {
             get: get,
             put: put
@@ -25,4 +22,3 @@
             $localStorage[name] = value;
         }
     }
-})();

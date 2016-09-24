@@ -1,13 +1,8 @@
-(function() {
-    'use strict';
+'use strict';
+    // authInterceptor.$inject = ['$rootScope', '$q', '$location', '$localStorage', '$sessionStorage'];
 
-    angular
-        .module('gCompanyApp')
-        .factory('authInterceptor', authInterceptor);
-
-    authInterceptor.$inject = ['$rootScope', '$q', '$location', '$localStorage', '$sessionStorage'];
-
-    function authInterceptor ($rootScope, $q, $location, $localStorage, $sessionStorage) {
+export default function authInterceptor ($rootScope, $q, $location, $localStorage, $sessionStorage) {
+        'ngInject';
         var service = {
             request: request
         };
@@ -18,12 +13,11 @@
             /*jshint camelcase: false */
             config.headers = config.headers || {};
             var token = $localStorage.authenticationToken || $sessionStorage.authenticationToken;
-            
+
             if (token) {
                 config.headers.Authorization = 'Bearer ' + token;
             }
-            
+
             return config;
         }
     }
-})();

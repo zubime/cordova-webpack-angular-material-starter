@@ -1,12 +1,7 @@
-(function() {
-    'use strict';
-    angular
-        .module('gCompanyApp')
-        .factory('Location', Location);
+'use strict';
 
-    Location.$inject = ['$resource'];
-
-    function Location ($resource) {
+export default function Location ($resource) {
+        'ngInject';
         var resourceUrl =  'm_location/' + 'api/locations/:id';
 
         return $resource(resourceUrl, {}, {
@@ -23,4 +18,3 @@
             'update': { method:'PUT' }
         });
     }
-})();

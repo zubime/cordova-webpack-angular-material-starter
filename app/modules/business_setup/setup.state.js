@@ -1,19 +1,13 @@
 'use strict';
 var template = require("ngtemplate!./setup.html");
 var location_detail = require("ngtemplate!./location-detail.html");
-var location_contact = require("ngtemplate!./information/views/location-contact.html");
-var location_hours = require("ngtemplate!./information/views/location-hours.html");
-var location_location = require("ngtemplate!./information/views/location-location.html");
-var location_marketing = require("ngtemplate!./information/views/location-marketing.html");
+var location_contact = require("ngtemplate!./information/contact/location-contact.html");
+var location_hours = require("ngtemplate!./information/opening_hours/location-hours.html");
+var location_location = require("ngtemplate!./information/location/location-location.html");
+var location_marketing = require("ngtemplate!./information/marketing/location-marketing.html");
 
 
-    angular
-        .module('gCompanyApp')
-        .config(stateConfig);
-
-    stateConfig.$inject = ['$stateProvider'];
-
-    function stateConfig($stateProvider) {
+export default function stateConfig($stateProvider) {
         $stateProvider.state('setup', {
             parent: 'app',
             url: '/setup',

@@ -1,14 +1,8 @@
-(function() {
-    'use strict';
+'use strict';
+//authExpiredInterceptor.$inject = ['$rootScope', '$q', '$injector', '$localStorage', '$sessionStorage'];
 
-    angular
-        .module('gCompanyApp')
-        .factory('authExpiredInterceptor', authExpiredInterceptor);
-
-    
-    authExpiredInterceptor.$inject = ['$rootScope', '$q', '$injector', '$localStorage', '$sessionStorage'];
-
-    function authExpiredInterceptor($rootScope, $q, $injector, $localStorage, $sessionStorage) {
+export default function authExpiredInterceptor($rootScope, $q, $injector, $localStorage, $sessionStorage) {
+        'ngInject';
         var service = {
             responseError: responseError
         };
@@ -28,4 +22,3 @@
             return $q.reject(response);
         }
     }
-})();

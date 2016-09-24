@@ -1,15 +1,9 @@
-(function() {
-    'use strict';
+'use strict';
 
-    angular
-        .module('gCompanyApp')
-        .controller('LocationController', LocationController);
-
-    LocationController.$inject = ['$scope', '$state', 'DataUtils', 'Location', 'ParseLinks', 'AlertService', 'pagingParams', 'paginationConstants'];
-
-    function LocationController ($scope, $state, DataUtils, Location, ParseLinks, AlertService, pagingParams, paginationConstants) {
+export default function LocationController ($scope, $state, DataUtils, Location, ParseLinks, AlertService, pagingParams, paginationConstants) {
+        'ngInject';
         var vm = this;
-        
+
         vm.loadPage = loadPage;
         vm.predicate = pagingParams.predicate;
         vm.reverse = pagingParams.ascending;
@@ -58,4 +52,3 @@
             });
         }
     }
-})();

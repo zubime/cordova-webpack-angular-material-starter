@@ -1,14 +1,6 @@
-(function() {
-    'use strict';
-
-    angular
-        .module('gCompanyApp')
-        .config(alertServiceConfig);
-
-    alertServiceConfig.$inject = ['AlertServiceProvider'];
-
-    function alertServiceConfig(AlertServiceProvider) {
+'use strict';
+export default function alertServiceConfig(AlertServiceProvider) {
+        'ngInject';
         // set below to true to make alerts look like toast
         AlertServiceProvider.showAsToast(false);
     }
-})();

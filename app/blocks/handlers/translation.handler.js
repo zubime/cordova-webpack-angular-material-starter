@@ -1,13 +1,7 @@
-(function() {
-    'use strict';
+'use strict';
 
-    angular
-        .module('gCompanyApp')
-        .factory('translationHandler', translationHandler);
-
-    translationHandler.$inject = ['$rootScope', '$window', '$state', '$translate'];
-
-    function translationHandler($rootScope, $window, $state, $translate) {
+export default function translationHandler($rootScope, $window, $state, $translate) {
+        'ngInject';
         return {
             initialize: initialize,
             updateTitle: updateTitle
@@ -40,4 +34,3 @@
             });
         }
     }
-})();

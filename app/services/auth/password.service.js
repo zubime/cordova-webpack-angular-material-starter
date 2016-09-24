@@ -1,15 +1,8 @@
-(function() {
-    'use strict';
+'use strict';
 
-    angular
-        .module('gCompanyApp')
-        .factory('Password', Password);
-
-    Password.$inject = ['$resource'];
-
-    function Password($resource) {
+export default function Password($resource) {
+        'ngInject';
         var service = $resource('api/account/change_password', {}, {});
 
         return service;
     }
-})();

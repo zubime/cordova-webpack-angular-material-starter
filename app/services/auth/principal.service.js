@@ -1,13 +1,7 @@
-(function() {
-    'use strict';
+'use strict';
 
-    angular
-        .module('gCompanyApp')
-        .factory('Principal', Principal);
-
-    Principal.$inject = ['$q', 'Account'];
-
-    function Principal ($q, Account) {
+export default function Principal ($q, Account) {
+        'ngInject';
         var _identity,
             _authenticated = false;
 
@@ -96,4 +90,3 @@
             return angular.isDefined(_identity);
         }
     }
-})();

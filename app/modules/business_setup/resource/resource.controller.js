@@ -1,15 +1,8 @@
-(function() {
-    'use strict';
 
-    angular
-        .module('gCompanyApp')
-        .controller('ResourceController', ResourceController);
-
-    ResourceController.$inject = ['$scope', '$state', 'DataUtils', 'Resource', 'ParseLinks', 'AlertService', 'pagingParams', 'paginationConstants'];
-
-    function ResourceController ($scope, $state, DataUtils, Resource, ParseLinks, AlertService, pagingParams, paginationConstants) {
+export default function ResourceController ($scope, $state, DataUtils, Resource, ParseLinks, AlertService, pagingParams, paginationConstants) {
+        'ngInject';
         var vm = this;
-        
+
         vm.loadPage = loadPage;
         vm.predicate = pagingParams.predicate;
         vm.reverse = pagingParams.ascending;
@@ -57,4 +50,3 @@
             });
         }
     }
-})();

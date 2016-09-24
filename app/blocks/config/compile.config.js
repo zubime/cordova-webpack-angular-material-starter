@@ -1,16 +1,13 @@
-(function() {
-    'use strict';
+'use strict';
 
-    angular
-        .module('gCompanyApp')
-        .config(compileServiceConfig);
 
-    compileServiceConfig.$inject = ['$compileProvider','DEBUG_INFO_ENABLED'];
+    // compileServiceConfig.$inject = ['$compileProvider','DEBUG_INFO_ENABLED'];
 
-    function compileServiceConfig($compileProvider,DEBUG_INFO_ENABLED) {
+export default function compileServiceConfig($compileProvider,DEBUG_INFO_ENABLED) {
+        'ngInject';
         // disable debug data on prod profile to improve performance
         $compileProvider.debugInfoEnabled(DEBUG_INFO_ENABLED);
-        
+
         /*
         If you wish to debug an application with this information
         then you should open up a debug console in the browser
@@ -19,4 +16,3 @@
 		angular.reloadWithDebugInfo();
 		*/
     }
-})();

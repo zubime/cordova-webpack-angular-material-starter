@@ -2,7 +2,7 @@
 
 const HTTP = new WeakMap();
 
-class ApplicationService
+export default class ApplicationService
 {
 
   constructor($http){
@@ -34,8 +34,8 @@ class ApplicationService
     return vm.fab;
   }
   static factory($http){
+    'ngInject';
     return new ApplicationService($http);
   }
 
 }
-ApplicationService.factory.$inject = ['$http']

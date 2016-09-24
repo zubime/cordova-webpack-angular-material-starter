@@ -1,15 +1,8 @@
-(function() {
-    'use strict';
+'use strict';
 
-    angular
-        .module('gCompanyApp')
-        .factory('PasswordResetFinish', PasswordResetFinish);
-
-    PasswordResetFinish.$inject = ['$resource'];
-
-    function PasswordResetFinish($resource) {
+export default function PasswordResetFinish($resource) {
+        'ngInject';
         var service = $resource('api/account/reset_password/finish', {}, {});
 
         return service;
     }
-})();

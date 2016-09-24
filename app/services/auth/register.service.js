@@ -1,13 +1,6 @@
-(function () {
-    'use strict';
+'use strict';
 
-    angular
-        .module('gCompanyApp')
-        .factory('Register', Register);
-
-    Register.$inject = ['$resource'];
-
-    function Register ($resource) {
+export default function Register ($resource) {
+        'ngInject';
         return $resource('api/register', {}, {});
     }
-})();

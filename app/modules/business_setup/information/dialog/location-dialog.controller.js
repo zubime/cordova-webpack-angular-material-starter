@@ -1,13 +1,7 @@
-(function() {
-    'use strict';
+'use strict';
 
-    angular
-        .module('gCompanyApp')
-        .controller('LocationDialogController', LocationDialogController);
-
-    LocationDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$mdDialog', 'DataUtils', 'entity', 'Location'];
-
-    function LocationDialogController ($timeout, $scope, $stateParams, $mdDialog, DataUtils, entity, Location) {
+export default function LocationDialogController ($timeout, $scope, $stateParams, $mdDialog, DataUtils, entity, Location) {
+        'ngInject';
         var vm = this;
         vm.delay = true;
         vm.location = entity;
@@ -89,4 +83,3 @@
         };
 
     }
-})();

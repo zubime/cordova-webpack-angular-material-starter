@@ -1,21 +1,7 @@
-require('../interceptor/auth-expired.interceptor.js');
-require('../interceptor/auth.interceptor.js');
-require('../interceptor/errorhandler.interceptor.js');
-require('../interceptor/notification.interceptor.js');
-
-(function() {
-    'use strict';
-
-    angular
-        .module('gCompanyApp')
-        .config(httpConfig);
-
-    httpConfig.$inject = ['$urlRouterProvider', '$httpProvider', '$urlMatcherFactoryProvider'];
-
-    function httpConfig($urlRouterProvider, $httpProvider, $urlMatcherFactoryProvider) {
 
 
-
+export default function httpConfig($urlRouterProvider, $httpProvider, $urlMatcherFactoryProvider) {
+        'ngInject';
         $httpProvider.interceptors.push('errorHandlerInterceptor');
         $httpProvider.interceptors.push('authExpiredInterceptor');
         $httpProvider.interceptors.push('authInterceptor');
@@ -31,4 +17,3 @@ require('../interceptor/notification.interceptor.js');
             pattern: /bool|true|0|1/
         });
     }
-})();

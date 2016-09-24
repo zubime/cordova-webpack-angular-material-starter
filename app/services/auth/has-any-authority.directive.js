@@ -1,13 +1,7 @@
-(function() {
-    'use strict';
+'use strict';
 
-    angular
-        .module('gCompanyApp')
-        .directive('hasAnyAuthority', hasAnyAuthority);
-
-    hasAnyAuthority.$inject = ['Principal'];
-
-    function hasAnyAuthority(Principal) {
+export default function hasAnyAuthority(Principal) {
+        'ngInject';
         var directive = {
             restrict: 'A',
             link: linkFunc
@@ -49,4 +43,3 @@
             }
         }
     }
-})();

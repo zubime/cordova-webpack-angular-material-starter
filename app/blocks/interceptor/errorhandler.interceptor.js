@@ -1,13 +1,8 @@
-(function() {
-    'use strict';
+'use strict';
+    // errorHandlerInterceptor.$inject = ['$q', '$rootScope'];
 
-    angular
-        .module('gCompanyApp')
-        .factory('errorHandlerInterceptor', errorHandlerInterceptor);
-
-    errorHandlerInterceptor.$inject = ['$q', '$rootScope'];
-
-    function errorHandlerInterceptor ($q, $rootScope) {
+export default function errorHandlerInterceptor ($q, $rootScope) {
+        'ngInject';
         var service = {
             responseError: responseError
         };
@@ -21,4 +16,3 @@
             return $q.reject(response);
         }
     }
-})();

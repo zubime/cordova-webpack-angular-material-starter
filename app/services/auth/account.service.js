@@ -1,13 +1,6 @@
-(function() {
-    'use strict';
-
-    angular
-        .module('gCompanyApp')
-        .factory('Account', Account);
-
-    Account.$inject = ['$resource'];
-
-    function Account ($resource) {
+'use strict';
+export default function Account ($resource) {
+        'ngInject';
         var service = $resource('api/account', {}, {
             'get': { method: 'GET', params: {}, isArray: false,
                 interceptor: {
@@ -21,4 +14,3 @@
 
         return service;
     }
-})();

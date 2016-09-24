@@ -1,13 +1,9 @@
-(function() {
+
     'use strict';
 
-    angular
-        .module('gCompanyApp')
-        .config(localStorageConfig);
 
-    localStorageConfig.$inject = ['$localStorageProvider'];
 
-    function localStorageConfig($localStorageProvider) {
+export default function localStorageConfig($localStorageProvider) {
+        'ngInject';
         $localStorageProvider.setKeyPrefix('jhi-');
     }
-})();

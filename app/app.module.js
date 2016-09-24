@@ -14,6 +14,9 @@ import  'angular-ui-router';
 import  stateConfig from './app.state.js';
 import  config from './app-routes.js';
 import  ComponentModule from './components';
+import  BlocksModule from './blocks';
+import  ServicesModule from './services';
+import  BusinessSetupModule from './modules/business_setup';
 
 
 require('./menu.less');
@@ -37,7 +40,10 @@ var angular = require('angular');
             'ngMdIcons',
             'ngAnimate',
             'status',
-            ComponentModule.name
+            ComponentModule.name,
+            BlocksModule.name,
+            ServicesModule.name,
+            BusinessSetupModule.name
         ])
         .config(function($mdThemingProvider,$mdIconProvider) {
           // $mdIconProvider
@@ -68,11 +74,5 @@ var angular = require('angular');
 
 
 
-        require('./services/auth');
-        require('./services/application');
-        require('./blocks/handlers/state.handler.js');
-        require('./blocks/handlers/translation.handler.js');
-        require('./blocks/config');
-        require('./modules/business_setup');
 
         require('./modules/status');

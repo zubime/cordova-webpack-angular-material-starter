@@ -1,1 +1,0 @@
-require("./tab.directive.js");

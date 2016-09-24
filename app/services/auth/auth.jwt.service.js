@@ -1,13 +1,7 @@
-(function() {
-    'use strict';
+'use strict';
 
-    angular
-        .module('gCompanyApp')
-        .factory('AuthServerProvider', AuthServerProvider);
-
-    AuthServerProvider.$inject = ['$http', '$localStorage', '$sessionStorage', '$q'];
-
-    function AuthServerProvider ($http, $localStorage, $sessionStorage, $q) {
+export default function AuthServerProvider ($http, $localStorage, $sessionStorage, $q) {
+        'ngInject';
         var service = {
             getToken: getToken,
             hasValidToken: hasValidToken,
@@ -73,4 +67,3 @@
             delete $sessionStorage.authenticationToken;
         }
     }
-})();

@@ -1,13 +1,7 @@
-(function() {
-    'use strict';
+'use strict';
 
-    angular
-        .module('gCompanyApp')
-        .controller('LocationDeleteController',LocationDeleteController);
-
-    LocationDeleteController.$inject = ['$mdDialog', 'entity', 'Location'];
-
-    function LocationDeleteController($mdDialog, entity, Location) {
+export default function LocationDeleteController($mdDialog, entity, Location) {
+        'ngInject';
         var vm = this;
 
         vm.location = entity;
@@ -25,4 +19,3 @@
                 });
         }
     }
-})();

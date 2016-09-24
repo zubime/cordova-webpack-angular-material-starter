@@ -1,17 +1,10 @@
-(function() {
-    'use strict';
-
-    angular
-        .module('gCompanyApp')
-        .factory('notificationInterceptor', notificationInterceptor);
-
-    notificationInterceptor.$inject = ['$q', 'AlertService'];
-
-    function notificationInterceptor ($q, AlertService) {
+'use strict';
+// notificationInterceptor.$inject = ['$q', 'AlertService'];
+export default function notificationInterceptor ($q, AlertService) {
+        'ngInject';
         var service = {
             response: response
         };
-
         return service;
 
         function response (response) {
@@ -22,4 +15,3 @@
             return response;
         }
     }
-})();
