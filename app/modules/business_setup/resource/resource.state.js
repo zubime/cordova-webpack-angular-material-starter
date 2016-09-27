@@ -1,13 +1,9 @@
-(function() {
+
     'use strict';
 
-    angular
-        .module('gCompanyApp')
-        .config(stateConfig);
 
-    stateConfig.$inject = ['$stateProvider'];
-
-    function stateConfig($stateProvider) {
+export default function stateConfig($stateProvider) {
+        'ngInject';
         $stateProvider
         .state('resource', {
             parent: 'business_setup',
@@ -60,9 +56,7 @@
             },
             views: {
                 'content@': {
-                    templateUrl: 'app/entities/resource/resource-detail.html',
-                    controller: 'ResourceDetailController',
-                    controllerAs: 'vm'
+                    component: 'resource-detail'
                 }
             },
             resolve: {
@@ -165,5 +159,3 @@
             }]
         });
     }
-
-})();

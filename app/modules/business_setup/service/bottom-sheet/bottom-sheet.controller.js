@@ -2,8 +2,11 @@
 
 
  class BottomSheetCtrl {
-  constructor(){
-
+  constructor(categories,services){
+    'ngInject';
+    let vm = this;
+    vm.categories=categories;
+    vm.services=services;
   }
 }
 

@@ -1,4 +1,4 @@
-import bottom   from "ngtemplate?prefix=service/!./bottomMenu/bottom-sheet.html";
+import bottom   from "ngtemplate?prefix=service/!./bottom-sheet/bottom-sheet.html";
 
 class ServiceTabDirectiveController{
   constructor($scope,$mdBottomSheet){
@@ -14,7 +14,9 @@ class ServiceTabDirectiveController{
   showListBottomSheet () {
     this.$mdBottomSheet.show({
       templateUrl: bottom,
-      controller:  'serviceTabBottomSheetCtrl'
+      controller:  'serviceTabBottomSheetCtrl',
+      controllerAs: 'vm',
+      locals: {categories:['Bike','Canoe','Boat'],services:['Workshop','Rental','Free']}
     }).then(function(clickedItem) {
 
     });

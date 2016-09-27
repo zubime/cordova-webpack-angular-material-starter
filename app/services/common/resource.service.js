@@ -1,15 +1,10 @@
-(function() {
-    'use strict';
-    angular
-        .module('gCompanyApp')
-        .factory('ServiceDetails', ServiceDetails);
+'use strict';
 
-    ServiceDetails.$inject = ['$resource'];
+export default function Resource ($resource) {
+        'ngInject';
+        var resourceUrl =  'm_location/' + 'api/resources/:id';
 
-    function ServiceDetails ($resource) {
-        var resourceUrl =  'm_location/' + 'api/location/:locationId/service-details/:id';
-
-        return $resource(resourceUrl, {locationId:'@locationId',id:'@id'}, {
+        return $resource(resourceUrl, {}, {
             'query': { method: 'GET', isArray: true},
             'get': {
                 method: 'GET',
@@ -23,4 +18,4 @@
             'update': { method:'PUT' }
         });
     }
-})();
+

@@ -11,16 +11,20 @@ import  'angular-animate';
 import  'angular-messages';
 import  'angular-material';
 import  'angular-ui-router';
+import  'ui-router-route-to-components';
 import  stateConfig from './app.state.js';
 import  config from './app-routes.js';
 import  ComponentModule from './components';
 import  BlocksModule from './blocks';
 import  ServicesModule from './services';
-import  BusinessSetupModule from './modules/business_setup';
+import  BusinessSetupModule from './modules/business_setup/business_setup';
+import  LocationModule from './modules/location/location'
+import  BusinessLogicModule from './modules/modules'; 
 
 
 require('./menu.less');
 require('./main.less');
+require ('svg-morpheus/compile/minified/svg-morpheus.js');
 
 
 import AppCtrl from './app-controller.js'
@@ -37,13 +41,14 @@ var angular = require('angular');
             'ngFileUpload',
             'ngMaterial',
             'ui.router',
+            'ui.router.components',
             'ngMdIcons',
             'ngAnimate',
             'status',
             ComponentModule.name,
             BlocksModule.name,
             ServicesModule.name,
-            BusinessSetupModule.name
+            BusinessLogicModule.name
         ])
         .config(function($mdThemingProvider,$mdIconProvider) {
           // $mdIconProvider

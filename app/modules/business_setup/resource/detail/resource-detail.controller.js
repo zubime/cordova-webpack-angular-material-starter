@@ -1,13 +1,8 @@
-(function() {
-    'use strict';
+'use strict';
 
-    angular
-        .module('gCompanyApp')
-        .controller('ResourceDetailController', ResourceDetailController);
-
-    ResourceDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'DataUtils', 'entity', 'Resource'];
-
-    function ResourceDetailController($scope, $rootScope, $stateParams, DataUtils, entity, Resource) {
+class ResourceDetailController{
+        constructor($scope, $rootScope, $stateParams, DataUtils, entity, Resource) {
+        'ngInject';
         var vm = this;
 
         vm.resource = entity;
@@ -19,4 +14,6 @@
         });
         $scope.$on('$destroy', unsubscribe);
     }
-})();
+}
+
+export default ResourceDetailController;

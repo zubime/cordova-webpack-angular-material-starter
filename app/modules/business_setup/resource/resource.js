@@ -1,5 +1,10 @@
+import angular from 'angular';
 import ResourceComponent from "./resource.component.js";
-var angular  = require('angular');
+import stateConfig from './resource.state.js';
 
-export default angular.module('business_setup.resource',[])
-.component('resourceTab',ResourceComponent);
+
+const module = angular.module('business_setup.resource',[])
+.component('resourceTab',ResourceComponent)
+.config(stateConfig);
+
+export default module;

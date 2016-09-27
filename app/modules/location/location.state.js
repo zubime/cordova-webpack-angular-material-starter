@@ -4,6 +4,7 @@ var location_delete_dialog = require("ngtemplate!./delete/location-delete-dialog
 var location_dialog = require("ngtemplate!./dialog/location-dialog.html");
 
 
+
     export default function stateConfig($stateProvider) {
             'ngInject';
         $stateProvider

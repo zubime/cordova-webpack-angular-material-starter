@@ -1,5 +1,5 @@
 'use strict';
-var template = require("ngtemplate!./setup.html");
+var template = require("ngtemplate!./business_setup.html");
 var location_detail = require("ngtemplate!./location-detail.html");
 var location_contact = require("ngtemplate!./information/contact/location-contact.html");
 var location_hours = require("ngtemplate!./information/opening_hours/location-hours.html");
