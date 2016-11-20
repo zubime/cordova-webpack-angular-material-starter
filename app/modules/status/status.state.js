@@ -15,7 +15,7 @@ function stateConfig($stateProvider) {
                 templateProvider: function($templateCache,$log){
                   return $templateCache.get(status);
                 } ,
-                controller: 'SetupController',
+                controller: 'StatusController',
                 controllerAs: 'vm'
             }
         }

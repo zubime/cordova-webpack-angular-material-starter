@@ -28,7 +28,7 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' https://maps.wikimedia.org http://*/openstreetmap.org">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: https://maps.wikimedia.org http://*/openstreetmap.org">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
@@ -41,121 +41,8 @@
         <script type="text/javascript" src="vendor.bundle.js"></script>
         <script type="text/javascript" src="app.bundle.js"></script>
     </head>
-    <body ng-app="gCompanyApp" ng-controller="AppCtrl as main" ng-cloak>
-        <section layout="row"  layout-fill>
-          <md-sidenav class="md-sidenav-left" md-component-id="left"
-                  md-whiteframe="4">
-            <section  ng-cloak>
-              <md-toolbar ng-init="i=0;icons=['face','cake','videocam','web'];selection=icons[i]" md-scroll-shrink class="md-tall">
-
-                <div flex></div>
-                <div
-                md-swipe-left="i=(icons.length+i-1)%icons.length; selection=icons[i]"
-                md-swipe-right="i=(i+1)%icons.length; selection=icons[i]"
-                class="menu-heading-left"
-                layout="row"
-                layout-align="space-between center">
-                  <md-button class="md-icon-button" ng-click="i=(icons.length+i-1)%icons.length; selection=icons[i]">
-                    <md-icon >keyboard_arrow_left</md-icon>
-                  </md-button>
-                  <div flex></div>
-                  <div   style="width:100px;height:100px" layout layout-aligh="center center">
-                    <!-- <md-icon   ng-style="{'font-size':'50px'}" ng-repeat="icon in icons" ng-animate="animate" ng-if="selection == icon" >{{icon}}</md-icon> -->
-                    <md-icon md-svg-src="svg/sport.svg" aria-label="sportiventure"></md-icon>
-                  </div>
-                  <div flex></div>
-                  <md-button class="md-icon-button" ng-click="i=(i+1)%icons.length; selection=icons[i]">
-                    <md-icon>keyboard_arrow_right</md-icon>
-                  </md-button>
-                </div>
-                <div flex></div>
-              </md-toolbar>
-              <md-content >
-                <md-subheader>SportiVenture.com<br>{{$state.current.data.fab.state}}</md-subheader>
-                <md-list>
-                  <md-list-item  ng-click="main.toggleLeft()" ui-sref="location">
-                    <md-icon>location_on</md-icon>
-                    <p>Location</p>
-                  </md-list-item>
-                  <md-list-item  ng-click="main.toggleLeft()" ui-sref="location-detail.information({id:1})">
-                    <md-icon>store</md-icon>
-                    <p>Business Setup</p>
-                  </md-list-item>
-                  <md-list-item  ng-click="main.toggleLeft()" ui-sref="conversations">
-                    <md-icon>question_answer</md-icon>
-                    <p>Conversations</p>
-                  </md-list-item>
-                  <md-list-item  ng-click="main.toggleLeft()" ui-sref="calendar">
-                    <md-icon>date_range</md-icon>
-                    <p>Calendar</p>
-                  </md-list-item>
-                  <md-list-item  ng-click="main.toggleLeft()" ui-sref="gift_card">
-                    <md-icon>card_giftcard</md-icon>
-                    <p>Promotions</p>
-                  </md-list-item>
-                  <md-list-item  ng-click="main.toggleLeft()" ui-sref="statistics">
-                    <md-icon>trending_up</md-icon>
-                    <p>Statistics</p>
-                  </md-list-item>
-                  <md-list-item  ng-click="main.toggleLeft()" ui-sref="configuration">
-                    <md-icon>build</md-icon>
-                    <p>Configuration</p>
-                  </md-list-item>
-                  <md-list-item  ng-click="main.toggleLeft()" ui-sref="status">
-                    <md-icon>settings</md-icon>
-                    <p>Status</p>
-                  </md-list-item>
-
-                    <md-list-item  ng-click="main.toggleLeft()" >
-                      <md-icon>exit_to_app</md-icon>
-                      <p>Logout</p>
-                    </md-list-item>
-                </md-list>
-
-              </md-content>
-            </section>
-          </md-sidenav>
-
-          <section layout="column"  flex layout-fill  >
-
-            <md-toolbar class="md-hue-2" flex="none">
-             <div class="md-toolbar-tools">
-               <md-button class="md-icon-button" aria-label="Settings" ng-click="main.toggleLeft()">
-                 <!-- <md-icon ng-click="main.toggleLeft()" >menu</md-icon> -->
-                 <ng-md-icon  icon="{{$state.current.data.menu.icon?$state.current.data.menu.icon:'menu'}}" ></ng-md-icon>
-               </md-button>
-               <h2>
-                 <span class="header_title" translate="{{$state.current.data.pageTitle}}">SportiVenture </span>
-                 <span>
-                    <!-- $state: {{$state.current.name}}
-                    $stateParams: {{$stateParams}}
-                    $state full url: {{ $state.$current.url.source }} -->
-                    {{$state.current.data.menu.state}}
-                  </span>
-               </h2>
-               <span flex></span>
-               <md-button ng-click="main.notifications.open('help')" class="md-icon-button" aria-label="Favorite">
-                 <md-icon  ng-class="{'animated':main.notifications.help, 'infinite':true, 'rubberBand':true}" md-font-set="material-icons">lightbulb_outline</md-icon>
-               </md-button>
-               <md-button class="md-icon-button" aria-label="More">
-                 <md-icon >more_vert</md-icon>
-               </md-button>
-             </div>
-           </md-toolbar>
-            <md-content ng-animate="{enter: 'animated bounceInRight', leave: 'animated bounceOutLeft'}" flex layout-fill data-ui-view="content" layout="column" >
-
-            </md-content>
-            <div  ng-init="left = true" ng-class="{'left':left, 'right':!left}" class="description" ng-show="$state.current.data.pageDescription" md-swipe-left="left=true;$state.go($state.current.data.nextState)" md-swipe-right="left=false;$state.go($state.current.data.prevState)">
-              <h1 class="md-headline centered" translate="{{$state.current.data.pageDescription}}"></h1>
-            </div>
-
-          </section>
-        </section>
-        <md-button  ng-hide="$state.current.data.fab == null" ng-click="$state.go($state.current.data.fab.state)"  class="md-fab md-primary md-fab-bottom-right" >
-          <!-- <md-icon>add</md-icon> -->
-          <ng-md-icon ng-attr-style="options={'duration':375,'rotation':'clockwise'}" icon="{{$state.current.data.fab.icon?$state.current.data.fab.icon:'add'}}" style="fill: pink"></ng-md-icon>
-        </md-button>
-
+    <body ng-app="gCompanyApp"  ng-cloak>
+      <app-component ng-cloak></app-component>
 
     </body>
 </html>

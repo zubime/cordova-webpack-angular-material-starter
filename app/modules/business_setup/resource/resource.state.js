@@ -1,24 +1,29 @@
 
-    'use strict';
+'use strict';
+var resource_dialog =  require('ngtemplate!./components/resource-dialog.html');
 
 
 export default function stateConfig($stateProvider) {
         'ngInject';
         $stateProvider
         .state('resource', {
-            parent: 'business_setup',
+            parent: 'business-setup',
             url: '/resource?page&sort&search',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'gCompanyApp.resource.home.title'
-            },
-            views: {
-                'content@': {
-                    templateUrl: 'app/entities/resource/resources.html',
-                    controller: 'ResourceController',
-                    controllerAs: 'vm'
+                pageTitle: 'gCompanyApp.resource.home.title',
+                fab:{
+                    icon:'add',
+                    state:'resource.new'
                 }
             },
+            // views: {
+            //     'content@': {
+            //         templateUrl: 'app/entities/resource/resources.html',
+            //         controller: 'ResourceController',
+            //         controllerAs: 'vm'
+            //     }
+            // },
             params: {
                 page: {
                     value: '1',
@@ -48,7 +53,7 @@ export default function stateConfig($stateProvider) {
             }
         })
         .state('resource-detail', {
-            parent: 'business_setup',
+            parent: 'business-setup',
             url: '/resource/{id}',
             data: {
                 authorities: ['ROLE_USER'],
@@ -73,23 +78,21 @@ export default function stateConfig($stateProvider) {
             parent: 'resource',
             url: '/new',
             data: {
-                authorities: ['ROLE_USER']
+                authorities: ['ROLE_USER'],
+                menu: {
+                  icon: 'arrow_back',
+                  state: '^'
+                },
+                fab:null
             },
-            onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
-                $uibModal.open({
-                    templateUrl: 'app/entities/resource/resource-dialog.html',
-                    controller: 'ResourceDialogController',
-                    controllerAs: 'vm',
-                    backdrop: 'static',
-                    size: 'lg',
-                    resolve: {
+            resolve: {
                         entity: function () {
                             return {
                                 locationId: null,
                                 serviceDetailId: null,
                                 typeId: null,
                                 subTypeId: null,
-                                pricePerHour: null,
+                                pricePerHour: 11,
                                 pricePerDay: null,
                                 pricePerWeek: null,
                                 currencyCode: null,
@@ -98,16 +101,21 @@ export default function stateConfig($stateProvider) {
                                 galleryId: null,
                                 image: null,
                                 imageContentType: null,
-                                id: null
+                                id: 1
                             };
                         }
-                    }
-                }).result.then(function() {
-                    $state.go('resource', null, { reload: true });
-                }, function() {
-                    $state.go('resource');
-                });
-            }]
+                    },
+            views: {
+                'content@':{
+                    // component: 'resource-dialog'
+                    templateProvider: function($templateCache,$log){
+                      return $templateCache.get(resource_dialog);
+                    },
+                    // templateUrl: './dialog/resource-dialog.html',
+                    controller: 'ResourceDialogController',
+                    controllerAs: 'vm'
+                }
+            }
         })
         .state('resource.edit', {
             parent: 'resource',

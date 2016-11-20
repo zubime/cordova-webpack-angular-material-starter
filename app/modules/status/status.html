@@ -1,4 +1,4 @@
-<md-card ng-repeat="state in $state.get()">
+<md-card ng-repeat="state in vm.$state.get()">
   <md-card-title>{{state.name}}</md-card-title>
   <md-card-content>
   <ul><li ng-repeat="(key,value) in state">{{key}}:{{value}}</li></ul>

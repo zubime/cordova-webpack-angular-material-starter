@@ -3,6 +3,7 @@ var CordovaPlugin = require('webpack-cordova-plugin');
 var path = require("path");
 
 module.exports = {
+  devtool:'source-map',
   entry: {
     vendor:[
       'mdi',
@@ -40,8 +41,12 @@ module.exports = {
       version: true,                            // Set config.xml' version. (true = use version from package.json)
     })
   ],
+  resolve: {
+    extensions: ['', '.webpack.js', '.web.js', '.ts', '.js']
+  },
   module: {
     loaders: [
+      { test: /\.ts$/, loader: 'ts-loader' },
       { test: /\.css$/,
         loader: "style!css"
       },

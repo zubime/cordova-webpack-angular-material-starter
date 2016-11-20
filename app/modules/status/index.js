@@ -1,4 +1,4 @@
-import { StatusController } from "./status.controller.js";
+import StatusController from "./status.controller.js";
 import { stateConfig } from "./status.state.js";
 import { run } from "./status-run.js";
 

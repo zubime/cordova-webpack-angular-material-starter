@@ -1,12 +1,14 @@
 'use strict';
 
 
-class SetupController {
-  constructor() {
+class StatusController {
+  constructor($state) {
+    'ngInject';
     let vm = this;
-    vm.ctrlName = ctrlName;
+    this.$state = $state;
+   
   }
 }
 
 
-export { SetupController }
+export default StatusController 

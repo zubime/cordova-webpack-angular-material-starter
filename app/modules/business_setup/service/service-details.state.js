@@ -1,28 +1,28 @@
-(function() {
+
     'use strict';
 
-    angular
-        .module('gCompanyApp')
-        .config(stateConfig);
 
-    stateConfig.$inject = ['$stateProvider'];
-
-    function stateConfig($stateProvider) {
+export default function stateConfig($stateProvider) {
+        'ngInject';
         $stateProvider
         .state('service-details', {
-            parent: 'business_setup',
+            parent: 'business-setup',
             url: '/location/{locationId}/service-details',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'gCompanyApp.serviceDetails.home.title'
-            },
-            views: {
-                'content@': {
-                    templateUrl: 'app/entities/service-details/service-details.html',
-                    controller: 'ServiceDetailsController',
-                    controllerAs: 'vm'
+                pageTitle: 'gCompanyApp.serviceDetails.home.title',
+                fab:{
+                icon:'add',
+                state:'business-setup.service.new'
                 }
             },
+            // views: {
+            //     'content@': {
+            //         templateUrl: 'app/entities/service-details/service-details.html',
+            //         controller: 'ServiceDetailsController',
+            //         controllerAs: 'vm'
+            //     }
+            // },
             resolve: {
                 translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
                     $translatePartialLoader.addPart('serviceDetails');
@@ -32,7 +32,7 @@
             }
         })
         .state('service-details-detail', {
-            parent: 'business_setup',
+            parent: 'business-setup',
             url: '/location/{locationId}/service-details/{id}',
             data: {
                 authorities: ['ROLE_USER'],
@@ -141,5 +141,3 @@
             }]
         });
     }
-
-})();

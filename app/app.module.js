@@ -27,7 +27,8 @@ require('./main.less');
 require ('svg-morpheus/compile/minified/svg-morpheus.js');
 
 
-import AppCtrl from './app-controller.js'
+import AppCtrl from './app.controller.js';
+import AppComponent from './app.component.js';
 import run from './app-run.js';
 
 var angular = require('angular');
@@ -69,6 +70,7 @@ var angular = require('angular');
         .config(stateConfig)
         .config(config)
         .controller('AppCtrl',AppCtrl)
+        .component('appComponent',AppComponent)
         .constant('VERSION', "0.0.1-SNAPSHOT")
         .constant('DEBUG_INFO_ENABLED', true)
         .run(run);
