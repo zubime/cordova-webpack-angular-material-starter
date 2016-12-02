@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --watch --content-base www/ --port 3333",
+    "start": "webpack-dev-server --hot --inline --watch --content-base www/ --port 3333",
     "build": "webpack"
   },
   "author": "",
@@ -25,7 +25,7 @@
     "angular-translate-interpolation-messageformat": "^2.11.1",
     "angular-translate-loader-partial": "^2.11.1",
     "angular-translate-storage-local": "^2.11.1",
-    "angular-ui-router": "^0.3.1",
+    "angular-ui-router": "1.0.0-beta.4",
     "animate.css": "^3.5.1",
     "cordova-plugin-keyboard": "^1.1.4",
     "extract-text-webpack-plugin": "^1.0.1",
@@ -47,7 +47,6 @@
     "svg-morpheus": "^0.3.0",
     "ts-loader": "^0.8.2",
     "ui-leaflet": "^1.0.1",
-    "ui-router-route-to-components": "^0.1.0",
     "url-loader": "^0.5.7"
   },
   "devDependencies": {
